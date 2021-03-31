@@ -3,6 +3,8 @@
 namespace App\Entity;
 
 use App\Repository\UserRepository;
+use Doctrine\Common\Collections\ArrayCollection;
+use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
 use Symfony\Bridge\Doctrine\Validator\Constraints\UniqueEntity;
 use Symfony\Component\Security\Core\User\UserInterface;
@@ -41,6 +43,46 @@ class User implements UserInterface
      * @ORM\Column(type="boolean")
      */
     private $isVerified = false;
+
+    /**
+     * @ORM\Column(type="string", length=255)
+     */
+    private $lastname;
+
+    /**
+     * @ORM\Column(type="string", length=255)
+     */
+    private $firstname;
+
+    /**
+     * @ORM\Column(type="string", length=255)
+     */
+    private $city;
+
+    /**
+     * @ORM\Column(type="string", length=255)
+     */
+    private $address;
+
+    /**
+     * @ORM\Column(type="integer")
+     */
+    private $postcode;
+
+    /**
+     * @ORM\Column(type="integer")
+     */
+    private $phone;
+
+    /**
+     * @ORM\OneToMany(targetEntity=Renting::class, mappedBy="user")
+     */
+    private $rentings;
+
+    public function __construct()
+    {
+        $this->rentings = new ArrayCollection();
+    }
 
     public function getId(): ?int
     {
@@ -131,6 +173,108 @@ class User implements UserInterface
     public function setIsVerified(bool $isVerified): self
     {
         $this->isVerified = $isVerified;
+
+        return $this;
+    }
+
+    public function getLastname(): ?string
+    {
+        return $this->lastname;
+    }
+
+    public function setLastname(string $lastname): self
+    {
+        $this->lastname = $lastname;
+
+        return $this;
+    }
+
+    public function getFirstname(): ?string
+    {
+        return $this->firstname;
+    }
+
+    public function setFirstname(string $firstname): self
+    {
+        $this->firstname = $firstname;
+
+        return $this;
+    }
+
+    public function getCity(): ?string
+    {
+        return $this->city;
+    }
+
+    public function setCity(string $city): self
+    {
+        $this->city = $city;
+
+        return $this;
+    }
+
+    public function getAddress(): ?string
+    {
+        return $this->address;
+    }
+
+    public function setAddress(string $address): self
+    {
+        $this->address = $address;
+
+        return $this;
+    }
+
+    public function getPostcode(): ?int
+    {
+        return $this->postcode;
+    }
+
+    public function setPostcode(int $postcode): self
+    {
+        $this->postcode = $postcode;
+
+        return $this;
+    }
+
+    public function getPhone(): ?int
+    {
+        return $this->phone;
+    }
+
+    public function setPhone(int $phone): self
+    {
+        $this->phone = $phone;
+
+        return $this;
+    }
+
+    /**
+     * @return Collection|Renting[]
+     */
+    public function getRentings(): Collection
+    {
+        return $this->rentings;
+    }
+
+    public function addRenting(Renting $renting): self
+    {
+        if (!$this->rentings->contains($renting)) {
+            $this->rentings[] = $renting;
+            $renting->setUser($this);
+        }
+
+        return $this;
+    }
+
+    public function removeRenting(Renting $renting): self
+    {
+        if ($this->rentings->removeElement($renting)) {
+            // set the owning side to null (unless already changed)
+            if ($renting->getUser() === $this) {
+                $renting->setUser(null);
+            }
+        }
 
         return $this;
     }
