@@ -37,6 +37,12 @@ class Piece
      */
     private $availability;
 
+    /**
+     * @ORM\ManyToOne(targetEntity=Owner::class, inversedBy="pieces")
+     * @ORM\JoinColumn(nullable=false)
+     */
+    private $owner;
+
     public function getId(): ?int
     {
         return $this->id;
@@ -86,6 +92,18 @@ class Piece
     public function setAvailability(bool $availability): self
     {
         $this->availability = $availability;
+
+        return $this;
+    }
+
+    public function getOwner(): ?Owner
+    {
+        return $this->owner;
+    }
+
+    public function setOwner(?Owner $owner): self
+    {
+        $this->owner = $owner;
 
         return $this;
     }
