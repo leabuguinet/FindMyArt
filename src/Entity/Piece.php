@@ -3,6 +3,8 @@
 namespace App\Entity;
 
 use App\Repository\PieceRepository;
+use Doctrine\Common\Collections\ArrayCollection;
+use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
@@ -42,6 +44,16 @@ class Piece
      * @ORM\JoinColumn(nullable=false)
      */
     private $owner;
+
+    /**
+     * @ORM\ManyToMany(targetEntity=RentingDetail::class, mappedBy="piece")
+     */
+    private $rentingDetails;
+
+    public function __construct()
+    {
+        $this->rentingDetails = new ArrayCollection();
+    }
 
     public function getId(): ?int
     {
@@ -104,6 +116,33 @@ class Piece
     public function setOwner(?Owner $owner): self
     {
         $this->owner = $owner;
+
+        return $this;
+    }
+
+    /**
+     * @return Collection|RentingDetail[]
+     */
+    public function getRentingDetails(): Collection
+    {
+        return $this->rentingDetails;
+    }
+
+    public function addRentingDetail(RentingDetail $rentingDetail): self
+    {
+        if (!$this->rentingDetails->contains($rentingDetail)) {
+            $this->rentingDetails[] = $rentingDetail;
+            $rentingDetail->addPiece($this);
+        }
+
+        return $this;
+    }
+
+    public function removeRentingDetail(RentingDetail $rentingDetail): self
+    {
+        if ($this->rentingDetails->removeElement($rentingDetail)) {
+            $rentingDetail->removePiece($this);
+        }
 
         return $this;
     }

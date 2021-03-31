@@ -3,6 +3,8 @@
 namespace App\Entity;
 
 use App\Repository\RentingRepository;
+use Doctrine\Common\Collections\ArrayCollection;
+use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
@@ -32,6 +34,16 @@ class Renting
      * @ORM\JoinColumn(nullable=false)
      */
     private $user;
+
+    /**
+     * @ORM\OneToMany(targetEntity=RentingDetail::class, mappedBy="renting")
+     */
+    private $rentingDetails;
+
+    public function __construct()
+    {
+        $this->rentingDetails = new ArrayCollection();
+    }
 
     public function getId(): ?int
     {
@@ -70,6 +82,36 @@ class Renting
     public function setUser(?User $user): self
     {
         $this->user = $user;
+
+        return $this;
+    }
+
+    /**
+     * @return Collection|RentingDetail[]
+     */
+    public function getRentingDetails(): Collection
+    {
+        return $this->rentingDetails;
+    }
+
+    public function addRentingDetail(RentingDetail $rentingDetail): self
+    {
+        if (!$this->rentingDetails->contains($rentingDetail)) {
+            $this->rentingDetails[] = $rentingDetail;
+            $rentingDetail->setRenting($this);
+        }
+
+        return $this;
+    }
+
+    public function removeRentingDetail(RentingDetail $rentingDetail): self
+    {
+        if ($this->rentingDetails->removeElement($rentingDetail)) {
+            // set the owning side to null (unless already changed)
+            if ($rentingDetail->getRenting() === $this) {
+                $rentingDetail->setRenting(null);
+            }
+        }
 
         return $this;
     }
