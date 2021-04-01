@@ -357,13 +357,12 @@ class User implements UserInterface
 
         return $this;
     }
-    ////UPLOAD 3 documents 
+    ////UPLOAD carte identité
 
-    public function setImageFile(File $identityCard = null, File $residenceCertificate = null, File $insuranceCertificate = null )
+    public function setIdentityCardFile(File $identityCard = null)
     {
         $this->identityCardFile = $identityCard;
-        $this->identityCardFile = $residenceCertificate;
-        $this->insuranceCertificateFile = $insuranceCertificate;
+
 
         // VERY IMPORTANT:
         // It is required that at least one field changes if you are using Doctrine,
@@ -372,37 +371,91 @@ class User implements UserInterface
             // if 'updatedAt' is not defined in your entity, use another property
             $this->updatedAt = new \DateTime('now');
         }
+    }
 
+    public function getIdentityCardFile()
+    {
+        return $this->identityCardFile;
+
+    }
+
+    public function setIdentityCard($identityCard)
+    {
+        $this->identityCard = $identityCard;
+
+    }
+
+    public function getIdentityCard()
+    {
+        return $this->identityCard;
+    }
+
+
+ ////UPLOAD justificatif de domicile
+
+    public function setresidenceCertificateFile(File $residenceCertificate = null)
+    {
+        $this->residenceCertificateFile = $residenceCertificate;
+
+
+        // VERY IMPORTANT:
+        // It is required that at least one field changes if you are using Doctrine,
+        // otherwise the event listeners won't be called and the file is lost
         if ($residenceCertificate) {
             // if 'updatedAt' is not defined in your entity, use another property
             $this->updatedAt = new \DateTime('now');
         }
-
-        if ($insuranceCertificate) {
-            // if 'updatedAt' is not defined in your entity, use another property
-            $this->updatedAt = new \DateTime('now');
-        }
     }
 
-    public function getImageFile()
+    public function getresidenceCertificateFile()
     {
         return $this->identityCardFile;
-        return $this->residenceCertificateFile;
-        return $this->insuranceCertificateFile;
+
     }
 
-    public function setImage($identityCard, $residenceCertificate, $insuranceCertificate)
+    public function setresidenceCertificate($residenceCertificate)
     {
-        $this->identityCard = $identityCard;
         $this->residenceCertificate = $residenceCertificate;
-        $this->insuranceCertificate = $insuranceCertificate;
+
     }
 
-    public function getImage()
+    public function getresidenceCertificate()
     {
-        return $this->identityCard;
         return $this->residenceCertificate;
-        return $this->insuranceCertificate;
     }
+
+ ////UPLOAD attestation d'assurance
+
+ public function setinsuranceCertificateFile(File $insuranceCertificate = null)
+ {
+     $this->insuranceCertificateFile = $insuranceCertificate;
+
+
+     // VERY IMPORTANT:
+     // It is required that at least one field changes if you are using Doctrine,
+     // otherwise the event listeners won't be called and the file is lost
+     if ($insuranceCertificate) {
+         // if 'updatedAt' is not defined in your entity, use another property
+         $this->updatedAt = new \DateTime('now');
+     }
+ }
+
+ public function getinsuranceCertificateFile()
+ {
+     return $this->identityCardFile;
+
+ }
+
+ public function setinsuranceCertificate($insuranceCertificate)
+ {
+     $this->insuranceCertificate = $insuranceCertificate;
+
+ }
+
+ public function getinsuranceCertificate()
+ {
+     return $this->insuranceCertificate;
+ }
+
 
 }
