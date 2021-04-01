@@ -9,10 +9,14 @@ use Doctrine\ORM\Mapping as ORM;
 use Symfony\Bridge\Doctrine\Validator\Constraints\UniqueEntity;
 use Symfony\Component\Security\Core\User\UserInterface;
 
+use Symfony\Component\HttpFoundation\File\File;
+use Vich\UploaderBundle\Mapping\Annotation as Vich;
+
 /**
  * @ORM\Entity(repositoryClass=UserRepository::class)
  * @ORM\Table(name="`user`")
  * @UniqueEntity(fields={"email"}, message="There is already an account with this email")
+ * @Vich\Uploadable
  */
 class User implements UserInterface
 {
@@ -83,6 +87,64 @@ class User implements UserInterface
      * @ORM\Column(type="boolean")
      */
     private $DocValidated;
+
+    ///UPLOAD Carte d'identité
+
+    /**
+     * @ORM\Column(type="string", length=255)
+     * @var string
+     */
+    private $identityCard;
+
+    /**
+     * @Vich\UploadableField(mapping="user_documents", fileNameProperty="identityCard")
+     * @var File
+     */
+    private $identityCardFile;
+
+
+    ///UPLOAD Justificatif de domicile
+
+    /**
+     * @ORM\Column(type="string", length=255)
+     * @var string
+     */
+    private $residenceCertificate;
+
+    /**
+     * @Vich\UploadableField(mapping="user_documents", fileNameProperty="residenceCertificate")
+     * @var File
+     */
+    private $residenceCertificateFile;
+
+    ///UPLOAD Attestation d'assurance domicile
+
+    /**
+     * @ORM\Column(type="string", length=255)
+     * @var string
+     */
+    private $insuranceCertificate;
+
+    /**
+     * @Vich\UploadableField(mapping="user_documents", fileNameProperty="insuranceCertificate")
+     * @var File
+     */
+    private $insuranceCertificateFile;
+
+
+    ///UPLOAD updated at
+
+
+    /**
+     * @ORM\Column(type="datetime")
+     * @var \DateTime
+     */
+    public $updatedAt;
+
+
+
+
+
 
     public function __construct()
     {
@@ -295,4 +357,52 @@ class User implements UserInterface
 
         return $this;
     }
+    ////UPLOAD 3 documents 
+
+    public function setImageFile(File $identityCard = null, File $residenceCertificate = null, File $insuranceCertificate = null )
+    {
+        $this->identityCardFile = $identityCard;
+        $this->identityCardFile = $residenceCertificate;
+        $this->insuranceCertificateFile = $insuranceCertificate;
+
+        // VERY IMPORTANT:
+        // It is required that at least one field changes if you are using Doctrine,
+        // otherwise the event listeners won't be called and the file is lost
+        if ($identityCard) {
+            // if 'updatedAt' is not defined in your entity, use another property
+            $this->updatedAt = new \DateTime('now');
+        }
+
+        if ($residenceCertificate) {
+            // if 'updatedAt' is not defined in your entity, use another property
+            $this->updatedAt = new \DateTime('now');
+        }
+
+        if ($insuranceCertificate) {
+            // if 'updatedAt' is not defined in your entity, use another property
+            $this->updatedAt = new \DateTime('now');
+        }
+    }
+
+    public function getImageFile()
+    {
+        return $this->identityCardFile;
+        return $this->residenceCertificateFile;
+        return $this->insuranceCertificateFile;
+    }
+
+    public function setImage($identityCard, $residenceCertificate, $insuranceCertificate)
+    {
+        $this->identityCard = $identityCard;
+        $this->residenceCertificate = $residenceCertificate;
+        $this->insuranceCertificate = $insuranceCertificate;
+    }
+
+    public function getImage()
+    {
+        return $this->identityCard;
+        return $this->residenceCertificate;
+        return $this->insuranceCertificate;
+    }
+
 }

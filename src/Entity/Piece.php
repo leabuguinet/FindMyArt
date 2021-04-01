@@ -54,6 +54,10 @@ class Piece
      */
     private $rentingDetails;
 
+
+
+    ///UPLOAD images des oeuvres
+
     /**
      * @ORM\Column(type="string", length=255)
      * @var string
@@ -65,6 +69,8 @@ class Piece
      * @var File
      */
     private $imageFile;
+
+    ///UPLOAD updated at
 
     /**
      * @ORM\Column(type="datetime")
@@ -175,6 +181,8 @@ class Piece
 
         return $this;
     }
+//////
+
 
     public function setImageFile(File $image = null)
     {
