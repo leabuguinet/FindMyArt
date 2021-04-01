@@ -5,3 +5,8 @@ vich_uploader:
         pieces_images:
             uri_prefix: /images/pieces
             upload_destination: '%kernel.project_dir%/public/images/pieces'
+
+
+        user_documents:
+            uri_prefix: /documents/user
+            upload_destination: '%kernel.project_dir%/public/documents/user'
