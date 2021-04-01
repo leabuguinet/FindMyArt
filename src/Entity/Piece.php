@@ -70,7 +70,7 @@ class Piece
      * @ORM\Column(type="datetime")
      * @var \DateTime
      */
-    private $updatedAt;
+    public $updatedAt;
 
 
 
