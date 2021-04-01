@@ -32,15 +32,19 @@
                 <td>{{ piece.image }}</td>
             </tr>
             <tr>
+                <th>Size</th>
+                <td>{{ piece.size }}</td>
+            </tr>
+            <tr>
                 <th>UpdatedAt</th>
                 <td>{{ piece.updatedAt ? piece.updatedAt|date('Y-m-d H:i:s') : '' }}</td>
             </tr>
         </tbody>
     </table>
 
-    <a href="{{ path('piece_index') }}">back to list</a>
+    <a href="{{ path('piece_index') }}" class="btn btn-primary" role="button"><i class="fas fa-pencil-alt"></i></a>
 
-    <a href="{{ path('piece_edit', {'id': piece.id}) }}">edit</a>
+    <a href="{{ path('piece_edit', {'id': piece.id}) }}" class="btn btn-primary" role="button"><i class="far fa-eye"></i></a>
 
     {{ include('piece/_delete_form.html.twig') }}
 {% endblock %}

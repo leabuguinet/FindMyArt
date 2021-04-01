@@ -51,12 +51,16 @@
                 <th>Phone</th>
                 <td>{{ user.phone }}</td>
             </tr>
+            <tr>
+                <th>doc validated</th>
+                <td>{{ user.DocValidated }}</td>
+            </tr>
         </tbody>
     </table>
 
-    <a href="{{ path('user_index') }}">back to list</a>
+    <a href="{{ path('user_index') }}"  class="btn btn-primary" role="button"><i class="fas fa-pencil-alt"></i></a>
 
-    <a href="{{ path('user_edit', {'id': user.id}) }}">edit</a>
+    <a href="{{ path('user_edit', {'id': user.id}) }}" class="btn btn-primary" role="button"><i class="far fa-eye"></i></a>
 
     {{ include('user/_delete_form.html.twig') }}
 {% endblock %}
