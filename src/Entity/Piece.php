@@ -72,6 +72,11 @@ class Piece
      */
     public $updatedAt;
 
+    /**
+     * @ORM\Column(type="string", length=255)
+     */
+    private $size;
+
 
 
     public function __construct()
@@ -197,6 +202,18 @@ class Piece
     public function getImage()
     {
         return $this->image;
+    }
+
+    public function getSize(): ?string
+    {
+        return $this->size;
+    }
+
+    public function setSize(string $size): self
+    {
+        $this->size = $size;
+
+        return $this;
     }
 
 }

@@ -79,6 +79,11 @@ class User implements UserInterface
      */
     private $rentings;
 
+    /**
+     * @ORM\Column(type="boolean")
+     */
+    private $DocValidated;
+
     public function __construct()
     {
         $this->rentings = new ArrayCollection();
@@ -275,6 +280,18 @@ class User implements UserInterface
                 $renting->setUser(null);
             }
         }
+
+        return $this;
+    }
+
+    public function getDocValidated(): ?bool
+    {
+        return $this->DocValidated;
+    }
+
+    public function setDocValidated(bool $DocValidated): self
+    {
+        $this->DocValidated = $DocValidated;
 
         return $this;
     }
