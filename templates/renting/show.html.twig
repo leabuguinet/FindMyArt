@@ -1,0 +1,30 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Renting{% endblock %}
+
+{% block body %}
+    <h1>Renting</h1>
+
+    <table class="table">
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ renting.id }}</td>
+            </tr>
+            <tr>
+                <th>Date</th>
+                <td>{{ renting.date ? renting.date|date('Y-m-d H:i:s') : '' }}</td>
+            </tr>
+            <tr>
+                <th>Statuts</th>
+                <td>{{ renting.statuts }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <a href="{{ path('renting_index') }}">back to list</a>
+
+    <a href="{{ path('renting_edit', {'id': renting.id}) }}">edit</a>
+
+    {{ include('renting/_delete_form.html.twig') }}
+{% endblock %}
