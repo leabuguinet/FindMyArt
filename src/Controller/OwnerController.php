@@ -34,8 +34,7 @@ class OwnerController extends AbstractController
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
-            dump($form->getData());
-            die('stop');
+            $owner = $form->getData();
             $entityManager = $this->getDoctrine()->getManager();
             $entityManager->persist($owner);
             $entityManager->flush();

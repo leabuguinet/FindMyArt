@@ -7,11 +7,16 @@ use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
 
+
 /**
  * @ORM\Entity(repositoryClass=OwnerRepository::class)
  * @ORM\InheritanceType("SINGLE_TABLE")
  * @ORM\DiscriminatorColumn(name="category", type="string")
- * @ORM\DiscriminatorMap({"artist" = "Artist"})
+ * @ORM\DiscriminatorMap(
+ *      {
+ *          "artist" = "App\Entity\OwnerType\Artist"
+ *
+ *      })
  */
 abstract class Owner
 {
