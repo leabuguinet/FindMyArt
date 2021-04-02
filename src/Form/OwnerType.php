@@ -2,7 +2,7 @@
 
 namespace App\Form;
 
-use App\Entity\Artist;
+use App\Entity\OwnerType\Artist;
 use App\Entity\Owner;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\Extension\Core\Type\ChoiceType;
@@ -24,22 +24,21 @@ class OwnerType extends AbstractType
                 ],
                 'mapped' => false,
             ])
+            
         ;
     }
 
     public function configureOptions(OptionsResolver $resolver)
     {
+        
         $resolver->setDefaults([
+            'data_class' => Owner::class,
             'empty_data' => function (FormInterface $form) {
                 $type = $form->get('type')->getData();
                 if ('artist' === $type) {
                     return new Artist();
                 }
-
-                if ('findmyart' === $type) {
-                    //return new ....;
-                }
-            },
+           }
         ]);
     }
 }
