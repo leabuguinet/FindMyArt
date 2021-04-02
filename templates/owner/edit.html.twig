@@ -1,0 +1,13 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Edit Owner{% endblock %}
+
+{% block body %}
+    <h1>Edit Owner</h1>
+
+    {{ include('owner/_form.html.twig', {'button_label': 'Update'}) }}
+
+    <a href="{{ path('owner_index') }}">back to list</a>
+
+    {{ include('owner/_delete_form.html.twig') }}
+{% endblock %}

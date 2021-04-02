@@ -20,22 +20,22 @@ abstract class Owner
      * @ORM\GeneratedValue
      * @ORM\Column(type="integer")
      */
-    private $id;
+    protected $id;
 
     /**
      * @ORM\Column(type="string", length=255)
      */
-    private $name;
+    protected $name;
 
     /**
      * @ORM\Column(type="string", length=255)
      */
-    private $email;
+    protected $email;
 
     /**
      * @ORM\OneToMany(targetEntity=Piece::class, mappedBy="owner")
      */
-    private $pieces;
+    protected $pieces;
 
     public function __construct()
     {
