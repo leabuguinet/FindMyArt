@@ -1,3 +1,24 @@
 body {
-    background-color: red;
+    background-color: #f1f1f1;
+}
+.menu ul li{
+    margin-right: 1rem;
+    list-style-type: none;
+    font-size: 2em;
+}
+.menu ul li a{
+    text-decoration: none;
+    text-transform: capitalize;
+    color: black;
+}
+.menu ul li a:hover{
+    color: rgb(37, 83, 114);
+}
+.icon a{
+    margin-right: 1rem;
+    font-size: 2em;
+    color: black;
+}
+.icon a:hover{
+    color: rgb(37, 83, 114);
 }
