@@ -1,8 +1,13 @@
 body {
     background-color: #f1f1f1;
 }
+nav{
+    background-color: rgb(240, 240, 240);
+    box-shadow: 0px 6px 5px -4px rgba(0,0,0,0.48);
+    padding: 2rem;
+}
 .menu ul li{
-    margin-right: 1rem;
+    margin-right: 3rem;
     list-style-type: none;
     font-size: 2em;
 }
@@ -21,4 +26,7 @@ body {
 }
 .icon a:hover{
     color: rgb(37, 83, 114);
+}
+.collection{
+    margin-top: 5rem;
 }
