@@ -8,6 +8,7 @@ use App\Entity\PieceType\Photography;
 use App\Entity\PieceType\StreetArt;
 
 use App\Entity\Piece;
+use Symfony\Component\Form\Extension\Core\Type\ChoiceType;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\Form\FormInterface;
@@ -31,9 +32,9 @@ class PieceType extends AbstractType
             ])
             ->add('availability')
             ->add('image')
-            ->add('updatedAt')
+            /* ->add('updatedAt') */
             ->add('owner')
-            ->add('rentingDetails')
+            /* ->add('rentingDetails') */
         ;
     }
 
