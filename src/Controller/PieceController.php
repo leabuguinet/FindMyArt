@@ -27,11 +27,12 @@ class PieceController extends AbstractController
     #[Route('/new', name: 'piece_new', methods: ['GET', 'POST'])]
     public function new(Request $request): Response
     {
-        $piece = new Piece();
-        $form = $this->createForm(PieceType::class, $piece);
+        /* $piece = new Piece(); */
+        $form = $this->createForm(PieceType::class);
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
+            $piece = $form->getData();
             $entityManager = $this->getDoctrine()->getManager();
             $entityManager->persist($piece);
             $entityManager->flush();
@@ -40,7 +41,6 @@ class PieceController extends AbstractController
         }
 
         return $this->render('piece/new.html.twig', [
-            'piece' => $piece,
             'form' => $form->createView(),
         ]);
     }

@@ -23,7 +23,7 @@ use Vich\UploaderBundle\Mapping\Annotation as Vich;
  *          "photography" = "App\Entity\PieceType\Photography"
  *      })
  */
-class Piece
+abstract class Piece
 {
     /**
      * @ORM\Id
@@ -42,10 +42,7 @@ class Piece
      */
     private $artist;
 
-    /**
-     * @ORM\Column(type="string", length=255)
-     */
-    private $style;
+
 
     /**
      * @ORM\Column(type="boolean")
@@ -128,17 +125,7 @@ class Piece
         return $this;
     }
 
-    public function getStyle(): ?string
-    {
-        return $this->style;
-    }
 
-    public function setStyle(string $style): self
-    {
-        $this->style = $style;
-
-        return $this;
-    }
 
     public function getAvailability(): ?bool
     {

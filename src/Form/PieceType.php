@@ -14,6 +14,9 @@ use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\Form\FormInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 
+use App\Entity\Owner;
+use Symfony\Bridge\Doctrine\Form\Type\EntityType;
+
 class PieceType extends AbstractType
 {
     public function buildForm(FormBuilderInterface $builder, array $options)
@@ -32,8 +35,13 @@ class PieceType extends AbstractType
             ])
             ->add('availability')
             ->add('image')
-            /* ->add('updatedAt') */
-            ->add('owner')
+            ->add('size')
+            ->add('updatedAt')
+            ->add('owner', EntityType::class, 
+            [
+                'class' => Owner::class,
+                'choice_label' => 'name'
+            ])
             /* ->add('rentingDetails') */
         ;
     }
