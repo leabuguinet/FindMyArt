@@ -14,8 +14,10 @@ use Doctrine\ORM\Mapping as ORM;
  * @ORM\DiscriminatorColumn(name="category", type="string")
  * @ORM\DiscriminatorMap(
  *      {
- *          "artist" = "App\Entity\OwnerType\Artist"
- *
+ *          "artist" = "App\Entity\OwnerType\Artist",
+ *          "findmyart" = "App\Entity\OwnerType\FindMyArt",
+ *          "gallery" = "App\Entity\OwnerType\Gallery",
+ *          "artschool" = "App\Entity\OwnerType\ArtSchool"
  *      })
  */
 abstract class Owner
