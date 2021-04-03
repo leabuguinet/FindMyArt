@@ -13,6 +13,15 @@ use Vich\UploaderBundle\Mapping\Annotation as Vich;
 /**
  * @ORM\Entity(repositoryClass=PieceRepository::class)
  * @Vich\Uploadable
+ * @ORM\InheritanceType("SINGLE_TABLE")
+ * @ORM\DiscriminatorColumn(name="style", type="string")
+ * @ORM\DiscriminatorMap(
+ *      {
+ *          "contemporaryart" = "App\Entity\PieceType\ContemporaryArt",
+ *          "digitalart" = "App\Entity\PieceType\DigitalArt",
+ *          "streetart" = "App\Entity\PieceType\StreetArt",
+ *          "photography" = "App\Entity\PieceType\Photography"
+ *      })
  */
 class Piece
 {
