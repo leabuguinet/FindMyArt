@@ -15,4 +15,14 @@ class HomeController extends AbstractController
             'controller_name' => 'HomeController',
         ]);
     }
+
+    #[Route('/', name: 'homepage')]
+    public function base(): Response
+    {
+        return $this->render('base.html.twig');
+    }
+
+    
+   
 }
+   
