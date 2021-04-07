@@ -16,7 +16,9 @@ class HomeController extends AbstractController
         ]);
     }
 
-    #[Route('/', name: 'homepage')]
+      /**
+     * @Route("/", name="homepage", methods={"GET","POST"})
+     */
     public function base(): Response
     {
         return $this->render('base.html.twig');
