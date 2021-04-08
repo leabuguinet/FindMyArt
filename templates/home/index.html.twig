@@ -9,7 +9,11 @@
         <i class="fas fa-filter"></i>
       </div>
       <div class="col-sm">
-        <p>for of</p>
+        <ul>
+               {% for piece in pieces %}
+               <li>{{ piece.title }}</li>
+               {% endfor %}
+      </ul>
       </div>
     </div>
   </div>
