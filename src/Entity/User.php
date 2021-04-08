@@ -86,7 +86,7 @@ class User implements UserInterface
     /**
      * @ORM\Column(type="boolean")
      */
-    private $DocValidated;
+    private $DocValidated = false;
 
     ///UPLOAD Carte d'identité
 
