@@ -13,6 +13,7 @@ use Symfony\Component\Mailer\MailerInterface;
 class ConceptController extends AbstractController
 {
     #[Route('/concept', name: 'concept')]
+    
     public function index(Request $request, MailerInterface $mailer): Response 
     {
 
