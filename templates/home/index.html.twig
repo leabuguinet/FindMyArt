@@ -11,7 +11,7 @@
                   <h5 class="card-title">{{ piece.title }}</h5>
                   <p class="card-text">{{ piece.artist }}</p>
                   <p class="card-text">{{ piece.size }}</p>
-                  <a href="#" class="btn btn-primary">Go somewhere</a>
+                  <a href="{{ path('piece_show', {'id': piece.id}) }}" class="btn btn-primary">Go somewhere</a>
                 </div>
               </div>
                {% endfor %}

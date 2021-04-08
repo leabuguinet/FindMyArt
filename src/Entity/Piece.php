@@ -25,6 +25,11 @@ use Vich\UploaderBundle\Mapping\Annotation as Vich;
  */
 abstract class Piece
 {
+    const ContemporaryArt = "ContemporaryArt";
+    const DigitalArt  = "DigitalArt";
+    const Photography = "Photography";
+    const StreetArt  = "StreetArt";
+    abstract public function getstyle();
     /**
      * @ORM\Id
      * @ORM\GeneratedValue

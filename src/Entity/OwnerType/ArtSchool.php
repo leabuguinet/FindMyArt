@@ -10,4 +10,7 @@ use Doctrine\ORM\Mapping as ORM;
  */
 class ArtSchool extends Owner
 {
+    public function getcategory() {
+        return parent::ArtSchool;
+    }
 }

@@ -10,4 +10,7 @@ use Doctrine\ORM\Mapping as ORM;
  */
 class Photography extends Piece
 {
+    public function getstyle() {
+        return parent::Photography;
+    }
 }
