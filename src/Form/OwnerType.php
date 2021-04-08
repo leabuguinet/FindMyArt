@@ -25,7 +25,7 @@ class OwnerType extends AbstractType
                     'Artiste' => 'artist',
                     'FindMyArt' => 'findmyart',
                     'Galerie' => 'gallery',
-                    'École d\'art' => 'artSchool'
+                    'École d\'art' => 'artschool'
 
                 ],
                 'mapped' => false,
