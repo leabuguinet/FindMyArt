@@ -10,4 +10,7 @@ use Doctrine\ORM\Mapping as ORM;
  */
 class FindMyArt extends Owner
 {
+    public function getcategory() {
+        return parent::FindMyArt;
+    }
 }

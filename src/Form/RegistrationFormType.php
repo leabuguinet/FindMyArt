@@ -5,6 +5,7 @@ namespace App\Form;
 use App\Entity\User;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\Extension\Core\Type\CheckboxType;
+use Symfony\Component\Form\Extension\Core\Type\FileType;
 use Symfony\Component\Form\Extension\Core\Type\PasswordType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
@@ -17,7 +18,13 @@ class RegistrationFormType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder
+            ->add('firstname')
+            ->add('lastname')
             ->add('email')
+            ->add('city')
+            ->add('address')
+            ->add('postcode')
+            ->add('phone')
             ->add('agreeTerms', CheckboxType::class, [
                 'mapped' => false,
                 'constraints' => [
@@ -41,6 +48,15 @@ class RegistrationFormType extends AbstractType
                         'max' => 4096,
                     ]),
                 ],
+            ])
+            -> add('identity_card', FileType::class, [
+                'label' => 'Carte d\'identité',
+            ])
+            -> add('residence_certificate', FileType::class, [
+                'label' => 'Justificatif de domicile',
+            ])
+            -> add('insurance_certificate', FileType::class, [
+                'label' => 'Attestation d\'assurance domicile',
             ])
         ;
     }

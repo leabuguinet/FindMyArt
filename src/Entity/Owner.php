@@ -22,6 +22,11 @@ use Doctrine\ORM\Mapping as ORM;
  */
 abstract class Owner
 {
+    const Artist = "Artist";
+    const FindMyArt  = "FindMyArt";
+    const ArtSchool = "ArtSchool";
+    const Gallery  = "Gallery";
+    abstract public function getcategory();
     /**
      * @ORM\Id
      * @ORM\GeneratedValue

@@ -10,4 +10,7 @@ use Doctrine\ORM\Mapping as ORM;
  */
 class StreetArt extends Piece
 {
+    public function getstyle() {
+        return parent::StreetArt;
+    }
 }
