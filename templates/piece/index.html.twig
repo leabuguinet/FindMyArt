@@ -15,6 +15,7 @@
                 <th>Style</th>
                 <th>Availability</th>
                 <th>Image</th>
+                <th>style</th>
                 <th>UpdatedAt</th>
                 <th>Size</th>
                 <th>Actions</th>
@@ -30,9 +31,10 @@
                 <td>{{ piece.image }}</td>
                 <td>{{ piece.updatedAt ? piece.updatedAt|date('Y-m-d H:i:s') : '' }}</td>
                 <td>{{ piece.size }}</td>
+                <td>{{ piece.PieceType.style }}</td>
                 <td>
-                    <a href="{{ path('piece_show', {'id': piece.id}) }}" class="btn btn-primary" role="button"><i class="fas fa-pencil-alt"></i></a>
-                    <a href="{{ path('piece_edit', {'id': piece.id}) }}" class="btn btn-primary" role="button"><i class="far fa-eye"></i></a>
+                    <a href="{{ path('piece_show', {'id': piece.id}) }}" class="btn btn-primary" role="button"><i class="far fa-eye"></i> </a>
+                    <a href="{{ path('piece_edit', {'id': piece.id}) }}" class="btn btn-primary" role="button"><i class="fas fa-pencil-alt"></i></a>
                 </td>
             </tr>
         {% else %}
