@@ -10,13 +10,16 @@
         <thead>
             <tr>
                 <th>Id</th>
-                <th>Title</th>
-                <th>Artist</th>
+                <th>Titre</th>
+                <th>Artiste</th>
                 <th>Style</th>
-                <th>Availability</th>
+                <th>Disponibilité</th>
                 <th>Image</th>
+                <th>Description</th>
+                <th>Matériaux et Technique</th>
+                <th>Date de création</th>
                 <th>UpdatedAt</th>
-                <th>Size</th>
+                <th>Taille</th>
                 <th>Actions</th>
             </tr>
         </thead>
@@ -29,6 +32,9 @@
                 <td>{{ piece.style }}</td>
                 <td>{{ piece.availability ? 'Yes' : 'No' }}</td>
                 <td>{{ piece.image }}</td>
+                <td>{{ piece.description }}</td>
+                <td>{{ piece.materialsTechnique }}</td>
+                <td>{{ piece.creationDate }}</td>
                 <td>{{ piece.updatedAt ? piece.updatedAt|date('Y-m-d H:i:s') : '' }}</td>
                 <td>{{ piece.size }}</td>
                 <td>
