@@ -12,7 +12,6 @@ export default class Collection extends React.Component {
   
 
   render() {
-    console.log(pieces);
     return (
     <div>
         
@@ -20,7 +19,7 @@ export default class Collection extends React.Component {
         {this.state.pieces.map(function(pieces) {
           return (
             <p>
-              {pieces.title}
+              {pieces.id}
             </p>
           )
         })}
@@ -30,14 +29,16 @@ export default class Collection extends React.Component {
   }
       
   fetchCollection = () => {
+
+
     fetch('http://localhost:' + port + '/api/pieces')
     .then(response => response.json())
     .then(response => {
 
       console.log(response);
-      
+
       this.setState({
-        pieces: response.data,
+        pieces: response,
       })
     })
   }

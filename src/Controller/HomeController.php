@@ -13,13 +13,18 @@ class HomeController extends AbstractController
     #[Route('/api/pieces', name: 'home')]
     public function index(PieceRepository $pieceRepository): Response
     {
-        return new JsonResponse([
-            'pieces' => $pieceRepository,
-        ]);
-    }
-    
+        $pieces = $pieceRepository->findAll();
 
-      /**
+        $data = [];
+        foreach($pieces as $piece) {
+            $data[] = $piece->formatedForView();
+        }
+
+        return new JsonResponse($data);
+    
+    }
+
+    /**
      * @Route("/{reactRouting}", name="homepage", defaults={"reactRouting": null})
      */
     public function base(): Response
