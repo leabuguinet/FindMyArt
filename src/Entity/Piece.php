@@ -94,6 +94,21 @@ abstract class Piece
      */
     private $size;
 
+    /**
+     * @ORM\Column(type="text", nullable=true)
+     */
+    private $description;
+
+    /**
+     * @ORM\Column(type="string", length=255, nullable=true)
+     */
+    private $materialsTechnique;
+
+    /**
+     * @ORM\Column(type="integer", nullable=true)
+     */
+    private $creationDate;
+
 
 
     public function __construct()
@@ -221,6 +236,42 @@ abstract class Piece
     public function setSize(string $size): self
     {
         $this->size = $size;
+
+        return $this;
+    }
+
+    public function getDescription(): ?string
+    {
+        return $this->description;
+    }
+
+    public function setDescription(?string $description): self
+    {
+        $this->description = $description;
+
+        return $this;
+    }
+
+    public function getMaterialsTechnique(): ?string
+    {
+        return $this->materialsTechnique;
+    }
+
+    public function setMaterialsTechnique(?string $materialsTechnique): self
+    {
+        $this->materialsTechnique = $materialsTechnique;
+
+        return $this;
+    }
+
+    public function getCreationDate(): ?int
+    {
+        return $this->creationDate;
+    }
+
+    public function setCreationDate(?int $creationDate): self
+    {
+        $this->creationDate = $creationDate;
 
         return $this;
     }

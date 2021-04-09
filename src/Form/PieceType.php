@@ -36,6 +36,9 @@ class PieceType extends AbstractType
             ->add('availability')
             ->add('image')
             ->add('size')
+            ->add('description')
+            ->add('materialsTechnique')
+            ->add('creationDate')
             ->add('updatedAt')
             ->add('owner', EntityType::class, 
             [
