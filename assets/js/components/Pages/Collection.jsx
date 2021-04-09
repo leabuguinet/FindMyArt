@@ -1,5 +1,5 @@
 import React from 'react';
-import { port } from "../envjs.js";
+import { port } from "../../envjs.js";
 
 export default class Collection extends React.Component {
 
@@ -18,9 +18,15 @@ export default class Collection extends React.Component {
         <p>hey</p>
         {this.state.pieces.map(function(pieces) {
           return (
-            <p>
+            <div className="container">
+              <ul>
+                <li><a href=""></a></li>
+                <li><a href=""></a></li>
+                <li><a href=""></a></li>
+                <li><a href=""></a></li>
+              </ul>
               {pieces.id}
-            </p>
+              </div>
           )
         })}
         <button onClick={this.fetchCollection}>Fetch Collection </button>
