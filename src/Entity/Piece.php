@@ -276,4 +276,23 @@ abstract class Piece
         return $this;
     }
 
+
+    public function formatedForView()
+    {
+        return [
+            "title" => $this->getTitle(),
+            "id" => $this->getId(),
+            "image" => $this->getImage(),
+            "description" => $this->getDescription(),
+            "artist" => $this->getArtist(),
+            "style" => $this->getStyle(),
+            "size" => $this->getSize(),
+            "creationDate" => $this->getCreationDate(),
+            "materialsTechnique" => $this->getMaterialsTechnique(),
+            "owner" => $this->getOwner(),
+            
+
+
+        ];
+    }
 }
