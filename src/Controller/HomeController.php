@@ -6,21 +6,21 @@ use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 use App\Repository\PieceRepository;
+use Symfony\Component\HttpFoundation\JsonResponse;
 
 class HomeController extends AbstractController
 {
-    #[Route('/home', name: 'home')]
+    #[Route('/api/pieces', name: 'home')]
     public function index(PieceRepository $pieceRepository): Response
     {
-        return $this->render('home/index.html.twig', [
-            'controller_name' => 'HomeController',
-            'pieces' => $pieceRepository->findAll(),
+        return new JsonResponse([
+            'pieces' => $pieceRepository,
         ]);
     }
     
 
       /**
-     * @Route("/", name="homepage", methods={"GET","POST"})
+     * @Route("/{reactRouting}", name="homepage", defaults={"reactRouting": null})
      */
     public function base(): Response
     {
