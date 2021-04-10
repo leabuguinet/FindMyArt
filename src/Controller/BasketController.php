@@ -8,7 +8,7 @@ use Symfony\Component\Routing\Annotation\Route;
 
 class BasketController extends AbstractController
 {
-    #[Route('/basket', name: 'basket')]
+    #[Route('/api/basket', name: 'basket')]
     public function index(): Response
     {
         return $this->render('basket/index.html.twig', [

@@ -2,5 +2,5 @@
 Ce fichier sert à préciser quel est le port qu'on veut utiliser, car il change d'un ordinateur à l'autre
 */
 
- export const port = "8888/projetgroupe/findmyart/public/index.php";
+ export const port = "/findmyart/public/index.php";
  
