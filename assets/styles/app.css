@@ -88,7 +88,3 @@ nav{
     margin : 10px;
  
 }
-
-.wrapper:nth-child(odd){
-    flex-grow: 3;
-}
