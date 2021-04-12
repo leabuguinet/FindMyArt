@@ -3,13 +3,21 @@
 {% block title %}Hello HomeController!{% endblock %}
 
 {% block body %}
-  <div class="wrapper">
-    {% for piece in pieces %}
+
+  {{ encore_entry_link_tags('app') }}
+  {{ encore_entry_script_tags('app') }}
+
+
+  <div id="root">
+
+
+  {# <div class="wrapper"> #}
+ {#    {% for piece in pieces %} #}
       {# <div class="pieces"> #}
-        <img src="../../assets/images/pieces/{{ piece.image }}" alt="{{ piece.image }}">
+  {#       <img src="../../assets/images/pieces/{{ piece.image }}" alt="{{ piece.image }}"> #}
       {# </div> #}
-    {% endfor %}
-  </div>
+    {# {% endfor %} #}
+{#   </div> #}
   
 
 {% endblock %}

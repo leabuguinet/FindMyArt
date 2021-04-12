@@ -46,7 +46,7 @@ import UserAccount from "./components/Pages/UserAccount";
 
           /* </Switch> */
 
-          {/*<Footer/>*/}
+          {/* <Footer/> */}
        /*  </div>
       </BrowserRouter>
     )
