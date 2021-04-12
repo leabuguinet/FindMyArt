@@ -25,4 +25,4 @@ yarn-error.log
 
 composer.lock
 
-./assets/js/envjs.js
+/assets/js/envjs.js

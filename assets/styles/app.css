@@ -1,23 +1,61 @@
-body {
-    background-color: #f1f1f1;
+/****** GENERAL ******/
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    --colorred: rgb(254, 82, 118);
+    --colorviolet: rgb(176, 15, 226);
+    --colorblue: rgb(42, 123, 204);
+    --colorgreen: rgba(55, 179, 186);
+    --coloryellow: rgba(234, 159, 24);
 }
+
+
+body {
+    background-color:white;
+}
+
+
+/****** NAVBAR ******/
+
+
 nav{
     background-color: rgb(240, 240, 240);
     box-shadow: 0px 6px 5px -4px rgba(0,0,0,0.48);
-    padding: 2rem;
+    font-family: 'Ruda', sans-serif;
+    display: flex;
+    justify-content: space-around;
 }
-.menu ul li{
-    margin-right: 3rem;
+
+.navbar img{
+    margin: 2rem;
+}
+
+.navbar ul li{
     list-style-type: none;
     font-size: 2em;
 }
-.menu ul li a{
+.navbar ul li a{
     text-decoration: none;
-    text-transform: capitalize;
     color: black;
+    padding: 2rem;
 }
-.menu ul li a:hover{
+.navbar ul li a:hover{
     color: rgb(37, 83, 114);
+    
+}
+
+.links ul{
+    display: flex;
+    justify-content: space-around;
+    margin: 0px !important;
+    
+    
+}
+
+.icon{
+    margin-right: 2rem;
 }
 .icon a{
     margin-right: 1rem;
@@ -27,6 +65,29 @@ nav{
 .icon a:hover{
     color: rgb(37, 83, 114);
 }
-.collection{
-    margin-top: 5rem;
+
+
+
+/****** PAGE HOME  ******/
+
+/* Display collection */
+
+.wrapper{
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    object-fit: fill;
+    align-items: center;
+    padding: 50px;
+    justify-content: center;
+}
+
+.wrapper img{
+    width: 350px;
+    margin : 10px;
+ 
+}
+
+.wrapper:nth-child(odd){
+    flex-grow: 3;
 }

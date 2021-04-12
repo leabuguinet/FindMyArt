@@ -1,5 +1,5 @@
 import React from 'react';
-import { port } from "../../envjs";
+//import { port } from "../../envjs";
 
 export default class Concept extends React.Component {
 
@@ -7,7 +7,7 @@ export default class Concept extends React.Component {
     return (
     <div>
         <p>page Concept</p>
-      </div>
+    </div>
     )
   }
   

@@ -1,4 +1,4 @@
-import React from "react";
+/* import React from "react";
 import Collection from "./components/Pages/Collection";
 import Concept from "./components/Pages/Concept";
 import Basket from "./components/Pages/Basket";
@@ -6,23 +6,21 @@ import Register from "./components/Pages/Register";
 import UserAccount from "./components/Pages/UserAccount";
 
 
+ */
 
-
-import {
+/* import {
   BrowserRouter, NavLink, Route, Switch
 } from "react-router-dom";
-
-//à déplacer
-
-export default class App extends React.Component {
+ */
+/* export default class App extends React.Component {
   render() {
     return (
-      <BrowserRouter>
-        <div>
-          <h2>Ma super app</h2>
+      <BrowserRouter> */
+        {/* <div> */}
+          {/* <h2>Ma super app</h2> */}
 
-          <Switch>
-
+         {/*  <Switch> */}
+{/* 
             <Route path='/' exact>
               <Collection/>
             </Route>
@@ -37,7 +35,7 @@ export default class App extends React.Component {
             </Route>
             <Route path='/UserAccount' >
               <Register/>
-            </Route>
+            </Route> */}
             
             {/*<Route path='/owner'>
               <Owner/>
@@ -46,12 +44,12 @@ export default class App extends React.Component {
               <Pieces/>
             </Route> */}
 
-          </Switch>
+          /* </Switch> */
 
           {/*<Footer/>*/}
-        </div>
+       /*  </div>
       </BrowserRouter>
     )
   }
-}
+} */
 
