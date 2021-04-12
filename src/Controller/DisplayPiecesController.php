@@ -15,8 +15,8 @@ use Symfony\Component\HttpFoundation\Request;
    
 class DisplayPiecesController extends AbstractController
 {
-    #[Route('/api/pieces', name: 'home')]
-    public function index(Request $request): Response
+    #[Route('/api/pieces', name: 'apipieces')]
+    public function index(Request $request, PieceRepository $pieceRepository): Response
     {
        /*  $pieces = $pieceRepository->findAll();
 
@@ -32,13 +32,14 @@ class DisplayPiecesController extends AbstractController
         $jsonParameters = json_decode($content, true);
         $hasParameters = isset($jsonParameters['search']) && $jsonParameters['search'];
         $pieces = [];
+        $pieces = $pieceRepository->findAll();
         $results = $pieces;
 
         if ($hasParameters) {
             $search = $jsonParameters['search'];
             $results = array_filter($pieces, function($piece) use ($search) {
                 // Si miel contient la chaîne de caractères
-                if (str_contains($piece, $search)) {
+                if (str_contains($piece-> getTitle(), $search) || str_contains($piece->getArtist(), $search)) {
                     // On le garde
                     return true;
                 }
@@ -49,13 +50,20 @@ class DisplayPiecesController extends AbstractController
             });
         }
 
+        $data = [];
+        foreach($results as $piece) {
+            $data[] = $piece->formatedForView();
+        }
+
         return new JsonResponse([
+            'piece' => $data,
             'data' => $results,
-            'paramaters' => $jsonParameters,
+            'parameters' => $jsonParameters,
             'A des paramètres ? ' => $hasParameters,
             'message' => 'coucou',
         ]);
 
+        
 
 
 
