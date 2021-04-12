@@ -4,4 +4,24 @@
 
 {% block body %}
 
+
+
+{{ form_start(contact_form) }} {# <form> #}
+        
+        {{ form_row(contact_form.field_name) }}
+        {{ form_row(contact_form.email) }}
+        {{ form_row(contact_form.phone) }}
+        {{ form_row(contact_form.message) }} 
+
+        {# {{ form_label(contact_form.message) }}
+        {{ form_widget(contact_form.message, {
+            attr: { class: 'contact_form' }
+        } ) }}
+        {{ form_errors(contact_form.message) }} #}
+        
+        <button class="btn btn-primary">Envoyer</button>
+
+    {{ form_end(contact_form) }}
+
+
 {% endblock %}
