@@ -21,7 +21,8 @@ body {
 
 
 nav{
-    background-color: rgb(240, 240, 240);
+    /* background-color: rgb(240, 240, 240); */
+    background-color:white;
     box-shadow: 0px 6px 5px -4px rgba(0,0,0,0.48);
     font-family: 'Ruda', sans-serif;
     display: flex;

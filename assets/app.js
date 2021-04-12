@@ -10,7 +10,13 @@
 import './styles/app.css';
 import React from "react";
 import ReactDOM from 'react-dom';
-import App from "./js/App";
+import App from "./js/app";
 
 
-ReactDOM.render(<App/>, document.getElementById('root'));
+const RouteElement = document.getElementById('root');
+
+if(RouteElement){
+    ReactDOM.render(<App/>, document.getElementById('root'));
+}
+
+
