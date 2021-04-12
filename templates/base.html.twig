@@ -14,9 +14,12 @@
         <link rel="preconnect" href="https://fonts.gstatic.com">
         <link href="https://fonts.googleapis.com/css2?family=Ruda:wght@400;500;600;700;800;900&display=swap" rel="stylesheet"> 
         
-            
+        {{ encore_entry_link_tags('app') }}
+        {{ encore_entry_script_tags('app') }}   
+        
         {% endblock %}
-
+        {{ encore_entry_link_tags('app') }}
+        {{ encore_entry_script_tags('app') }}
         {% block javascripts %}
            
         {% endblock %}
@@ -30,8 +33,8 @@
                 </div>
                 <div class="links">
                     <ul>
-                        <li><a href="#">Concept</a></li>
-                        <li><a href="#">Collection</a></li>
+                        <li><a href="{{ path('concept') }}">Concept</a></li>
+                        <li><a href="{{ path('home') }}">Collection</a></li>
                     </ul>
                 </div>
                 <div class="icon">
