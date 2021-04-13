@@ -49,6 +49,7 @@ class DisplayPiecesController extends AbstractController
                 }
             });
         }
+        
 
         $data = [];
         foreach($results as $piece) {
