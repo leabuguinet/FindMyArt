@@ -1,6 +1,6 @@
 import React from 'react';
-import { port } from "../envjs.js";
-import { portpieces } from "../envjs.js";
+import { baseUrl } from "../envjs.js";
+
 
 export default class Filter extends React.Component {
 
@@ -45,7 +45,7 @@ export default class Filter extends React.Component {
 
             <div key={piece.id}>
               
-              <a href={port + "/show/" + piece.id}>
+              <a href={baseUrl + "/show/" + piece.id}>
                 <img src={piece.findMyArtDisplayImage}/>
               </a>
 
@@ -69,7 +69,7 @@ export default class Filter extends React.Component {
 
   fetchPieces = () => {
     fetch(
-      'http://localhost:' + port + '/api/pieces',
+      baseUrl + '/api/pieces',
       {
         headers: {
           'Accept': 'application/json',
