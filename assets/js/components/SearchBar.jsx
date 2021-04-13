@@ -45,8 +45,7 @@ export default class Filter extends React.Component {
 
             <div>
               
-              <a href={portpieces + piece.id}>
-                <img src={"../../assets/images/pieces/" + piece.image}/>
+              <a href={port + "/show/" + piece.id}>
               </a>
 
             </div>

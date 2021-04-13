@@ -5,9 +5,24 @@
 {% block body %}
 
     <h1>page show 1 piece {{ piece.title }}</h1>
-    <img src="../../../assets/images/pieces/{{ piece.image }}" alt="">
-        
+
+    <img src="{{ findmyart_display_image(piece, 'imageFile') }}" alt="{{ piece.title }}" />
+
     <p>{{ piece.artist }}</p>
+
+    {% if piece.availability == 1 %}
+        <p>Disponible</p>
+    {% else %}
+        <p>Indisponible</p>
+    {% endif %}
+
+    <p>{{ piece.size }}</p>
+    <p>{{ piece.description }}</p>
+    <p>{{ piece.materialsTechnique }}</p>
+    <p>{{ piece.creationDate }}</p>
+    <p>{{ piece.owner.name }}</p>
+    <p>{{ piece.owner.category }}</p>
+    <p>{{ piece.style }}</p>
 
 
 {% endblock %}
