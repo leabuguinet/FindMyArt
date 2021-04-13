@@ -44,9 +44,11 @@ export default class Filter extends React.Component {
           return (
 
             <div>
+              
               <a href={port + "/show/" + piece.id}>
                 <img src={"../../assets/images/pieces/" + piece.image}/>
               </a>
+
             </div>
           )
         })}

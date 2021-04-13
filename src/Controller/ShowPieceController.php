@@ -15,7 +15,6 @@ class ShowPieceController extends AbstractController
     public function index(EntityManagerInterface $entityManager,  $id): Response
     {
         $piece = $entityManager->getRepository(Piece::class)->find($id);
-
         return $this->render('show_piece/index.html.twig', [
             'piece' => $piece,
 
