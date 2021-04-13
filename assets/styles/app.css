@@ -50,7 +50,7 @@ nav{
 .links ul{
     display: flex;
     justify-content: space-around;
-    margin: 0px !important;
+    margin: 0 !important;
     
     
 }

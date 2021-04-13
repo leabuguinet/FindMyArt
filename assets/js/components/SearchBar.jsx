@@ -1,6 +1,6 @@
 import React from 'react';
 import { port } from "../envjs.js";
-
+import { portpieces } from "../envjs.js";
 
 export default class Filter extends React.Component {
 
@@ -45,7 +45,7 @@ export default class Filter extends React.Component {
 
             <div>
               
-              <a href={port + "/show/" + piece.id}>
+              <a href={portpieces + piece.id}>
                 <img src={"../../assets/images/pieces/" + piece.image}/>
               </a>
 

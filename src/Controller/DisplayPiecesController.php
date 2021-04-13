@@ -39,7 +39,7 @@ class DisplayPiecesController extends AbstractController
             $search = $jsonParameters['search'];
             $results = array_filter($pieces, function($piece) use ($search) {
                 // Si miel contient la chaîne de caractères
-                if (str_contains($piece-> getTitle(), $search) || str_contains($piece->getArtist(), $search)) {
+                if (str_contains(strtolower($piece-> getTitle()), strtolower($search)) || str_contains(strtolower($piece->getArtist()), strtolower($search))) {
                     // On le garde
                     return true;
                 }
