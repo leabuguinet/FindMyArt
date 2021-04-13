@@ -16,7 +16,7 @@ security:
             security: false
         main:
             anonymous: true
-            lazy: true
+            #lazy: true
             provider: app_user_provider
             guard:
                 authenticators:

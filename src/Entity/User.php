@@ -91,7 +91,7 @@ class User implements UserInterface
     ///UPLOAD Carte d'identité
 
     /**
-     * @ORM\Column(type="string", length=255)
+     * @ORM\Column(type="string", length=255, nullable=true)
      * @var string
      */
     private $identityCard;
@@ -106,7 +106,7 @@ class User implements UserInterface
     ///UPLOAD Justificatif de domicile
 
     /**
-     * @ORM\Column(type="string", length=255)
+     * @ORM\Column(type="string", length=255, nullable=true)
      * @var string
      */
     private $residenceCertificate;
@@ -120,7 +120,7 @@ class User implements UserInterface
     ///UPLOAD Attestation d'assurance domicile
 
     /**
-     * @ORM\Column(type="string", length=255)
+     * @ORM\Column(type="string", length=255, nullable=true)
      * @var string
      */
     private $insuranceCertificate;

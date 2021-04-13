@@ -49,14 +49,29 @@ class RegistrationFormType extends AbstractType
                     ]),
                 ],
             ])
-            -> add('identity_card', FileType::class, [
+            -> add('identityCardFile', FileType::class, [
                 'label' => 'Carte d\'identité',
+                'constraints' => [
+                    new NotBlank([
+                        'message' => 'Please enter a password',
+                    ]),
+                ],
             ])
-            -> add('residence_certificate', FileType::class, [
+            -> add('residenceCertificateFile', FileType::class, [
                 'label' => 'Justificatif de domicile',
+                'constraints' => [
+                    new NotBlank([
+                        'message' => 'Please enter a password',
+                    ]),
+                ],
             ])
-            -> add('insurance_certificate', FileType::class, [
+            -> add('insuranceCertificateFile', FileType::class, [
                 'label' => 'Attestation d\'assurance domicile',
+                          'constraints' => [
+                    new NotBlank([
+                        'message' => 'Please enter a password',
+                    ]),
+                ],
             ])
         ;
     }
