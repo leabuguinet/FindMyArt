@@ -1,0 +1,13 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}page show 1 piece{% endblock %}
+
+{% block body %}
+
+    <h1>page show 1 piece {{ piece.title }}</h1>
+    <img src="../../../assets/images/pieces/{{ piece.image }}" alt="">
+        
+    <p>{{ piece.artist }}</p>
+
+
+{% endblock %}
