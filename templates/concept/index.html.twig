@@ -4,7 +4,31 @@
 
 {% block body %}
 
+<h3>
+    Find my Art C'est quoi ?
+</h3>
 
+<div>
+    Lorem ipsum dolor sit amet. Est aliquid modi eos repellendus voluptas et quidem quod 33 quae placeat. In incidunt consequatur est numquam perspiciatis sit ipsam veritatis et facilis velit? Aut voluptatum dicta et sapiente dolorum aut error voluptas in maxime repudiandae. Et quasi soluta vel aliquam quia nam eius odit 33 modi eaque ad omnis nulla non error corrupti 33 excepturi cupiditate? 
+</div>
+<h3>
+    Comment ça fonctionne ?
+</h3>
+<ul>
+    <li>Recherchez </li>
+    <li>Réservez</li>
+    <li>Accrochez</li>
+</ul>
+<h2>C'est pour qui ? pour tout le monde!! vous etes...</h2>
+<div>
+    <p>Un Particulier</p>
+</div>
+<div>
+    <p>Une Entreprise Une Collectivité</p>
+</div>
+<h2>Artiste,école ou galerie d'art vous souhaitez partager vos oeuvres ?</h2>
+
+<h2>contactez nous </h2>
 
 {{ form_start(contact_form) }} {# <form> #}
         
@@ -22,6 +46,12 @@
         <button class="btn btn-primary">Envoyer</button>
 
     {{ form_end(contact_form) }}
+    <div>
+        <iframe scrolling="no" marginheight="0" marginwidth="0" id="gmap_canvas" src="https://maps.google.com/maps?width=408&amp;height=320&amp;hl=en&amp;q=6%20bis%20Rue%20Chaudron,%20Paris+()&amp;t=&amp;z=12&amp;ie=UTF8&amp;iwloc=B&amp;output=embed" width="408" height="320" frameborder="0"></iframe> <a href='http://mapswebsite.net/fr'>http://mapswebsite.net/fr</a> <script type='text/javascript' src='https://embedmaps.com/google-maps-authorization/script.js?id=8058fc59a07ad6425bef576a972f9a2fc577fc9d'></script>
+    </div>
+    <h5>FindMyArt</h5>
+    <h5>6 bis Rue Chaudron</h5>
+    <h5>75010 Paris</h5>
 
 
 {% endblock %}
