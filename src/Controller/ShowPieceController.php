@@ -18,6 +18,8 @@ class ShowPieceController extends AbstractController
 
         return $this->render('show_piece/index.html.twig', [
             'piece' => $piece,
+
+            
         ]);
     }
 }
