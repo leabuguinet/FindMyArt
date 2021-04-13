@@ -6,17 +6,17 @@ use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 use App\Repository\PieceRepository;
+use App\Twig\AppExtension;
 use Symfony\Component\HttpFoundation\JsonResponse;
 use Symfony\Component\HttpFoundation\Request;
-   
-   
-   /* VERSION DES ROUTES POUR REACT APP  */
+
+/* VERSION DES ROUTES POUR REACT APP  */
    
    
 class DisplayPiecesController extends AbstractController
 {
     #[Route('/api/pieces', name: 'apipieces')]
-    public function index(Request $request, PieceRepository $pieceRepository): Response
+    public function index(Request $request, PieceRepository $pieceRepository,  AppExtension $appExtension): Response
     {
        /*  $pieces = $pieceRepository->findAll();
 
@@ -53,7 +53,9 @@ class DisplayPiecesController extends AbstractController
 
         $data = [];
         foreach($results as $piece) {
-            $data[] = $piece->formatedForView();
+            $pieceFormated = $piece->formatedForView();
+            $pieceFormated['findMyArtDisplayImage'] = $appExtension->displayImage($piece, 'imageFile');
+            $data[] = $pieceFormated;
         }
 
         return new JsonResponse([

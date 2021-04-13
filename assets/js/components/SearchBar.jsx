@@ -43,9 +43,10 @@ export default class Filter extends React.Component {
         {this.state.pieces.map(function (piece) {
           return (
 
-            <div>
+            <div key={piece.id}>
               
               <a href={port + "/show/" + piece.id}>
+                <img src={piece.findMyArtDisplayImage}/>
               </a>
 
             </div>
