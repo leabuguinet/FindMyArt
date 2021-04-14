@@ -54,9 +54,7 @@
         </tbody>
     </table>
 
-    <a href="{{ path('piece_index') }}" class="btn btn-primary" role="button"><i class="fas fa-pencil-alt"></i></a>
-
-    <a href="{{ path('piece_edit', {'id': piece.id}) }}" class="btn btn-primary" role="button"><i class="far fa-eye"></i></a>
+    <a href="{{ path('piece_edit', {'id': piece.id}) }}" class="btn btn-primary" role="button"><i class="fas fa-pencil-alt"></i></a>
 
     {{ include('piece/_delete_form.html.twig') }}
 {% endblock %}

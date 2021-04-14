@@ -12,22 +12,6 @@
                 <td>{{ user.id }}</td>
             </tr>
             <tr>
-                <th>Email</th>
-                <td>{{ user.email }}</td>
-            </tr>
-            <tr>
-                <th>Roles</th>
-                <td>{{ user.roles ? user.roles|json_encode : '' }}</td>
-            </tr>
-            <tr>
-                <th>Password</th>
-                <td>{{ user.password }}</td>
-            </tr>
-            <tr>
-                <th>IsVerified</th>
-                <td>{{ user.isVerified ? 'Yes' : 'No' }}</td>
-            </tr>
-            <tr>
                 <th>Lastname</th>
                 <td>{{ user.lastname }}</td>
             </tr>
@@ -36,8 +20,8 @@
                 <td>{{ user.firstname }}</td>
             </tr>
             <tr>
-                <th>City</th>
-                <td>{{ user.city }}</td>
+                <th>Email</th>
+                <td>{{ user.email }}</td>
             </tr>
             <tr>
                 <th>Address</th>
@@ -48,6 +32,10 @@
                 <td>{{ user.postcode }}</td>
             </tr>
             <tr>
+                <th>City</th>
+                <td>{{ user.city }}</td>
+            </tr>
+            <tr>
                 <th>Phone</th>
                 <td>{{ user.phone }}</td>
             </tr>
@@ -55,12 +43,25 @@
                 <th>doc validated</th>
                 <td>{{ user.DocValidated }}</td>
             </tr>
+            <tr>
+                <th>IsVerified</th>
+                <td>{{ user.isVerified ? 'Yes' : 'No' }}</td>
+            </tr>
+            <tr>
+                <th>Roles</th>
+                <td>{{ user.roles ? user.roles|json_encode : '' }}</td>
+            </tr>
+            <tr>
+                <th>Password</th>
+                <td>{{ user.password }}</td>
+            </tr>
+
         </tbody>
     </table>
 
-    <a href="{{ path('user_index') }}"  class="btn btn-primary" role="button"><i class="fas fa-pencil-alt"></i></a>
+    <a href="{{ path('user_index') }}"  class="btn btn-primary" role="button"><i class="far fa-eye"></i></a>
 
-    <a href="{{ path('user_edit', {'id': user.id}) }}" class="btn btn-primary" role="button"><i class="far fa-eye"></i></a>
+    <a href="{{ path('user_edit', {'id': user.id}) }}" class="btn btn-primary" role="button"><i class="fas fa-pencil-alt"></i></a>
 
     {{ include('user/_delete_form.html.twig') }}
 {% endblock %}

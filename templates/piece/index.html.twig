@@ -14,11 +14,11 @@
                 <th>Artiste</th>
                 <th>Style</th>
                 <th>Disponibilité</th>
-                <th>Image</th>
+                {# <th>Image</th> #}
                 <th>Description</th>
                 <th>Matériaux et Technique</th>
                 <th>Date de création</th>
-                <th>UpdatedAt</th>
+                {# <th>UpdatedAt</th> #}
                 <th>Taille</th>
                 <th>Actions</th>
             </tr>
@@ -31,11 +31,11 @@
                 <td>{{ piece.artist }}</td>
                 <td>{{ piece.style }}</td>
                 <td>{{ piece.availability ? 'Yes' : 'No' }}</td>
-                <td>{{ piece.image }}</td>
+                {# <td>{{ piece.image }}</td> #}
                 <td>{{ piece.description }}</td>
                 <td>{{ piece.materialsTechnique }}</td>
                 <td>{{ piece.creationDate }}</td>
-                <td>{{ piece.updatedAt ? piece.updatedAt|date('Y-m-d H:i:s') : '' }}</td>
+                {# <td>{{ piece.updatedAt ? piece.updatedAt|date('Y-m-d H:i:s') : '' }}</td> #}
                 <td>{{ piece.size }}</td>
                 <td>
                     <a href="{{ path('piece_show', {'id': piece.id}) }}" class="btn btn-primary" role="button"><i class="far fa-eye"></i> </a>
