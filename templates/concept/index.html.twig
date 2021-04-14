@@ -4,54 +4,101 @@
 
 {% block body %}
 
-<h3>
-    Find my Art C'est quoi ?
-</h3>
 
-<div>
-    Lorem ipsum dolor sit amet. Est aliquid modi eos repellendus voluptas et quidem quod 33 quae placeat. In incidunt consequatur est numquam perspiciatis sit ipsam veritatis et facilis velit? Aut voluptatum dicta et sapiente dolorum aut error voluptas in maxime repudiandae. Et quasi soluta vel aliquam quia nam eius odit 33 modi eaque ad omnis nulla non error corrupti 33 excepturi cupiditate? 
-</div>
-<h3>
-    Comment ça fonctionne ?
-</h3>
-<ul>
-    <li>Recherchez </li>
-    <li>Réservez</li>
-    <li>Accrochez</li>
-</ul>
-<h2>C'est pour qui ? pour tout le monde!! vous etes...</h2>
-<div>
-    <p>Un Particulier</p>
-</div>
-<div>
-    <p>Une Entreprise Une Collectivité</p>
-</div>
-<h2>Artiste,école ou galerie d'art vous souhaitez partager vos oeuvres ?</h2>
 
-<h2>contactez nous </h2>
+        <svg class="firstline" width="562" height="210" viewBox="0 0 562 210" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <g filter="url(#filter0_d)">
+        <path d="M557 0V24.7663C557 62.3217 526.555 92.7663 489 92.7663H73C35.4446 92.7663 5 123.211 5 160.766V202" stroke="black"/>
+        </g>
+        <defs>
+        <filter id="filter0_d" x="0.5" y="0" width="561" height="210" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+        <feFlood flood-opacity="0" result="BackgroundImageFix"/>
+        <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0"/>
+        <feOffset dy="4"/>
+        <feGaussianBlur stdDeviation="2"/>
+        <feColorMatrix type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.25 0"/>
+        <feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow"/>
+        <feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow" result="shape"/>
+        </filter>
+        </defs>
+        </svg>
 
-{{ form_start(contact_form) }} {# <form> #}
+            <h3 class="fma">
+                FIND MY ART, c'est quoi ?
+            </h3>
+
+            <div class="flex">
+
+            <svg class="secondline" width="415" height="136" viewBox="0 0 415 136" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M1 0L1 63C1 102.764 33.2355 135 73 135H415" stroke="black"/>
+            </svg>
+
+           
+                <div class="descriptionFMA">
+                
+                
+
+                        <p>    
+                        Le fonctionnement est simple, vous venez, vous aimez, vous empruntez ! 
+                        Nous mettons à votre disposition un ensemble d'oeuvres diverses et variées ! Alors quelques soit vos goûts, vous trouverez votre bonheur, promis ! 😉 
+                        </p>
+
+                </div>
+            </div>
+                <svg class="thirdline" width="500" height="296" viewBox="0 0 448 296" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M447 0V12.3669C447 49.9222 416.555 80.3668 379 80.3668H69C31.4446 80.3668 1 110.811 1 148.367V296" stroke="black"/>
+                </svg>
+            
+
+    <div class="function">
+        <h3>
+            Comment ça fonctionne ?
+        </h3>
+
+
+                <ul>
+                    <li>Recherchez </li>
+                    <li>Réservez</li>
+                    <li>Accrochez</li>
+                </ul>
+    </div>
+    
+
+    <h2 class="center">C'est pour qui ? pour tout le monde ! <br> Vous êtes :</h2>
+
+        <div class="choice">    
+            <a href="#">Un Particulier</a>
         
-        {{ form_row(contact_form.field_name) }}
-        {{ form_row(contact_form.email) }}
-        {{ form_row(contact_form.phone) }}
-        {{ form_row(contact_form.message) }} 
-
-        {# {{ form_label(contact_form.message) }}
-        {{ form_widget(contact_form.message, {
-            attr: { class: 'contact_form' }
-        } ) }}
-        {{ form_errors(contact_form.message) }} #}
         
-        <button class="btn btn-primary">Envoyer</button>
+            <a href="#">Une Entreprise <br> Une Collectivité</a>
+        </div>
 
-    {{ form_end(contact_form) }}
+
+    <h2 class="contact">Artiste, école ou galerie d'art, vous souhaitez partager vos oeuvres ?</h2>
+
+    <h2 class="contact">Contactez nous </h2>
+
+<div class="map">
+
+
     <div>
         <iframe scrolling="no" marginheight="0" marginwidth="0" id="gmap_canvas" src="https://maps.google.com/maps?width=408&amp;height=320&amp;hl=en&amp;q=6%20bis%20Rue%20Chaudron,%20Paris+()&amp;t=&amp;z=12&amp;ie=UTF8&amp;iwloc=B&amp;output=embed" width="408" height="320" frameborder="0"></iframe> <a href='http://mapswebsite.net/fr'>http://mapswebsite.net/fr</a> <script type='text/javascript' src='https://embedmaps.com/google-maps-authorization/script.js?id=8058fc59a07ad6425bef576a972f9a2fc577fc9d'></script>
-    </div>
-    <h5>FindMyArt</h5>
-    <h5>6 bis Rue Chaudron</h5>
-    <h5>75010 Paris</h5>
+    
+        <h5>FindMyArt</h5>
+        <h5>6 bis Rue Chaudron</h5>
+        <h5>75010 Paris</h5>
+    </div>    
 
+            
+            <form action="#" method="POST">
+
+                <input type="text" name="user_name" id="name" placeholder="Name">
+                <input type="email" name="user_mail" id="mail" placeholder="Email">
+                <textarea name="user_message" id="message" cols="30" rows="10" placeholder="Votre message"></textarea>
+                <button>Envoyer</button>
+
+            </form>
+        
+</div>
 
 {% endblock %}

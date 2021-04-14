@@ -88,3 +88,181 @@ nav{
     margin : 10px;
  
 }
+
+
+/***** PAGE CONCEPT *****/
+
+
+
+.firstline {
+    margin-left: 537px;
+}
+
+.fma {
+    text-align: left;
+    margin: 20px 405px;
+}
+
+.secondline {
+    margin-left: 540px;
+}
+
+.flex {
+    display: flex;
+}
+
+.descriptionFMA {
+    width: 30%;
+    text-align: center;   
+    padding: 2rem;
+    background-color: coral;
+    border-radius: 25px / 30px;
+    margin-left: 15px;
+}
+
+
+
+.descriptionFMA p {
+    font-size: 19px;
+    font-weight: 600;
+    
+}
+
+.thirdline {
+    margin-left: 730px;
+    margin-top: 15px;
+}
+
+
+.function {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 30px;
+}
+
+.function ul {
+    display: flex;
+    justify-content: space-around;
+    list-style: none;
+    padding: 0;
+    margin-top: 10px;
+}
+
+.function ul li {
+    margin: 0 30px;
+    text-align: center;
+    font-weight: 600;
+    font-size: 20px;
+}
+
+.function ul li::before {
+    content: '';
+    display: block;
+    position: relative;
+    top: 10%;
+    z-index: -10;
+    background-color: lightblue;
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+}
+
+.function::after {
+    content: '';
+    display: block;
+    background-color: black;
+    margin-top: 10px;
+    width: 1px;
+    height: 90px;
+    transform: rotate(0deg);
+}
+
+.center {
+    text-align: center;
+    margin-top: 30px;
+}
+
+.choice {
+    display: flex;   
+    justify-content: space-around;
+    margin: 30px auto;
+    font-size: 25px;
+    text-transform: uppercase;
+    width: 50%;
+}
+
+.choice a {
+    padding: .5rem;
+    text-align: center;
+    text-decoration: none;
+    color: black;
+    border-radius: none;
+    /* transform: scale(0); */
+    transition: .5s;
+}
+
+.choice a:hover {
+    border-radius: 30px;
+    transition: .5s ease;
+}
+
+.choice a:active {
+    transform: scale(0.9);
+    transition: .2s;
+}
+
+.choice a:first-child {
+    background-color: var(--colorred);
+    align-self: center;
+}
+
+.choice a:nth-child(2) {
+    background-color: var(--coloryellow);
+}
+
+.contact {
+    text-align: center;
+    line-height: 4rem;
+}
+
+.map {
+    display: flex;
+    justify-content: space-around;
+    flex-direction: row;
+    align-content: center;
+    width: 80%;
+    margin: 50px auto;
+    
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+}
+
+form input, textarea {
+    width: 300px;
+    margin: 10px;
+    padding: .5rem;
+    border: none;
+    border-radius: 15px;
+    background-color: rgb(216, 215, 214);
+}
+
+form button {
+    width: 150px;
+    margin: 10px;
+    padding: .5rem;
+    border: none;
+    border-radius: 15px;
+    background-color: rgb(216, 215, 214);
+    
+}
+
+form button:active {
+    transform: scale(0.9);
+    transition: .2s;
+}
