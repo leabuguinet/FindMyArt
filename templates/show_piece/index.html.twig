@@ -1,16 +1,50 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}page show 1 piece{% endblock %}
+{% block title %}{% endblock %}
 
 {% block body %}
 
-    <h2>Oeuvre : {{ piece.title }}</h2>
+    <section class="showpiece">
 
-    <img src="{{ findmyart_display_image(piece, 'imageFile') }}" alt="{{ piece.title }}" />
+        <img src="{{ findmyart_display_image(piece, 'imageFile') }}" alt="{{ piece.title }}" />
+        
+        <div class="description">
+            <h1>{{ piece.title }}</h1>
+            <h2>{{ piece.artist }}</h2>
 
-    <p>Nom de l'artiste : {{ piece.artist }}</p>
+            <div>
+                <p>
+                    {{ piece.creationDate }} ·
+                    {{ piece.style }}
+                </p>
+            </div>
+            <div>
+                <p>
+                    {{ piece.materialsTechnique }} · 
+                    Fonds d'oeuvres : {{ piece.owner.category }}
+                </p>
+            </div> 
+            <div> 
+                <p>
+                    {{ piece.size }}
+                </p>
+            </div>
 
-    {% if piece.style == "Photography" %}
+            <p>{{ piece.description }}</p>
+         
+            
+            {# <p>{{ piece.owner.name }}</p> #}
+            
+        </div>
+    </section>  
+    
+            {% if piece.availability == 1 %}
+                <p>Disponible</p>
+            {% else %}
+                <p>Indisponible</p>
+            {% endif %}
+
+{% if piece.style == "Photography" %}
         <p>Style : Photographie</p>
     {% elseif piece.style == "DigitalArt" %}
         <p>Style : Art Digital</p>
@@ -26,13 +60,8 @@
     {% else %}
         <p><i class="red-circle fas fa-circle"></i>Indisponible</p>
     {% endif %}
+        
 
-    <p>Taille : {{ piece.size }}</p>
-    <p>Description : {{ piece.description }}</p>
-    <p>Matériaux : {{ piece.materialsTechnique }}</p>
-    <p>Date de création : {{ piece.creationDate }}</p>
-    <p>Prêteur : {{ piece.owner.name }}</p>
-    
 
 
 {% endblock %}
