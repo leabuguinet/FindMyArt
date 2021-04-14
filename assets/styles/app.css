@@ -302,3 +302,28 @@ nav{
     font-weight: 700;
     line-height: 9px;
 }
+/****** PAGE Login Register  ******/
+.formLogin{
+    margin-right: 20rem;
+    margin-top: 5rem;
+}
+.formLogin form{
+    background-color: rgb(240, 240, 240);
+    padding: 5rem;
+    border-radius: 13px;
+}
+.formLogin form button{
+  margin-top: 1rem;
+}
+.formRegister{
+    background-color: rgb(240, 240, 240);
+    padding: 2rem;
+    margin-top: 5rem;
+    border-radius: 13px;
+}
+.formRegister input{
+    display: block;
+}
+.form{
+    margin-bottom: 2rem;
+}
