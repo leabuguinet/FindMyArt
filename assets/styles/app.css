@@ -195,8 +195,7 @@ nav{
     text-align: center;
     text-decoration: none;
     color: black;
-    border-radius: none;
-    /* transform: scale(0); */
+    border-radius: none; 
     transition: .5s;
 }
 
