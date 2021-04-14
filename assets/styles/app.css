@@ -31,6 +31,7 @@ nav{
 
 .navbar img{
     margin: 2rem;
+    width: 200px;
 }
 
 .navbar ul li{
@@ -66,6 +67,101 @@ nav{
 .icon a:hover{
     color: rgb(37, 83, 114);
 }
+
+/****** FOOTER  ******/
+
+.footer{
+    background-color: black;
+    width: 100%;
+    padding-top: 3rem;
+}
+
+.footer a{
+    color: white; 
+    text-decoration: none;
+    font-family: 'Ruda', sans-serif;
+}
+
+.footer-links{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.footer-links div{
+    width: 20%;
+}
+
+.footer-links--pages{
+    display: flex;
+    flex-direction: column;
+}
+
+.footer-links--pages a{
+    margin-bottom: 20px;
+    padding-bottom: 5px;
+    border-bottom: solid white 2px;
+    transition: color 2sc linear 100ms;
+}
+
+.networks-icons{
+    display: flex; 
+    justify-content: center;
+}
+
+.networks-icons a{
+    font-size: 2.5em;
+    width: 70px;
+    text-align: center;
+}
+
+.footer-contact{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-size: 1.2rem;
+}
+
+.footer-contact i{
+    font-size: 2em;
+    padding-top: 1rem;
+}
+
+.credits{
+    color: white;
+    text-align: center;
+    padding: 3rem 0 2rem 0;
+}
+
+.footer-links--pages a:first-child:hover, .networks-icons a:hover{
+    color: var(--colorred);
+}
+
+.footer-links--pages a:nth-child(2):hover, .networks-icons a:nth-child(3):hover{
+    color: var(--coloryellow);
+}
+
+.footer-links--pages a:nth-child(3):hover, .networks-icons a:nth-child(2):hover{
+    color: var(--colorgreen);
+}
+
+.footer-contact a:hover{
+    color: var(--colorviolet);
+}
+
+.footer-links--pages a:first-child:hover{
+    border-bottom: solid var(--colorred) 2px;
+}
+
+.footer-links--pages a:nth-child(2):hover{
+    border-bottom: solid var(--coloryellow) 2px;
+}
+
+.footer-links--pages a:nth-child(3):hover{
+    border-bottom: solid var(--colorgreen) 2px;
+}
+
+
 
 
 

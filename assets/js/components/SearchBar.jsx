@@ -45,9 +45,11 @@ export default class Filter extends React.Component {
 
             <div key={piece.id}>
               
+              <div>
               <a href={baseUrl + "/show/" + piece.id}>
                 <img src={piece.findMyArtDisplayImage}/>
               </a>
+              </div>
 
             </div>
           )
