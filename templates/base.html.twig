@@ -37,7 +37,7 @@
                     </ul>
                 </div>
                 <div class="icon">
-                        <a href="{{ path('app_register') }}"><i class="far fa-user"></i></a>
+                        <a href="{{ path('app_login') }}"><i class="far fa-user"></i></a>
 
                         {% if is_granted('IS_AUTHENTICATED_FULLY') %}
                             <a class="link" href="{{ path('app_logout') }}"> Déconnexion</a>
