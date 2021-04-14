@@ -40,7 +40,11 @@
                     </ul>
                 </div>
                 <div class="icon">
-                        <a href="{{ path('app_login') }}"><i class="far fa-user"></i></a>
+                        {% if is_granted('IS_AUTHENTICATED_FULLY') %}
+                            <a href="{{ path('user_account') }}"><i class="far fa-user"></i></a>
+                        {% else%}
+                            <a href="{{ path('app_login') }}"><i class="far fa-user"></i></a>
+                        {% endif %}
 
                         {% if is_granted('IS_AUTHENTICATED_FULLY') %}
                             <a class="link" href="{{ path('app_logout') }}"> Déconnexion</a>
