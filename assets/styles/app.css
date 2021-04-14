@@ -305,7 +305,7 @@ nav{
 /****** PAGE Login Register  ******/
 .formLogin{
     margin-right: 20rem;
-    margin-top: 5rem;
+    margin-top: 2rem;
 }
 .formLogin form{
     background-color: rgb(240, 240, 240);
@@ -318,7 +318,7 @@ nav{
 .formRegister{
     background-color: rgb(240, 240, 240);
     padding: 2rem;
-    margin-top: 5rem;
+    margin-top: 2rem;
     border-radius: 13px;
 }
 .formRegister input{
