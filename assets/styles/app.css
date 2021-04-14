@@ -323,6 +323,11 @@ nav{
 }
 .formRegister input{
     display: block;
+    border-radius: 13px;
+    border: none;
+}
+.formRegister input:hover{
+    border: solid 4px rgba(9, 93, 250, 0.349);
 }
 .form{
     margin-bottom: 2rem;
