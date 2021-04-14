@@ -92,8 +92,6 @@ nav{
 
 /***** PAGE CONCEPT *****/
 
-
-
 .firstline {
     margin-left: 537px;
 }
@@ -265,4 +263,43 @@ form button {
 form button:active {
     transform: scale(0.9);
     transition: .2s;
+}
+
+
+
+/****** PAGE SHOW PIECE  ******/
+
+.showpiece{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: flex-start;
+    padding: 6rem 4rem;
+    
+}
+
+.showpiece img{
+   width: 60%;
+   min-width: 200px;
+   object-fit: contain;
+}
+
+.showpiece .description{
+    width: 40%;
+    padding-left: 2rem;
+}
+
+.showpiece h1, .showpiece h2{
+    font-family: 'Ruda', sans-serif;
+    font-size: 3rem;
+}
+
+.showpiece h2{
+    font-size: 2rem;
+    padding-bottom: 2rem;
+}
+
+.description div p{
+    font-weight: 700;
+    line-height: 8px;
 }

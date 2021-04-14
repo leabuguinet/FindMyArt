@@ -83,19 +83,7 @@ export default class Filter extends React.Component {
     ).then(response => response.json()).then(response => {
       let updatedPiecesList = response.piece;
       console.log(response);
-      // {
-      // 7: "Miel des ours",
-      // 9: "Coco veut du gâteau",
-      // 10: "Papy en met dans son thé et on adore"
-      // }
-      // console.log(updatedMielsList);
-     /*  updatedPiecesList = Object.entries(updatedPiecesList).map(object => {
-        // console.log('-------------');
-        // console.log(object);
-        // console.log(object[0]);
-        // console.log(object[1]);
-        return object[1]
-      }); */
+      
       this.setState({
         pieces: updatedPiecesList,
       })
