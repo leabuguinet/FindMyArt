@@ -10,17 +10,17 @@
         <thead>
             <tr>
                 <th>Id</th>
-                <th>Email</th>
-                <th>Roles</th>
-                <th>Password</th>
-                <th>IsVerified</th>
                 <th>Lastname</th>
                 <th>Firstname</th>
-                <th>City</th>
+                <th>Email</th>                
                 <th>Address</th>
                 <th>Postcode</th>
+                <th>City</th>
                 <th>Phone</th>
                 <th>doc_validated</th>
+                <th>IsVerified</th>
+                {# <th>Password</th>
+                <th>Roles</th> #}
                 <th>Action</th>
             </tr>
         </thead>
@@ -28,21 +28,21 @@
         {% for user in users %}
             <tr>
                 <td>{{ user.id }}</td>
-                <td>{{ user.email }}</td>
-                <td>{{ user.roles ? user.roles|json_encode : '' }}</td>
-                <td>{{ user.password }}</td>
-                <td>{{ user.isVerified ? 'Yes' : 'No' }}</td>
                 <td>{{ user.lastname }}</td>
                 <td>{{ user.firstname }}</td>
-                <td>{{ user.city }}</td>
+                <td>{{ user.email }}</td>                
                 <td>{{ user.address }}</td>
                 <td>{{ user.postcode }}</td>
+                <td>{{ user.city }}</td>
                 <td>{{ user.phone }}</td>
                 <td>{{ user.DocValidated }}</td>
+                <td>{{ user.isVerified ? 'Yes' : 'No' }}</td>
+                {# <td>{{ user.password }}</td>
+                <td>{{ user.roles ? user.roles|json_encode : '' }}</td> #}
                 
                 <td class="d-flex m-1">
-                    <a href="{{ path('user_show', {'id': user.id}) }}"class="btn btn-primary m-1" role="button"><i class="fas fa-pencil-alt"></i></a>
-                    <a href="{{ path('user_edit', {'id': user.id}) }}"class="btn btn-primary m-1" role="button"><i class="far fa-eye"></i></a>
+                    <a href="{{ path('user_show', {'id': user.id}) }}"class="btn btn-primary m-1" role="button"><i class="far fa-eye"></i></a>
+                    <a href="{{ path('user_edit', {'id': user.id}) }}"class="btn btn-primary m-1" role="button"><i class="fas fa-pencil-alt"></i></a>
                 </td>
             </tr>
         {% else %}

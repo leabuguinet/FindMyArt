@@ -4,25 +4,35 @@
 
 {% block body %}
 
-    <h1>page show 1 piece {{ piece.title }}</h1>
+    <h2>Oeuvre : {{ piece.title }}</h2>
 
     <img src="{{ findmyart_display_image(piece, 'imageFile') }}" alt="{{ piece.title }}" />
 
-    <p>{{ piece.artist }}</p>
+    <p>Nom de l'artiste : {{ piece.artist }}</p>
 
-    {% if piece.availability == 1 %}
-        <p>Disponible</p>
+    {% if piece.style == "Photography" %}
+        <p>Style : Photographie</p>
+    {% elseif piece.style == "DigitalArt" %}
+        <p>Style : Art Digital</p>
+    {% elseif piece.style == "ContemporaryArt" %}
+        <p>Style : Art Contemporain</p>
     {% else %}
-        <p>Indisponible</p>
+        <p>Style : Street Art</p>
     {% endif %}
 
-    <p>{{ piece.size }}</p>
-    <p>{{ piece.description }}</p>
-    <p>{{ piece.materialsTechnique }}</p>
-    <p>{{ piece.creationDate }}</p>
-    <p>{{ piece.owner.name }}</p>
-    <p>{{ piece.owner.category }}</p>
-    <p>{{ piece.style }}</p>
+
+    {% if piece.availability == 1 %}
+        <p><i class="green-circle fas fa-circle"></i>Disponible</p>
+    {% else %}
+        <p><i class="red-circle fas fa-circle"></i>Indisponible</p>
+    {% endif %}
+
+    <p>Taille : {{ piece.size }}</p>
+    <p>Description : {{ piece.description }}</p>
+    <p>Matériaux : {{ piece.materialsTechnique }}</p>
+    <p>Date de création : {{ piece.creationDate }}</p>
+    <p>Prêteur : {{ piece.owner.name }}</p>
+    
 
 
 {% endblock %}
