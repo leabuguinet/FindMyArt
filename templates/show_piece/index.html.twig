@@ -22,9 +22,9 @@
 
 
     {% if piece.availability == 1 %}
-        <i class="green-circle fas fa-circle"></i><p>Disponible</p>
+        <p><i class="green-circle fas fa-circle"></i>Disponible</p>
     {% else %}
-        <i class="red-circle fas fa-circle"></i><p>Indisponible</p>
+        <p><i class="red-circle fas fa-circle"></i>Indisponible</p>
     {% endif %}
 
     <p>Taille : {{ piece.size }}</p>
