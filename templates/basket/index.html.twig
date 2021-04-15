@@ -10,7 +10,9 @@
         <li>{{ piece.id }}</li>
         <li>{{ piece.title }}</li>
         <li>prix : 100000€</li>
+        <li><a href="{{path('remove_basket',{'id': piece.id})}}">X</a></li>
 
     {% endfor %}
 <a href="{{path('add_renting')}}">Paye vite</a>
+
 {% endblock %}

@@ -75,23 +75,19 @@ class BasketController extends AbstractController
         return $this->redirectToRoute('user_account');
     }
     #[Route('/basket/remove/{id}', name: 'remove_basket')]
-    public function remove(Request $request, EntityManagerInterface $entityManager): Response
+    public function remove(Request $request, EntityManagerInterface $entityManager,$id): Response
     {
         // Récupère la piece avec l'id: si l'objet n'existe pas je l'ajoute pas au panier
 
         $session = $request->getSession();
         // Récupère le panier
+     
         $panier = $session->get('basket', []);
-       /* $panier[] = ;
-        unset($panier[$id]);
-        dd($panier)
+        //dump($panier);
+        $key = array_search($id,$panier);
+        unset($panier[$key]);
+        //dd($panier);
         $session->set('basket', $panier);
-*/
-        /*
-        [12, 5, 9]
-        */
-
-        // Redirection sur la piece
         return $this->redirectToRoute('basket');
     }
 }
