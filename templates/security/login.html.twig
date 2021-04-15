@@ -3,6 +3,12 @@
 {% block title %}Log in!{% endblock %}
 
 {% block body %}
+
+    {% for message in app.flashes('success-email-sent') %}
+        <div class="alert alert-success" role="alert">{{ message }}</div>
+    {% endfor %}
+
+
 <div class="form d-flex justify-content-center">
     <div class="formLogin">
 <form method="post">
@@ -41,6 +47,8 @@
         Sign in
     </button>
 </form>
+
+
 </div>
 {% for flashError in app.flashes('verify_email_error') %}
 <div class="alert alert-danger" role="alert">{{ flashError }}</div>
