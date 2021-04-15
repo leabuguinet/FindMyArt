@@ -49,9 +49,6 @@ class BasketController extends AbstractController
         */
 
         // Redirection sur la piece
-        return $this->render('basket/index.html.twig', [
-            'controller_name' => 'BasketController',
-            // ....
-        ]);
+        return $this->redirectToRoute('basket');
     }
 }
