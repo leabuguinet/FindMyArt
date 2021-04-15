@@ -3,6 +3,7 @@
 namespace App\Entity;
 
 use App\Repository\RentingRepository;
+use DateTime;
 use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
@@ -43,6 +44,7 @@ class Renting
     public function __construct()
     {
         $this->rentingDetails = new ArrayCollection();
+        $this->date = new DateTime();
     }
 
     public function getId(): ?int
