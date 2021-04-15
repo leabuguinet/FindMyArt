@@ -40,30 +40,25 @@
             </div>
 
             <p>{{ piece.description }}</p>
-         
-            
-            {# <p>{{ piece.owner.name }}</p> #}
 
-            <a href="{{path('add_basket',{id: piece.id})}}"> test</a>
+            <div class="availability-piece">
+                {% if piece.availability == 1 %}
+                    <p><i class="green-circle fas fa-circle"></i>Disponible</p>
+                {% else %}
+                    <p><i class="red-circle fas fa-circle"></i>Indisponible</p>
+                {% endif %}
+            </div>
             
+            <div class="add-basket">
+                <a href="{{path('add_basket',{id: piece.id})}}"> <i class="fas fa-plus-circle"></i></a>
+        
+                <span class="ghost-message"> Ajouter à votre palette </span>
+            </div>
+
         </div>
     </section>  
     
-            {% if piece.availability == 1 %}
-                <p>Disponible</p>
-            {% else %}
-                <p>Indisponible</p>
-            {% endif %}
-
-
-
-
-    {% if piece.availability == 1 %}
-        <p><i class="green-circle fas fa-circle"></i>Disponible</p>
-    {% else %}
-        <p><i class="red-circle fas fa-circle"></i>Indisponible</p>
-    {% endif %}
-        
+  
 
 
 
