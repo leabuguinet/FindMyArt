@@ -38,20 +38,35 @@ export default class Filter extends React.Component {
         {/* <button onClick={this.fetchPieces}>Fetch Pieces</button> */}
 
         <div className="searchsection">
-          <div className="searchbox">
-            <div className="search">
+            <div className="searchbox">
 
-              <h4>Filtre</h4>
-              <p>Rechercher par oeuvre ou par artiste</p>
-              <div>
-                <input type="text" value={this.state.searchValue} onChange={this.updateSearch}placeholder="Tapez votre recherche..."/>
+              <div className="search">
+                <div>
+                  <input type="text" value={this.state.searchValue} onChange={this.updateSearch}placeholder="Artiste, oeuvre..."/>
+                </div>
               </div>
-
             </div>
-          </div>
+
+            <ul class="ks-cboxtags">
+                <li>
+                  <input type="checkbox" id="checkboxOne" value="Street Art"/>
+                  <label for="checkboxOne">Street Art</label>
+                </li>
+                <li>
+                  <input type="checkbox" id="contemporary-art" value="Art Contemporain"/>
+                  <label for="contemporary-art">Art Contemporain</label>
+                </li>
+                <li>
+                  <input type="checkbox" id="photography" value="Photograpie"/>
+                  <label for="photography">Photographie</label>
+                </li>
+                <li>
+                  <input type="checkbox" id="digital-art" value="Digital Art"/>
+                  <label for="digital-art">Digital Art</label>
+                </li>
+            </ul>
         </div>
-
-
+    
         <div className="wrapper">
         {this.state.pieces.map(function (piece) {
           return (
