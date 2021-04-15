@@ -729,35 +729,86 @@ ul.ks-cboxtags li input[type="checkbox"]:focus + label {
 
 .login-page{
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
+    flex-wrap: wrap;
+    align-items: flex-start;
+    align-content: center;
+    
 }
 
-.formLogin{
-    margin-right: 20rem;
-    margin-top: 2rem;
+.login-page h2{
+    font-size: 1.5rem;
+    text-align: center;
 }
-.formLogin form{
-    background-color: rgb(240, 240, 240);
-    padding: 5rem;
+
+.login-page h3{
+    font-size: 1.5rem;
+    text-align: center;
+}
+
+.login-page form{
+    margin-top: 3rem;
     border-radius: 13px;
+    padding: 3rem;
+
 }
-.formLogin form button{
-  margin-top: 1rem;
-}
-.formRegister{
-    background-color: rgb(240, 240, 240);
-    padding: 2rem;
-    margin-top: 2rem;
-    border-radius: 13px;
-}
-.formRegister input{
-    display: block;
+
+.login-page input{
     border-radius: 13px;
     border: none;
+    padding: 5px;
+    width: 80%;
 }
-.formRegister input:hover{
-    border: solid 4px rgba(9, 93, 250, 0.349);
+
+.formlogin{
+    width: 35%;
+    background-color: var(--colorgreen);
+    margin-right: 4rem;
 }
-.form{
-    margin-bottom: 2rem;
+
+.formlogin button{
+    margin-top: 1rem;
 }
+
+.formregister{
+    width: 50%;
+    background-color: rgba(234, 159, 24, 0.6);
+    margin-bottom: 3rem;
+    margin-left: 4rem;
+}
+
+.formregister, .formlogin{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.formregister div, .formlogin div{
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    margin-top: 1rem;
+    width: 80%;
+    align-content: center;
+}
+
+
+.formregister div:nth-of-type(9){
+    align-self: flex-start;
+} 
+
+.register-button{
+    border-radius: 30px;
+    padding: 0.8rem 1rem;
+    border: none;
+    margin-top: 2rem !important;
+    box-shadow: 1px 1px 5px grey;
+}
+
+.register-button:hover{
+    box-shadow: inset 1px 1px 5px grey;
+    color: var(--colorgreen);
+}
+
+
+/*************************************MEDIA QUERIES********************/
