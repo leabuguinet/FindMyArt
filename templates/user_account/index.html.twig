@@ -4,6 +4,11 @@
 
 {% block body %}
 
+    {% for message in app.flashes('success-email-validated') %}
+        <div class="alert alert-success" role="alert">{{ message }}</div>
+    {% endfor %}
+
+
 <h1>Bonjour {{ user.firstname }}, bienvenu⸱e sur ton espace personnel ! </h1>
 
 <h2>Tes commandes</h2>

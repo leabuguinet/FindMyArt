@@ -6,6 +6,7 @@ use App\Entity\User;
 use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Component\HttpFoundation\RedirectResponse;
 use Symfony\Component\HttpFoundation\Request;
+use Symfony\Component\HttpFoundation\RequestStack;
 use Symfony\Component\Routing\Generator\UrlGeneratorInterface;
 use Symfony\Component\Security\Core\Authentication\Token\TokenInterface;
 use Symfony\Component\Security\Core\Encoder\UserPasswordEncoderInterface;
@@ -30,13 +31,15 @@ class UserAuthentificatorAuthenticator extends AbstractFormLoginAuthenticator im
     private $urlGenerator;
     private $csrfTokenManager;
     private $passwordEncoder;
+    private $requestStack;
 
-    public function __construct(EntityManagerInterface $entityManager, UrlGeneratorInterface $urlGenerator, CsrfTokenManagerInterface $csrfTokenManager, UserPasswordEncoderInterface $passwordEncoder)
+    public function __construct(EntityManagerInterface $entityManager, UrlGeneratorInterface $urlGenerator, CsrfTokenManagerInterface $csrfTokenManager, UserPasswordEncoderInterface $passwordEncoder, RequestStack $requestStack)
     {
         $this->entityManager = $entityManager;
         $this->urlGenerator = $urlGenerator;
         $this->csrfTokenManager = $csrfTokenManager;
         $this->passwordEncoder = $passwordEncoder;
+        $this->requestStack = $requestStack;
     }
 
     public function supports(Request $request)
@@ -95,6 +98,10 @@ class UserAuthentificatorAuthenticator extends AbstractFormLoginAuthenticator im
         if ($targetPath = $this->getTargetPath($request->getSession(), $providerKey)) {
             return new RedirectResponse($targetPath);
         }
+
+        $request = $this->requestStack->getCurrentRequest();
+        //$session = $request->getSession();
+        //$session->getFlashBag()->add('success', 'Tu es bien connecté ! ');
 
         return new RedirectResponse($this->urlGenerator->generate('user_account'));
         //throw new \Exception('TODO: provide a valid redirect inside '.__FILE__);
