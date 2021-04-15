@@ -6,6 +6,10 @@
 
 
 <h1>Votre sélection</h1>
-
+{% for piece in panier %}
+        <li>{{ piece.id }}</li>
+        <li>{{ piece.title }}</li>
+        <li>prix : 100000€</li>
+    {% endfor %}
 
 {% endblock %}

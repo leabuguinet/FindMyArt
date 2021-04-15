@@ -35,19 +35,34 @@ export default class Filter extends React.Component {
   render() {
     return (
       <div>
-        <h3>En train de rechercher : {this.state.searchValue}</h3>
-        <button onClick={this.fetchPieces}>Fetch Pieces</button>
-        <input type="text" value={this.state.searchValue} onChange={this.updateSearch}/>
-        
+        {/* <button onClick={this.fetchPieces}>Fetch Pieces</button> */}
+
+        <div className="searchsection">
+          <div className="searchbox">
+            <div className="search">
+
+              <h4>Filtre</h4>
+              <p>Rechercher par oeuvre ou par artiste</p>
+              <div>
+                <input type="text" value={this.state.searchValue} onChange={this.updateSearch}placeholder="Tapez votre recherche..."/>
+              </div>
+
+            </div>
+          </div>
+        </div>
+
+
         <div className="wrapper">
         {this.state.pieces.map(function (piece) {
           return (
 
             <div key={piece.id}>
               
+              <div>
               <a href={baseUrl + "/show/" + piece.id}>
                 <img src={piece.findMyArtDisplayImage}/>
               </a>
+              </div>
 
             </div>
           )

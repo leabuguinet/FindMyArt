@@ -22,19 +22,18 @@ class PieceRepository extends ServiceEntityRepository
     // /**
     //  * @return Piece[] Returns an array of Piece objects
     //  */
-    /*
-    public function findByExampleField($value)
+    public function findByIds($ids)
     {
         return $this->createQueryBuilder('p')
-            ->andWhere('p.exampleField = :val')
-            ->setParameter('val', $value)
-            ->orderBy('p.id', 'ASC')
-            ->setMaxResults(10)
+            ->andWhere('p.id IN (:val)')
+            ->setParameter('val', $ids)
+            //->orderBy('p.id', 'ASC')
+            //->setMaxResults(10)
             ->getQuery()
             ->getResult()
         ;
     }
-    */
+
 
     /*
     public function findOneBySomeField($value): ?Piece

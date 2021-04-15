@@ -15,7 +15,16 @@
             <div>
                 <p>
                     {{ piece.creationDate }} ·
-                    {{ piece.style }}
+                    
+                    {% if piece.style == "Photography" %}
+                        Photographie
+                    {% elseif piece.style == "DigitalArt" %}
+                        Art Digital
+                    {% elseif piece.style == "ContemporaryArt" %}
+                        Art Contemporain
+                    {% else %}
+                        Street Art
+                    {% endif %}
                 </p>
             </div>
             <div>
@@ -34,6 +43,8 @@
          
             
             {# <p>{{ piece.owner.name }}</p> #}
+
+            <a href="{{path('add_basket',{id: piece.id})}}"> test</a>
             
         </div>
     </section>  
@@ -44,15 +55,7 @@
                 <p>Indisponible</p>
             {% endif %}
 
-{% if piece.style == "Photography" %}
-        <p>Style : Photographie</p>
-    {% elseif piece.style == "DigitalArt" %}
-        <p>Style : Art Digital</p>
-    {% elseif piece.style == "ContemporaryArt" %}
-        <p>Style : Art Contemporain</p>
-    {% else %}
-        <p>Style : Street Art</p>
-    {% endif %}
+
 
 
     {% if piece.availability == 1 %}

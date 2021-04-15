@@ -4,10 +4,64 @@
 
 {% block body %}
 
-<h1>Bonjour, bienvenu⸱e sur votre espace personnel ! </h1>
+<h1>Bonjour {{ user.firstname }}, bienvenu⸱e sur ton espace personnel ! </h1>
 
-<h2>Vos commandes</h2>
+<h2>Tes commandes</h2>
 
-<h3>Vos informations personnelles</h3>
+<h3>Tes informations personnelles</h3>
+
+    <table>
+        <tbody>
+            {# <tr>
+                <th>Nº de client :</th>
+                <td>{{ user.id }}</td>
+            </tr> #}
+            <tr>
+                <th>Prénom :</th>
+                <td>{{ user.firstname }}</td>
+            </tr>
+            <tr>
+                <th>Nom :</th>
+                <td>{{ user.lastname }}</td>
+            </tr>
+            <tr>
+                <th>Email :</th>
+                <td>{{ user.email }}</td>
+            </tr>
+            <tr>
+                <th>Addresse :</th>
+                <td>{{ user.address }}</td>
+            </tr>
+            <tr>
+                <th>Code Postal :</th>
+                <td>{{ user.postcode }}</td>
+            </tr>
+            <tr>
+                <th>Ville :</th>
+                <td>{{ user.city }}</td>
+            </tr>
+            <tr>
+                <th>Téléphone :</th>
+                <td>{{ user.phone }}</td>
+            </tr>
+            <tr>
+                <th>Tes documents ont été validés : </th>
+                {% if (user.DocValidated == 'Yes') %}
+                    <td> Oui</td>
+                {% else %}
+                    <td>Non, pas encore ! Notre équipe doit valider les documents que tu nous a envoyé, le délai maximum est de 72h. Une fois validés, ton compte sera activé et tu pourras commencer à l'utiliser.</td>
+                {% endif %}
+            </tr>
+            {# <tr>
+                <th>Mot de passe :</th>
+                <td>{{ user.password }}</td>
+            </tr> #}
+            {# <tr>
+                <th>Roles</th>
+                <td>{{ user.roles ? user.roles|json_encode : '' }}</td>
+            </tr> #}
+
+        </tbody>
+    </table>
 
 {% endblock %}

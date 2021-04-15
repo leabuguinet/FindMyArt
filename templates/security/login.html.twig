@@ -3,6 +3,8 @@
 {% block title %}Log in!{% endblock %}
 
 {% block body %}
+<div class="form d-flex justify-content-center">
+    <div class="formLogin">
 <form method="post">
     {% if error %}
         <div class="alert alert-danger">{{ error.messageKey|trans(error.messageData, 'security') }}</div>
@@ -39,18 +41,20 @@
         Sign in
     </button>
 </form>
+</div>
 {% for flashError in app.flashes('verify_email_error') %}
 <div class="alert alert-danger" role="alert">{{ flashError }}</div>
 {% endfor %}
-
+<div class="formRegister">
 <h1>Register</h1>
 
 {{ form_start(registrationForm) }}
 
 {{ form_widget(registrationForm) }}
 
-<button type="submit" class="btn">Register</button>
+<button type="submit " class="btn alert alert-danger mt-2">Register</button>
 
 {{ form_end(registrationForm) }}
-
+</div>
+</div>
 {% endblock %}
