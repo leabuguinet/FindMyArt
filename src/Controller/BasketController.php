@@ -2,6 +2,7 @@
 
 namespace App\Controller;
 
+use App\Entity\Piece;
 use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
@@ -11,7 +12,7 @@ use Symfony\Component\Routing\Annotation\Route;
 class BasketController extends AbstractController
 {
     #[Route('/basket', name: 'basket')]
-    public function index(Request $request): Response
+    public function index(Request $request , EntityManagerInterface $entityManager): Response
     {
         $session = $request->getSession();
         
@@ -21,10 +22,11 @@ class BasketController extends AbstractController
 
         // Requte pour récupérer tous les pièces en fonction des ids
         // SELECT * FROM pieces WHERE id IN (12, 5, 9)
-
+        $pieces = $entityManager->getRepository(Piece::class)->findByIds($panier);
+        //$imagePath = $storageInterface->resolvePath($piece, 'imageFile');
 
         return $this->render('basket/index.html.twig', [
-            'controller_name' => 'BasketController',
+            'panier'=> $pieces
             // ....
         ]);
     }
@@ -39,7 +41,6 @@ class BasketController extends AbstractController
         $panier = $session->get('basket', []);
         $panier[] = $id;
 
-        dd($panier);
 
         $session->set('basket', $panier);
 
@@ -48,5 +49,6 @@ class BasketController extends AbstractController
         */
 
         // Redirection sur la piece
+        return $this->redirectToRoute('basket');
     }
 }
