@@ -1,6 +1,6 @@
 /****** GENERAL ******/
 
-*{
+*, ::before, ::after{
     margin: 0;
     padding: 0;
     box-sizing: border-box;
@@ -92,30 +92,46 @@ nav{
 
 /***** PAGE CONCEPT *****/
 
-.firstline {
-    margin-left: 537px;
-}
+/* body {
+    background: linear-gradient(to bottom, rgba(255,255,255,1) 0%, rgba(255,220,125,1) 100%);
+} */
+
 
 .fma {
     text-align: left;
-    margin: 20px 405px;
+    margin: 20px;
+    font-size: 40px;
+    text-transform: uppercase;
 }
 
-.secondline {
-    margin-left: 540px;
+.fma::after, .function::before {
+    content: '';
+    display: block;
+    background-color: gray;
+    text-align: center;   
+    width: 1px;
+    height: 70px;
+    margin: 35px auto;
+    transform: rotate(0deg);
 }
+
 
 .flex {
     display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 60px;
 }
 
 .descriptionFMA {
-    width: 30%;
+    width: 33%;
     text-align: center;   
     padding: 2rem;
-    background-color: coral;
+    background-color: transparent;
+    border: none;
     border-radius: 25px / 30px;
     margin-left: 15px;
+    box-shadow: 0px 2px 30px 2px;
 }
 
 
@@ -126,11 +142,6 @@ nav{
     
 }
 
-.thirdline {
-    margin-left: 730px;
-    margin-top: 15px;
-}
-
 
 .function {
     display: flex;
@@ -139,32 +150,53 @@ nav{
     margin-top: 30px;
 }
 
-.function ul {
+.function .all {
     display: flex;
     justify-content: space-around;
-    list-style: none;
-    padding: 0;
-    margin-top: 10px;
+
 }
 
-.function ul li {
-    margin: 0 30px;
+
+.card {
+    overflow: hidden;
+    margin: 20px;
+    height: 150px;
+    width: 180px;
     text-align: center;
-    font-weight: 600;
-    font-size: 20px;
 }
 
-.function ul li::before {
-    content: '';
-    display: block;
-    position: relative;
-    top: 10%;
-    z-index: -10;
-    background-color: lightblue;
-    width: 200px;
-    height: 200px;
-    border-radius: 50%;
+.card:nth-child(1) {background-color: var(--colorgreen);}
+.card:nth-child(2) {background-color: var(--coloryellow);}
+.card:nth-child(3) {background-color: var(--colorred);}
+
+
+.card p:first-child {
+    margin: 20px auto;
+    text-transform: uppercase;   
+    font-weight: bold;
+    font-size: 19px;
 }
+
+.anim p:nth-child(2) {
+    margin: 0 15px;
+}
+
+.anim svg {
+    width: 50%;
+    margin-top: 15px;
+}
+
+.anim {
+    width: 100%;
+    transform: translateY(0px);
+    transition: 0.6s;
+}
+
+.anim:hover {
+    transform: translateY(-130px);
+    
+}
+
 
 .function::after {
     content: '';
@@ -191,7 +223,7 @@ nav{
 }
 
 .choice a {
-    padding: .5rem;
+    padding: .9rem;
     text-align: center;
     text-decoration: none;
     color: black;
@@ -200,8 +232,8 @@ nav{
 }
 
 .choice a:hover {
-    border-radius: 30px;
-    transition: .5s ease;
+    border-bottom: 3px solid black;
+    transition: .2s;
 }
 
 .choice a:active {
@@ -221,6 +253,7 @@ nav{
 .contact {
     text-align: center;
     line-height: 4rem;
+    margin-top: 40px;
 }
 
 .map {
@@ -229,33 +262,46 @@ nav{
     flex-direction: row;
     align-content: center;
     width: 80%;
-    margin: 50px auto;
+    margin: 30px auto;
+    border: 1px solid black;
+    /* border-top: none; */
+    padding: 1.5rem;
+    border-radius: 30px / 30px;
     
+}
+
+.map h5 {
+    text-align: center;
 }
 
 .formconcept {
     display: flex;
     flex-direction: column;
     align-items: center;
-
 }
 
 .formconcept input, textarea {
     width: 300px;
     margin: 10px;
     padding: .5rem;
-    border: none;
+    border: 2px solid black;
     border-radius: 15px;
-    background-color: rgb(216, 215, 214);
+    background-color: transparent;
+}
+
+#name::placeholder,
+#mail::placeholder,
+#message::placeholder {
+    color: black;
 }
 
 .formconcept button {
     width: 150px;
     margin: 10px;
     padding: .5rem;
-    border: none;
+    border: 2px solid black;
     border-radius: 15px;
-    background-color: rgb(216, 215, 214);
+    background-color: transparent;
     
 }
 
