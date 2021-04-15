@@ -6,13 +6,19 @@
 
 
 <h1>Votre sélection</h1>
+
+{% set result = 0 %}
 {% for piece in panier %}
+
         <li>{{ piece.id }}</li>
         <li>{{ piece.title }}</li>
-        <li>prix : 100000€</li>
+        <li>{{ piece.price }}€</li>
         <li><a href="{{path('remove_basket',{'id': piece.id})}}">X</a></li>
-
+        {% set result = result + piece.price %}
     {% endfor %}
-<a href="{{path('add_renting')}}">Paye vite</a>
+  
+    
 
+<a href="{{path('add_renting')}}">Paye vite</a>
+<li>La somme est de {{ result }} €</li>
 {% endblock %}

@@ -56,6 +56,7 @@ class BasketController extends AbstractController
     #[Route('/basket/renting', name: 'add_renting')]
     public function rentingAdd(Request $request, EntityManagerInterface $entityManager): Response
     {
+        $result = 0;
         $session = $request->getSession();
         $panier = $session->get('basket');
         $pieces = $entityManager->getRepository(Piece::class)->findByIds($panier);
@@ -63,15 +64,17 @@ class BasketController extends AbstractController
         $renting->setStatuts('pending');
         $renting->setUser($this->getUser());
         $rentingDetail = new RentingDetail();
-        $rentingDetail->setPriceOption('1500€');
         foreach ($pieces as $piece) {
             $rentingDetail->addPiece($piece);
+            $result = $result + $piece->getPrice();
         }
+        $rentingDetail->setPriceOption($result . '€');
         $rentingDetail->setRenting($renting);
         $entityManager = $this->getDoctrine()->getManager();
         $entityManager->persist($renting);
         $entityManager->persist($rentingDetail);
         $entityManager->flush();
+        $session->set('basket',[]);
         return $this->redirectToRoute('user_account');
     }
     #[Route('/basket/remove/{id}', name: 'remove_basket')]
