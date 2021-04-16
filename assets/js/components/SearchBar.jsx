@@ -26,6 +26,7 @@ export default class Filter extends React.Component {
 
   componentDidMount() {
      this.fetchPieces();
+     
   }
   //
   // componentWillUnmount() {
@@ -73,9 +74,9 @@ export default class Filter extends React.Component {
 
             <div  key={piece.id}>
               
-              <div>
+              <div  >
               <a href={baseUrl + "/show/" + piece.id}>
-                <img  className="wrap" src={piece.findMyArtDisplayImage}/>
+                <img  src={piece.findMyArtDisplayImage}/>
               </a>
               </div>
 
@@ -86,7 +87,6 @@ export default class Filter extends React.Component {
       </div>
     )
   }
-
   /**
    * Cette fonction met à jour le state search avec la valeur reçue en paramètres
    * @param event
