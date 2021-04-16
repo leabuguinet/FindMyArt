@@ -919,17 +919,17 @@ ul.ks-cboxtags li input[type="checkbox"]:focus + label {
     color: var(--colorgreen);
 }
 
+
 /****** PAGE User Account  ******/
+
+.user-account h1{
+    display: flex;
+    justify-content: center;
+}
 
 .user-account h1 span{
     font-weight: bold;
     color: var(--colorgreen);
-}
-.user-account h1 span{
-    font-weight: bold;
-    color: var(--colorgreen);
-    display: flex; 
-    justify-content: center;
 }
 
 .user-account h2{
@@ -941,8 +941,13 @@ ul.ks-cboxtags li input[type="checkbox"]:focus + label {
     display: flex;
 }
 
+.user-account .rentings .renting-resume{
+    display: flex;
+    flex-direction: column;
+}
+
 .user-account .rentings img{
-    width: 30%;
+    width: 25%;
 }
 
 .user-account h3{
@@ -950,11 +955,18 @@ ul.ks-cboxtags li input[type="checkbox"]:focus + label {
     border-radius: 13px;
 }
 
+.user-account .red{
+    color: red;
+    font-style: italic;
+}
+
+
 /****** PAGE Basket  ******/
 
 .basket img{
     width: 10%;
 }
+
 
 /*** page 403 **/
 
