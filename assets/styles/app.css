@@ -66,8 +66,7 @@ body {
 .navbar ul li a{
     text-decoration: none;
     color: black;
-    padding: 1rem;
-    border-radius: 30px / 30px; 
+    padding: 1rem; 
     transition: .2s;
 }
 
