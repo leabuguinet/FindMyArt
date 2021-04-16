@@ -1016,11 +1016,11 @@ html {
 }
 
 .body404 {
-	min-height: 100%;
+	min-height: 100vh;
     display: flex;
 }
 
-h1 {
+.h1 {
 	font-family: 'Cabin Sketch', cursive;
 	font-size: 3em;
 	text-align: center;
@@ -1028,7 +1028,7 @@ h1 {
 	order: 1;
 }
 
-h1 small {
+.h1 small {
 	display: block;
 }
 
