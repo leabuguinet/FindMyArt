@@ -806,6 +806,13 @@ ul.ks-cboxtags li input[type="checkbox"]:focus + label {
     font-weight: 700;
 
 }
+
+.add-basket p{
+    font-style: italic;
+    color: lightslategray;
+
+}
+
 .wrap{
     margin: 0;
 }
