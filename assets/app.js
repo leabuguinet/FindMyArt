@@ -57,4 +57,4 @@ function showInfo2() {
 
 let button2 = document.getElementById('button2');
 button2.addEventListener('click', showInfo2);
-   
+ScrollReveal().reveal('.wrap');

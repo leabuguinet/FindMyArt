@@ -24,7 +24,7 @@
 
     <a href="{{ path('renting_index') }}">back to list</a>
 
-    <a href="{{ path('renting_edit', {'id': renting.id}) }}">edit</a>
+    <a href="{{ path('renting_edit', {'id': renting.id}) }}" class="btn btn-primary m-2" role="button"><i class="fas fa-pencil-alt"></a>
 
     {{ include('renting/_delete_form.html.twig') }}
 {% endblock %}

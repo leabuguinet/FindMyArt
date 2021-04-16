@@ -4,21 +4,41 @@
 
 {% block body %}
 
+<div class="basket">
 
-<h1>Votre sélection</h1>
+    <h1>Votre sélection :</h1>
 
-{% set result = 0 %}
-{% for piece in panier %}
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>Nom de l'oeuvre</th>
+                    <th>Apperçu</th>
+                    <th>Prix par mois</th>
+                    <th></th>
+                </tr>
+            </thead>
+            
+            <tbody>
+                {% set result = 0 %}
+                {% for piece in panier %}
+                    <tr>
+                        <td>{{ piece.title }}</td>
+                        <td><img src="{{ findmyart_display_image(piece, 'imageFile') }}" alt="{{ piece.title }}" /></td>
+                        <td>{{ piece.price }}€</td>
+                        <td><a href="{{path('remove_basket',{'id': piece.id})}}"><i class="far fa-trash-alt"></i></a></li>
+                        {% set result = result + piece.price %}</td>
+                    </tr>
+                {% endfor %}
+                    
+                    <tr>
+                        <td colspan="4">Total : {{ result }} €</td>
+                    </tr>
 
-        <li>{{ piece.id }}</li>
-        <li>{{ piece.title }}</li>
-        <li>{{ piece.price }}€</li>
-        <li><a href="{{path('remove_basket',{'id': piece.id})}}">X</a></li>
-        {% set result = result + piece.price %}
-    {% endfor %}
-  
-    
+            </tbody>
+        </table>
 
-<a href="{{path('add_renting')}}">Paye vite</a>
-<li>La somme est de {{ result }} €</li>
+        <a href="{{path('add_renting')}}">Confirmer la sélection</a>
+
+</div>
+
 {% endblock %}

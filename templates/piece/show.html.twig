@@ -54,7 +54,10 @@
         </tbody>
     </table>
 
-    <a href="{{ path('piece_edit', {'id': piece.id}) }}" class="btn btn-primary" role="button"><i class="fas fa-pencil-alt"></i></a>
+    <a href="{{ path('piece_edit', {'id': piece.id}) }}" class="btn btn-primary m-2" role="button"><i class="fas fa-pencil-alt"></i></a>
 
     {{ include('piece/_delete_form.html.twig') }}
+
+    <a href="{{ path('renting_index') }}">back to list</a>
+
 {% endblock %}

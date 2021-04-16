@@ -25,8 +25,8 @@
                 <td>{{ renting.user.firstname }}</td>
                 <td>{{ renting.statuts }}</td>
                 <td>
-                    <a href="{{ path('renting_show', {'id': renting.id}) }}">show</a>
-                    <a href="{{ path('renting_edit', {'id': renting.id}) }}">edit</a>
+                    <a href="{{ path('renting_show', {'id': renting.id}) }}"><i class="far fa-eye"></i></a>
+                    <a href="{{ path('renting_edit', {'id': renting.id}) }}"><i class="fas fa-pencil-alt"></i></a>
                 </td>
             </tr>
         {% else %}
@@ -37,5 +37,5 @@
         </tbody>
     </table>
 
-    <a href="{{ path('renting_new') }}">Create new</a>
+    <a href="{{ path('renting_new') }}" class="btn btn-success" role="button">Create new +</a>
 {% endblock %}

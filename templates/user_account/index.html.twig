@@ -8,28 +8,41 @@
         <div class="alert alert-success" role="alert">{{ message }}</div>
     {% endfor %}
 
-<div class = "user-account">
+<div class="user-account">
 
     <h1>Bonjour <span>{{ user.firstname }}</span>, bienvenu⸱e sur ton espace personnel ! </h1>
 
     <h2>Tes réservations</h2>
 
-        {% for renting in rentings %}
+        <div class="rentings">
+            {% for renting in rentings %}
+                <div class="renting-resume">
+                    {% if (renting.rentingDetails.first) %}
+                        {% set rentingDetail = (renting.rentingDetails.first) %}
+                        {% if (rentingDetail.piece.first) %}
+                            {% set piece = (rentingDetail.piece.first) %}
 
-            <li>{{ renting.id }}</li>          
-            <li>{{ renting.statuts }}</li> 
+                                <img src="{{ findmyart_display_image(piece, 'imageFile') }}" alt="{{ piece.title }}" />
 
-            {% if (renting.rentingDetails.first) %}
-                {% set rentingDetail = (renting.rentingDetails.first) %}
-                {% if (rentingDetail.piece.first) %}
-                    {% set piece = (rentingDetail.piece.first) %}
+                        {% endif %} 
+                    {% endif %}  
+                </div>
 
-                        <img src="{{ findmyart_display_image(piece, 'imageFile') }}" alt="{{ piece.title }}" />
+                <div>
+                    <li>Nº de commande : {{ renting.id }}</li>
 
-                {% endif %} 
-            {% endif %}  
-            
-        {% endfor %}
+                    {% if renting.statuts == "pending" %}
+                        En cours de préparation
+                    {% elseif renting.statuts == "shipped" %}
+                        En cours de livraison
+                    {% else %}
+                        Terminée
+                    {% endif %}
+
+                    <li><a href="#">Voir le détail</a></li>             
+                </div>
+            {% endfor %}
+        </div>
 
     <h3>Tes informations personnelles</h3>
 
