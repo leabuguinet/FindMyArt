@@ -810,5 +810,21 @@ ul.ks-cboxtags li input[type="checkbox"]:focus + label {
     color: var(--colorgreen);
 }
 
+/****** PAGE User Account  ******/
+
+.user-account h1 span{
+    font-weight: bold;
+    color: var(--colorgreen);
+}
+
+.user-account h2{
+    background-color: var(--coloryellow);
+    border-radius: 13px;
+}
+
+.user-account h3{
+    background-color: var(--colorblue);    
+    border-radius: 13px;
+}
 
 /*************************************MEDIA QUERIES********************/

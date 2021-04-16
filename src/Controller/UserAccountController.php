@@ -3,6 +3,9 @@
 namespace App\Controller;
 
 use App\Entity\User;
+use App\Entity\Renting;
+use App\Form\RentingType;
+use App\Repository\RentingRepository;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
@@ -14,7 +17,9 @@ class UserAccountController extends AbstractController
     {
         $user = $this->getUser();
         return $this->render('user_account/index.html.twig', [
-            'user' => $user,
+            'user' => $user,            
+            'rentings' => $user->getRentings(),
         ]);
     }
+
 }

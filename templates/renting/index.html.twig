@@ -10,6 +10,8 @@
             <tr>
                 <th>Id</th>
                 <th>Date</th>
+                <th>User Id</th>
+                <th>User Name</th>
                 <th>Statuts</th>
                 <th>actions</th>
             </tr>
@@ -18,7 +20,9 @@
         {% for renting in rentings %}
             <tr>
                 <td>{{ renting.id }}</td>
-                <td>{{ renting.date ? renting.date|date('Y-m-d H:i:s') : '' }}</td>
+                <td>{{ renting.date ? renting.date|date('Y-m-d H:i:s') : '' }}</td>                
+                <td>{{ renting.user.id }}</td>
+                <td>{{ renting.user.firstname }}</td>
                 <td>{{ renting.statuts }}</td>
                 <td>
                     <a href="{{ path('renting_show', {'id': renting.id}) }}">show</a>
