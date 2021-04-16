@@ -63,7 +63,6 @@ class DisplayPiecesController extends AbstractController
             'data' => $results,
             'parameters' => $jsonParameters,
             'A des paramètres ? ' => $hasParameters,
-            'message' => 'coucou',
         ]);
 
         

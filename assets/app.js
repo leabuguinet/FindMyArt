@@ -49,10 +49,7 @@ function showInfo2() {
         else {
                  div2.style.opacity = "0";
         }
-
-        
 };
-
 
 
 let button2 = document.getElementById('button2');

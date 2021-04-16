@@ -6,10 +6,9 @@
     box-sizing: border-box;
 
     --colorred: rgb(254, 82, 118); /* #fe5276 */
-    --colorviolet: rgb(176, 15, 226); /* #b00fe2 */
+    --colorviolet: rgb(113, 12, 143); /* #b00fe2 */
     --colorblue: rgb(42, 123, 204); /* #2a7bcc */
     --colorgreen: rgba(55, 179, 186); /* #37b3ba */
- /*    --coloryellow: rgba(234, 159, 24); /* #ea9f18 */
     --coloryellow: rgb(255, 181, 43); /* #ea9f18 */
 }
 
@@ -18,22 +17,7 @@ body {
     background-color:white;
     font-family: 'Ruda', sans-serif;
 }
-/**** masonry***/
 
-.my-masonry-grid {
-  display: -webkit-box; /* Not needed if autoprefixing */
-  display: -ms-flexbox; /* Not needed if autoprefixing */
-  display: flex;
-  margin-left: -30px; /* gutter size offset */
-  width: auto;
-}
-.my-masonry-grid_column {/* gutter size */
-  background-clip: padding-box;
-}
-
-/* Style your items */
-.my-masonry-grid_column > div { /* change div to reference your elements you put in <Masonry> */
-}
 
 /****** NAVBAR ******/
 
@@ -84,12 +68,26 @@ body {
     transition: .2s;
 }
 
-.navbar ul li a:hover{
-    box-shadow: 0px 0px 6px 1px;
-     
+/* .navbar ul li a:hover{
+    box-shadow: 0px 0px 6px 1px var(--coloryellow);
+} */
+
+.left a:hover{
+    box-shadow: 0px 0px 6px 1px var(--coloryellow);
+    color: var(--coloryellow);
 }
-.navbar ul li a:active {
-    color: gray;
+
+.linksright a:hover{
+    box-shadow: 0px 0px 6px 1px var(--colorgreen);
+    color: var(--colorgreen)
+}
+
+.conceptlink:active{
+    color: var(--colorgreen);
+}
+
+.collectionlink:active{
+    color: var(--colorgreen);
 }
 
 .links ul{
@@ -119,8 +117,16 @@ body {
     font-size: 2em;
     color: black;
 }
-.icon a:hover{
-    color: rgb(37, 83, 114);
+
+.user-icon:hover{
+    color: var(--colorblue);
+}
+.link-logout:hover{
+    color: var(--colorred);
+}
+
+.basket-icon:hover{
+    color: var(--colorviolet)
 }
 
 /****** FOOTER  ******/
@@ -261,6 +267,12 @@ body {
   .search {
     margin: 20px;
     display: flex;
+    position: relative;
+  }
+
+  .search div{
+      top: -4px;
+      left: -2px;
   }
   
   .search > h3 {
@@ -393,7 +405,7 @@ ul.ks-cboxtags li input[type="checkbox"]:focus + label {
     flex-wrap: wrap;
     object-fit: fill;
     align-items: center;
-    padding: 50px;
+    padding: 2rem 0;
     justify-content: center;
 }
 
@@ -403,6 +415,19 @@ ul.ks-cboxtags li input[type="checkbox"]:focus + label {
  
 }
 
+/**** masonry ***/
+
+.my-masonry-grid {
+    display: -webkit-box; /* Not needed if autoprefixing */
+    display: -ms-flexbox; /* Not needed if autoprefixing */
+    display: flex;
+    margin-left: -30px; /* gutter size offset */
+    width: auto;
+  }
+  .my-masonry-grid_column {/* gutter size */
+    background-clip: padding-box;
+  }
+  
 
 /***** PAGE CONCEPT *****/
 
@@ -414,7 +439,7 @@ ul.ks-cboxtags li input[type="checkbox"]:focus + label {
     text-transform: uppercase;
 }
 
-.fma::after, .function::before, #after::after{
+.fma::after, .function::before, #after::after, .communication::before{
     content: '';
     display: block;
     background-color: gray;
@@ -452,8 +477,9 @@ ul.ks-cboxtags li input[type="checkbox"]:focus + label {
 } 
 
 .descriptionFMA p {
-    font-size: 19px;
-    font-weight: 600;
+    font-size: 1.3rem;
+    font-weight: 300;
+  
 }
 
   @keyframes bounce-in-top {
@@ -510,10 +536,6 @@ ul.ks-cboxtags li input[type="checkbox"]:focus + label {
   }
   
 
-
-
-
-
 .function {
     display: flex;
     flex-direction: column;
@@ -527,7 +549,6 @@ ul.ks-cboxtags li input[type="checkbox"]:focus + label {
     justify-content: space-around;
 
 }
-
 
 .card {
     overflow: hidden;
@@ -591,53 +612,73 @@ ul.ks-cboxtags li input[type="checkbox"]:focus + label {
     font-size: 2rem;
 }
 
+.blacksection{
+    /* animation: color-change-5x 15s linear infinite alternate both; */
+    margin-top: 3rem;
+    padding: 1rem 0;
+    background-color: black;
+    color: white;
+}
+
+.blacksection::before, .blacksection::after{
+    content: '';
+    display: block;
+    background-color: white;
+    text-align: center;   
+    width: 1px;
+    height: 70px;
+    margin: 35px auto;
+    transform: rotate(0deg);
+}
+
 .choice {
     display: flex;   
-    justify-content: space-around;
-    margin: 30px auto 0px;
-    font-size: 25px;
-    width: 80%;
+    justify-content: space-between;
+    flex-direction: row;
+    /* margin: 30px auto 0px;
+    font-size: 25px; */
+   
 }
 
-.choiceinfos {
-    display: flex;
-    justify-content: space-around;
-    margin: 0 auto;
-    width: 80%;
 
+.choice-card{
+    display:flex; 
+    flex-direction: column;
+    align-items: center;
+    width: 45%;
 }
+
 
 #info1,
 #info2 {
-    border: 1px solid black;
-    border-radius: 30px / 30px;
-    margin-top: 10px;
+    margin-top: 2rem;
     display: block;
     opacity: 0;
     transition: .3s ease;
-    text-align: left;
-    width: 40%;
-    
-}
-
-#info1 p, 
-#info2 p {
-    margin: 20px;
-}
-
-
-.choice button {
-    padding: 1.3rem;
     text-align: center;
+    width: 70%;
+    font-size: 1.2rem;
+}
+
+#info2 a{
+    color: var(--colorred);
+    text-decoration: none;
+}
+
+.choice-card button {
+    padding: 2rem;
+    text-align: center;
+    font-size: 1.5rem;
     border: none;
     color: black;
     border-radius: 30px / 30px;
     transition: 0.6s;
+    width: 100%;
+    height: 80px;
 }
 
 .choice button:hover {
-    border-radius: 0px;
-    
+    border-radius: 0px; 
 }
 
 .choice button:active {
@@ -645,12 +686,34 @@ ul.ks-cboxtags li input[type="checkbox"]:focus + label {
     transition: .3s;
 }
 
-.choice button:first-child {
+#button2{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    align-content: center;
+    justify-content: flex-start;
+}
+
+#button2 p{
+    margin-top: -17px;
+}
+
+#button1:hover {
     background-color: var(--colorred);
 }
 
-.choice button:last-child {
+#button2:hover {
     background-color: var(--coloryellow);
+}
+
+.subscribe{
+    text-decoration: none;
+    color: var(--colorgreen);
+
+}
+
+.communication{
+    margin-bottom: 5rem;
 }
 
 .contact {
@@ -856,6 +919,12 @@ ul.ks-cboxtags li input[type="checkbox"]:focus + label {
   
 
 /****** PAGE Login Register  ******/
+
+.alreadyconnected{
+    text-align: center;
+    font-size: 1.3rem;
+}
+
 
 .login-page{
     display: flex;

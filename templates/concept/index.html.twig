@@ -72,58 +72,66 @@
         <h4 class="center">Vous êtes :</h4>
 
             <div class="choice">  
+                <div class="choice-card">
+                    <div class="button">
+                        <button id="button1">Un particulier</button>
+                    </div>
+                    <div id="info1">
+                        <p> L'art pour tous ! Pour 10€ par mois, accrochez une oeuvre unique chez vous et soutenez un artiste.
+                        <p>En trois clics, admirez une oeuvre chez vous : </p>
 
-                <button id="button1">Un particulier</button>
-            
-                <button id="button2">Une entreprise <br> Une collectivité</button>
-            </div>
+                        <p>· Inscrivez-vous </p>
+                        <p>· Ajoutez l'oeuvre de votre choix à votre palette </p>
+                        <p>· Commandez !</p>
 
-            <div class="choiceinfos">
-            
-                <div id="info1">
-                    <p>En trois clic, admirez une oeuvre chez vous : </p>
-                    <p>· Inscrivez-vous </p>
-                    <p>· Ajouter l'oeuvre de votre choix à votre palette </p>
-                    <p>· Commander !</p>
+                        <a href="{{ path('app_login') }}" class="subscribe">Par ici l'inscription !</a>
+                    </div>
                 </div>
 
-                <div id="info2">
-                    <p>Vous souhaitez accrochez des oeuvres dans vos locaux ? Organiser un vernissage avec vos collaborateurs ? Contactez nous pour créer ensemble un projet sur-mesure qui répondra à vos besoins </p>
-                    <p>contactpro@findmymart</p>
+                <div class="choice-card">
+                    <div class="button">
+                        <button id="button2"> <p>Une entreprise</p> <p> Une collectivité </p></button>
+                    </div>
+                    <div id="info2">
+                        <p>Vous souhaitez accrochez des oeuvres dans vos locaux ? Organiser un vernissage avec vos collaborateurs ?</p>
+                        <p>Contactez nous pour créer ensemble un projet sur-mesure qui répondra à vos besoins. </p>
+                        <a href="mailto:contactpro@findmyart.com">contactpro@findmymart.com</a>
+                    </div>
                 </div>
+
             </div>
     </div>
 
+    <section class="communication">
 
-    <h2 class="contact">Artiste, école ou galerie d'art, vous souhaitez partager vos oeuvres ?</h2>
+        <h2 class="contact">Artiste, école ou galerie d'art, vous souhaitez partager vos oeuvres ?</h2>
 
-    <h2 class="contact" id="after">Contactez nous !</h2>
-
-    
-    <div class="map">
-
-                    
-            <div>
-                <iframe scrolling="no" marginheight="0" marginwidth="0" id="gmap_canvas" src="https://maps.google.com/maps?width=408&amp;height=320&amp;hl=en&amp;q=6%20bis%20Rue%20Chaudron,%20Paris+()&amp;t=&amp;z=12&amp;ie=UTF8&amp;iwloc=B&amp;output=embed" width="408" height="320" frameborder="0"></iframe> <a href='http://mapswebsite.net/fr'>http://mapswebsite.net/fr</a> 
-                <script type='text/javascript' src='https://embedmaps.com/google-maps-authorization/script.js?id=8058fc59a07ad6425bef576a972f9a2fc577fc9d'></script>
-            
-                <h5 id="bold">Find My Art</h5>
-                <h5>6 bis Rue Chaudron</h5>
-                <h5>75010 Paris</h5>
-            </div>    
-
-            
-            <form class="formconcept" action="#" method="POST">
-
-                <input type="text" name="user_name" id="name" placeholder="Nom">
-                <input type="email" name="user_mail" id="mail" placeholder="Email">
-                <textarea name="user_message" id="message" rows="7" placeholder="Votre message"></textarea>
-                <button>Envoyer</button>
-
-            </form>
+        <h2 class="contact" id="after">Contactez nous !</h2>
         
-    </div>
-    
+        <div class="map" id="map">
+
+                        
+                <div>
+                    <iframe scrolling="no" marginheight="0" marginwidth="0" id="gmap_canvas" src="https://maps.google.com/maps?width=408&amp;height=320&amp;hl=en&amp;q=6%20bis%20Rue%20Chaudron,%20Paris+()&amp;t=&amp;z=12&amp;ie=UTF8&amp;iwloc=B&amp;output=embed" width="408" height="320" frameborder="0"></iframe> <a href='http://mapswebsite.net/fr'>http://mapswebsite.net/fr</a> 
+                    <script type='text/javascript' src='https://embedmaps.com/google-maps-authorization/script.js?id=8058fc59a07ad6425bef576a972f9a2fc577fc9d'></script>
+                
+                    <h5 id="bold">Find My Art</h5>
+                    <h5>6 bis Rue Chaudron</h5>
+                    <h5>75010 Paris</h5>
+                </div>    
+
+                
+                <form class="formconcept" action="#" method="POST">
+
+                    <input type="text" name="user_name" id="name" placeholder="Nom">
+                    <input type="email" name="user_mail" id="mail" placeholder="Email">
+                    <textarea name="user_message" id="message" rows="7" placeholder="Votre message"></textarea>
+                    <button>Envoyer</button>
+
+                </form>
+            
+        </div>
+    </section>
 </div>
 
 {% endblock %}

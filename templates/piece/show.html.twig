@@ -3,7 +3,7 @@
 {% block title %}Piece{% endblock %}
 
 {% block body %}
-    <h1>Piece</h1>
+    <h1 class="mt-5">Détails</h1>
 
     <table class="table">
         <tbody>
@@ -58,6 +58,6 @@
 
     {{ include('piece/_delete_form.html.twig') }}
 
-    <a href="{{ path('piece_index') }}">back to list</a>
+    <a href="{{ path('piece_index') }}" class="mb-5">Retour à la liste</a>
 
 {% endblock %}

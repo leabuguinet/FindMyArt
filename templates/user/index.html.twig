@@ -4,24 +4,24 @@
 
 {% block body %}
 <div class="container">
-    <h1>User index</h1>
+    <h1 class="mt-5">Listes des utilisateurs inscrits</h1>
 
-    <table class="table">
+    <table class="table mt-5">
         <thead>
             <tr>
                 <th>Id</th>
-                <th>Lastname</th>
-                <th>Firstname</th>
+                <th>Prénom</th>
+                <th>Nom</th>
                 <th>Email</th>                
-                <th>Address</th>
-                <th>Postcode</th>
-                <th>City</th>
-                <th>Phone</th>
-                <th>doc_validated</th>
-                <th>IsVerified</th>
+                <th>Adresse</th>
+                <th>Code Postal</th>
+                <th>Ville</th>
+                <th>Téléphone</th>
+                <th>Documents validés ?</th>
+                <th>Mail vérifié ?</th>
                 {# <th>Password</th>
                 <th>Roles</th> #}
-                <th>Action</th>
+                <th>Actions</th>
             </tr>
         </thead>
         <tbody>
@@ -53,6 +53,6 @@
         </tbody>
     </table>
 
-    <a href="{{ path('user_new') }}" class="btn btn-success" role="button">Create new +</a>
+    <a href="{{ path('user_new') }}" class="btn btn-success mt-5 mb-5" role="button">Ajouter un utilisateur +</a>
 </div>
 {% endblock %}

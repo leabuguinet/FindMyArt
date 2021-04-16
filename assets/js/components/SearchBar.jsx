@@ -4,10 +4,10 @@ import Masonry from 'react-masonry-css'
 import Zoom from 'react-reveal/Zoom'; // Importing Zoom effect
 
 const breakpointColumnsObj = {
-  default: 4,
-  1100: 3,
-  700: 2,
-  500: 1
+  default: 3,
+  1100: 2,
+  1000: 2,
+  600: 1
 };
 
 
