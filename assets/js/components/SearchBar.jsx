@@ -71,11 +71,11 @@ export default class Filter extends React.Component {
         {this.state.pieces.map(function (piece) {
           return (
 
-            <div key={piece.id}>
+            <div  key={piece.id}>
               
               <div>
               <a href={baseUrl + "/show/" + piece.id}>
-                <img src={piece.findMyArtDisplayImage}/>
+                <img  className="wrap" src={piece.findMyArtDisplayImage}/>
               </a>
               </div>
 

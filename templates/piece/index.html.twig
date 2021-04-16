@@ -38,7 +38,7 @@
                 {# <td>{{ piece.updatedAt ? piece.updatedAt|date('Y-m-d H:i:s') : '' }}</td> #}
                 <td>{{ piece.size }}</td>
                 <td>
-                    <a href="{{ path('piece_show', {'id': piece.id}) }}" class="btn btn-primary" role="button"><i class="far fa-eye"></i> </a>
+                    <a href="{{ path('piece_show', {'id': piece.id}) }}" class="btn btn-primary" role="button"><i class="far fa-eye"></i></a>
                     <a href="{{ path('piece_edit', {'id': piece.id}) }}" class="btn btn-primary" role="button"><i class="fas fa-pencil-alt"></i></a>
                 </td>
             </tr>
