@@ -558,7 +558,7 @@ ul.ks-cboxtags li input[type="checkbox"]:focus + label {
 
 .choice button:active {
     transform: scale(0.9);
-    transition: .2s;
+    transition: .3s;
 }
 
 .choice button:first-child {
