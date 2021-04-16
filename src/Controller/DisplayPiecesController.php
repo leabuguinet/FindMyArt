@@ -39,7 +39,7 @@ class DisplayPiecesController extends AbstractController
             $search = $jsonParameters['search'];
             $results = array_filter($pieces, function($piece) use ($search) {
                 // Si miel contient la chaîne de caractères
-                if (str_contains(strtolower($piece-> getTitle()), strtolower($search)) || str_contains(strtolower($piece->getArtist()), strtolower($search))) {
+                if (str_contains(strtolower($piece-> getTitle()), strtolower($search)) || str_contains(strtolower($piece->getArtist()), strtolower($search))||str_contains(strtolower($piece->getStyle()), strtolower($search))) {
                     // On le garde
                     return true;
                 }
@@ -57,7 +57,7 @@ class DisplayPiecesController extends AbstractController
             $pieceFormated['findMyArtDisplayImage'] = $appExtension->displayImage($piece, 'imageFile');
             $data[] = $pieceFormated;
         }
-
+        shuffle($data);
         return new JsonResponse([
             'piece' => $data,
             'data' => $results,

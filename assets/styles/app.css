@@ -18,10 +18,24 @@ body {
     background-color:white;
     font-family: 'Ruda', sans-serif;
 }
+/**** masonry***/
 
+.my-masonry-grid {
+  display: -webkit-box; /* Not needed if autoprefixing */
+  display: -ms-flexbox; /* Not needed if autoprefixing */
+  display: flex;
+  margin-left: -30px; /* gutter size offset */
+  width: auto;
+}
+.my-masonry-grid_column {/* gutter size */
+  background-clip: padding-box;
+}
+
+/* Style your items */
+.my-masonry-grid_column > div { /* change div to reference your elements you put in <Masonry> */
+}
 
 /****** NAVBAR ******/
-
 
 .navbar{
     /* background-color: rgb(240, 240, 240); */
@@ -1031,9 +1045,6 @@ ul.ks-cboxtags li input[type="checkbox"]:focus + label {
 
 @import url('https://fonts.googleapis.com/css?family=Cabin+Sketch');
 
-html {
-	height: 100%;
-}
 
 .body404 {
 	min-height: 100vh;
@@ -1100,25 +1111,6 @@ html {
 	animation: blue 3s linear infinite, opacityBlue 5s linear alternate infinite;
 }
 
-
-@media only screen and (min-width: 780px) {
-  .site {
-		flex-direction: row;
-		padding: 1em 3em 1em 0em;
-	}
-	
-	.h1 {
-		text-align: right;
-		order: 2;
-		padding-bottom: 2em;
-		padding-left: 2em;
-
-	}
-	
-	.sketch {
-		order: 1;
-	}
-}
 
 
 @keyframes blue {

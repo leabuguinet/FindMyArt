@@ -12,7 +12,7 @@ import React from "react";
 import ReactDOM from 'react-dom';
 import App from "./js/app";
 
-
+      
 const RouteElement = document.getElementById('root');
 
 if(RouteElement){
