@@ -31,6 +31,7 @@ body {
     display: flex;
     justify-content: space-between;
     text-align: center;
+    padding: 0;
 }
 
 .navbar .logo{
@@ -61,13 +62,20 @@ body {
     list-style-type: none;
     font-size: 2em;
 }
+
 .navbar ul li a{
     text-decoration: none;
     color: black;
-    padding: 2rem;
+    padding: 1rem; 
+    transition: .2s;
 }
+
 .navbar ul li a:hover{
-    color: rgb(37, 83, 114);
+    box-shadow: 0px 0px 6px 1px;
+     
+}
+.navbar ul li a:active {
+    color: gray;
 }
 
 .links ul{
