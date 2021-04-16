@@ -4,15 +4,17 @@
 
 {% block body %}
 
-<div class="basket">
+<div class="basket container">
 
     <h1>Votre sélection :</h1>
 
         <table class="table">
             <thead>
                 <tr>
-                    <th>Nom de l'oeuvre</th>
+                    <th>Nom de l'oeuvre</th>                    
                     <th>Apperçu</th>
+                    <th>Nom de l'artiste</th>
+                    <th>Style</th>
                     <th>Prix par mois</th>
                     <th></th>
                 </tr>
@@ -22,8 +24,10 @@
                 {% set result = 0 %}
                 {% for piece in panier %}
                     <tr>
-                        <td>{{ piece.title }}</td>
+                        <td>{{ piece.title }}</td>                        
                         <td><img src="{{ findmyart_display_image(piece, 'imageFile') }}" alt="{{ piece.title }}" /></td>
+                        <td>{{ piece.artist }}</td>
+                        <td>{{ piece.style }}</td>
                         <td>{{ piece.price }}€</td>
                         <td><a href="{{path('remove_basket',{'id': piece.id})}}"><i class="far fa-trash-alt"></i></a></li>
                         {% set result = result + piece.price %}</td>
@@ -31,16 +35,19 @@
                 {% endfor %}
                     
                     <tr>
-                        <td colspan="4">Total : {{ result }} €</td>
+                        <td colspan="6"><strong>Total : {{ result }} €</strong></td>
                     </tr>
 
             </tbody>
         </table>
-        {% if is_granted('IS_AUTHENTICATED_FULLY') %}
-        <a href="{{path('add_renting')}}">Confirmer la sélection</a>
-        {%else%}
-        <a href="{{path('app_login')}}">veuillez vous connecter</a>
-        {% endif %}
+        
+        <div class="boutons">
+            {% if is_granted('IS_AUTHENTICATED_FULLY') %}
+                <a href="{{path('add_renting')}}">Confirmer la sélection</a>
+            {% else %}
+                <a href="{{path('app_login')}}">Veuillez vous connecter</a>
+            {% endif %}
+        </div>
 </div>
 
 {% endblock %}

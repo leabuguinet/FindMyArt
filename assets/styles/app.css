@@ -1015,8 +1015,25 @@ tbody, td, tfoot, th, thead, tr {
 
 /****** PAGE Basket  ******/
 
+.basket {
+    height: 100vh;    
+    padding-top: 3rem;
+}
+
 .basket img{
-    width: 10%;
+    width: 30%;
+}
+
+.basket .boutons a{
+    text-decoration: none;
+    background-color: var(--colorblue);
+    border-radius: 10px;
+    color: white;
+    padding: 0.5rem;
+}
+
+.basket td, tr{
+    width: 20%;
 }
 
 
