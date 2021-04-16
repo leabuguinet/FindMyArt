@@ -333,7 +333,7 @@ body {
     text-transform: uppercase;
 }
 
-.fma::after, .function::before {
+.fma::after, .function::before, #after::after{
     content: '';
     display: block;
     background-color: gray;
@@ -358,9 +358,10 @@ body {
     padding: 2rem;
     background-color: transparent;
     border: none;
-    border-radius: 25px / 30px;
+    border-radius: 40px / 40px;
     margin-left: 15px;
-    box-shadow: 0px 2px 30px 2px;
+    /* box-shadow: 0px 2px 10px 2px; */
+    background-color: var(--colorred);
 }
 
 
@@ -388,32 +389,34 @@ body {
 
 .card {
     overflow: hidden;
-    margin: 25px;
-    height: 170px;
-    width: 220px;
+    margin: 30px;
+    height: 200px;
+    width: 300px;
+    border-radius: 30px / 30px;
     text-align: center;
 }
 
-.card:nth-child(1) {background-color: var(--colorgreen);}
+.card:nth-child(1) {background-color: var(--colorblue);}
 .card:nth-child(2) {background-color: var(--coloryellow);}
-.card:nth-child(3) {background-color: var(--colorred);}
+.card:nth-child(3) {background-color: var(--colorgreen);}
 
 
 .card p:first-child {
-    margin: 40px auto 0px;
+    margin: 40px auto 10px;
     text-transform: uppercase;   
     font-weight: bold;
-    font-size: 19px;
+    font-size: 25px;
 }
 
 .card p:last-child {
     margin: 6px 15px;
     font-size: 19px;
+    
 }
 
 .anim svg {
     width: 50%;
-    margin: 6px auto 30px;
+    margin: 6px auto 35px;
 }
 
 .anim {
@@ -426,7 +429,7 @@ body {
 }
 
 .anim:hover {
-    transform: translateY(-150px);
+    transform: translateY(-158px);
     
 }
 
@@ -449,45 +452,70 @@ body {
 .choice {
     display: flex;   
     justify-content: space-around;
-    margin: 30px auto;
+    margin: 30px auto 0px;
     font-size: 25px;
-    text-transform: uppercase;
-    width: 50%;
+    width: 80%;
 }
 
-.choice a {
-    padding: .9rem;
+.choiceinfos {
+    display: flex;
+    justify-content: space-around;
+    margin: 0 auto;
+    width: 80%;
+
+}
+
+#info1,
+#info2 {
+    border: 1px solid black;
+    border-radius: 30px / 30px;
+    margin-top: 10px;
+    display: block;
+    opacity: 0;
+    transition: .3s ease;
+    text-align: left;
+    width: 18%;
+    
+}
+
+#info1 p, 
+#info2 p {
+    margin: 20px;
+}
+
+
+.choice button {
+    padding: 1.3rem;
     text-align: center;
-    text-decoration: none;
+    border: none;
     color: black;
-    border-radius: none;
-    transition: 0.4s;
+    border-radius: 30px / 30px;
+    transition: 0.6s;
 }
 
-.choice a:hover {
-    border-radius: 30px / 30px; 
-    transition: .4s;
+.choice button:hover {
+    border-radius: 0px;
+    
 }
 
-.choice a:active {
+.choice button:active {
     transform: scale(0.9);
     transition: .2s;
 }
 
-.choice a:first-child {
+.choice button:first-child {
     background-color: var(--colorred);
-    align-self: center;
 }
 
-.choice a:nth-child(2) {
+.choice button:last-child {
     background-color: var(--coloryellow);
 }
 
 .contact {
     text-align: center;
-    line-height: 4rem;
-    margin-top: 40px;
+    padding: 1rem;
 }
+
 
 .map {
     display: flex;
@@ -495,16 +523,21 @@ body {
     flex-direction: row;
     align-content: center;
     width: 80%;
-    margin: 30px auto;
+    margin: 20px auto;
     border: 1px solid black;
     background: linear-gradient(to top, #e2e1e1, transparent);
-    padding: 1.5rem;
+    padding: 3rem;
     border-radius: 30px / 30px;
     
 }
 
 .map h5 {
     text-align: center;
+    
+}
+
+#bold {
+    font-weight: bold;
     text-transform: uppercase;
 }
 
