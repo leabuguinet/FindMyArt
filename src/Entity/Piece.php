@@ -109,6 +109,11 @@ abstract class Piece
      */
     private $creationDate;
 
+    /**
+     * @ORM\Column(type="integer", nullable=true)
+     */
+    private $Price;
+
 
 
     public function __construct()
@@ -294,5 +299,17 @@ abstract class Piece
 
 
         ];
+    }
+
+    public function getPrice(): ?int
+    {
+        return $this->Price;
+    }
+
+    public function setPrice(?int $Price): self
+    {
+        $this->Price = $Price;
+
+        return $this;
     }
 }

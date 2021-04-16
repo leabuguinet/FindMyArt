@@ -194,9 +194,6 @@ body {
 }
 
 
-
-
-
 /****** PAGE HOME  ******/
 
 /* SearchBar */
@@ -207,16 +204,16 @@ body {
     width: 100%;
     height: 100%;
     display: flex;
-    justify-content: center;
-    align-items: center;
+    justify-content: space-around;
     padding: 2rem 0;
     animation: color-change-5x 15s linear infinite alternate both;
+    align-items: center;
   }
 
   .searchbox{
       background: white;
       border-radius: 10px;
-      width: 70%;
+      
       
   }
   
@@ -238,12 +235,6 @@ body {
     }
   }
   
-
-
-
-
-
-
   .search {
     margin: 20px;
     display: flex;
@@ -270,8 +261,8 @@ body {
     width: 4px;
     height: 20px;
     position: absolute;
-    top: 19px;
-    right: -6px;
+    top: 22px;
+    right: -4px;
     transform: rotate(135deg);
   }
   
@@ -281,8 +272,8 @@ body {
     background: transparent;
     width: 25px;
     height: 25px;
-    padding: 10px;
-    border: solid 3px black;
+    padding: 14px;
+    border: solid 2px black;
     outline: none;
     border-radius: 35px;
     transition: width 0.5s;
@@ -303,6 +294,73 @@ body {
     width: 250px;
   }
 
+ul.ks-cboxtags {
+    list-style: none;
+}
+
+ul.ks-cboxtags li{
+  display: inline;
+  margin: 0 10px;
+}
+ul.ks-cboxtags li label{
+    display: inline-block;
+    background-color: white;
+    border: 2px solid white;
+    color: black;
+    border-radius: 25px;
+    white-space: nowrap;
+    margin: 3px 0px;
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    -webkit-tap-highlight-color: transparent;
+    transition: all .2s;
+}
+
+ul.ks-cboxtags li label {
+    padding: 8px 12px;
+    cursor: pointer;
+}
+
+ul.ks-cboxtags li label::before {
+    display: inline-block;
+    font-style: normal;
+    font-variant: normal;
+    text-rendering: auto;
+    -webkit-font-smoothing: antialiased;
+    font-family: "Font Awesome 5 Free";
+    font-weight: 900;
+    font-size: 12px;
+    padding: 2px 6px 2px 2px;
+    content: "\f067";
+    transition: transform .3s ease-in-out;
+}
+
+ul.ks-cboxtags li input[type="checkbox"]:checked + label::before {
+    content: "\f00c";
+    transform: rotate(-360deg);
+    transition: transform .3s ease-in-out;
+}
+
+ul.ks-cboxtags li input[type="checkbox"]:checked + label {
+    border: 2px solid black;
+    background-color: black;
+    color: #fff;
+    transition: all .2s;
+}
+
+ul.ks-cboxtags li input[type="checkbox"] {
+  display: absolute;
+}
+ul.ks-cboxtags li input[type="checkbox"] {
+  position: absolute;
+  opacity: 0;
+}
+ul.ks-cboxtags li input[type="checkbox"]:focus + label {
+  border: 2px solid var(--coloryellow) ;
+}
 
 /* Display collection */
 
@@ -586,13 +644,12 @@ body {
     flex-wrap: wrap;
     justify-content: center;
     align-items: flex-start;
-    padding: 6rem 4rem;
-    
+    padding: 6rem 4rem 4rem 4rem;
 }
 
 .showpiece img{
    width: 60%;
-   min-width: 200px;
+   min-width: 400px;
    object-fit: contain;
 }
 
@@ -615,33 +672,176 @@ body {
     font-weight: 700;
     line-height: 9px;
 }
+
+.availability-piece{
+    display: flex;
+    width: 55%;
+    justify-content: space-between;
+    padding: 1rem 0;
+    
+}
+
+.availability-piece .red-circle{
+    color: red;
+    font-size: 1.2rem;
+    margin-right: 10px;
+}   
+
+.availability-piece .green-circle{
+    color: rgb(69, 167, 69);
+    font-size: 1.2rem;
+    margin-right: 10px;
+}   
+
+.availability-piece p{
+    font-family: 'Ruda', sans-serif;
+    font-weight: 700;
+    font-size: 1rem;
+}
+
+.fa-plus-circle{
+    font-size: 2.7rem;
+    color: var(--colorgreen);
+    animation: rotate-in-center 0.6s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+}
+
+.fa-plus-circle:hover{
+    animation: heartbeat 1.5s ease-in-out both;
+}
+
+.add-basket{
+    display: flex;
+    align-items: center;
+}
+
+.add-basket span{
+    margin-left: 10px;
+    font-weight: 700;
+
+}
+
+
+  @keyframes heartbeat {
+    from {
+              transform: scale(1);
+              transform-origin: center center;
+              animation-timing-function: ease-out;
+    }
+    10% {
+              transform: scale(0.91);
+              animation-timing-function: ease-in;
+    }
+    17% {
+              transform: scale(0.98);
+              animation-timing-function: ease-out;
+    }
+    33% {
+              transform: scale(0.87);
+              animation-timing-function: ease-in;
+    }
+    45% {
+              transform: scale(1);
+              animation-timing-function: ease-out;
+    }
+  }
+
+  @keyframes rotate-in-center {
+    0% {
+        transform: rotate(-360deg);
+        opacity: 0;
+    }
+    100% {
+        transform: rotate(0);
+        opacity: 1;
+    }
+  }
+
+  
+
 /****** PAGE Login Register  ******/
-.formLogin{
-    margin-right: 20rem;
-    margin-top: 2rem;
+
+.login-page{
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    align-items: flex-start;
+    align-content: center;
+    
 }
-.formLogin form{
-    background-color: rgb(240, 240, 240);
-    padding: 5rem;
+
+.login-page h2{
+    font-size: 1.5rem;
+    text-align: center;
+}
+
+.login-page h3{
+    font-size: 1.5rem;
+    text-align: center;
+}
+
+.login-page form{
+    margin-top: 3rem;
     border-radius: 13px;
+    padding: 3rem;
+
 }
-.formLogin form button{
-  margin-top: 1rem;
-}
-.formRegister{
-    background-color: rgb(240, 240, 240);
-    padding: 2rem;
-    margin-top: 2rem;
-    border-radius: 13px;
-}
-.formRegister input{
-    display: block;
+
+.login-page input{
     border-radius: 13px;
     border: none;
+    padding: 5px;
+    width: 80%;
 }
-.formRegister input:hover{
-    border: solid 4px rgba(9, 93, 250, 0.349);
+
+.formlogin{
+    width: 35%;
+    background-color: var(--colorgreen);
+    margin-right: 4rem;
 }
-.form{
-    margin-bottom: 2rem;
+
+.formlogin button{
+    margin-top: 1rem;
 }
+
+.formregister{
+    width: 50%;
+    background-color: rgba(234, 159, 24, 0.6);
+    margin-bottom: 3rem;
+    margin-left: 4rem;
+}
+
+.formregister, .formlogin{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.formregister div, .formlogin div{
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    margin-top: 1rem;
+    width: 80%;
+    align-content: center;
+}
+
+
+.formregister div:nth-of-type(9){
+    align-self: flex-start;
+} 
+
+.register-button{
+    border-radius: 30px;
+    padding: 0.8rem 1rem;
+    border: none;
+    margin-top: 2rem !important;
+    box-shadow: 1px 1px 5px grey;
+}
+
+.register-button:hover{
+    box-shadow: inset 1px 1px 5px grey;
+    color: var(--colorgreen);
+}
+
+
+/*************************************MEDIA QUERIES********************/

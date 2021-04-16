@@ -1,6 +1,6 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Log in!{% endblock %}
+{% block title %}Connexion{% endblock %}
 
 {% block body %}
 
@@ -9,60 +9,66 @@
     {% endfor %}
 
 
-<div class="form d-flex justify-content-center">
-    <div class="formLogin">
-<form method="post">
-    {% if error %}
-        <div class="alert alert-danger">{{ error.messageKey|trans(error.messageData, 'security') }}</div>
-    {% endif %}
+    <div class="login-page">
+        
+            <form method="post" class="formlogin">
+                {% if error %}
+                    <div class="alert alert-danger">{{ error.messageKey|trans(error.messageData, 'security') }}</div>
+                {% endif %}
 
-    {% if app.user %}
-        <div class="mb-3">
-            You are logged in as {{ app.user.username }}, <a href="{{ path('app_logout') }}">Logout</a>
-        </div>
-    {% endif %}
+                {% if app.user %}
+                    <div class="mb-3">
+                        Vous êtes connecté en tant que {{ app.user.username }}, <a href="{{ path('app_logout') }}">Déconnexion</a>
+                    </div>
+                {% endif %}
 
-    <h1 class="h3 mb-3 font-weight-normal">Please sign in</h1>
-    <label for="inputEmail">Email</label>
-    <input type="email" value="{{ last_username }}" name="email" id="inputEmail" class="form-control" required autofocus>
-    <label for="inputPassword">Password</label>
-    <input type="password" name="password" id="inputPassword" class="form-control" required>
+                <h2>Connexion à votre espace personnel</h2>
 
-    <input type="hidden" name="_csrf_token"
-           value="{{ csrf_token('authenticate') }}"
-    >
+                <div>
+                    <label for="inputEmail">Email</label>
+                    <input type="email" value="{{ last_username }}" name="email" id="inputEmail" class="" required autofocus>
+                </div>
 
-    {#
-        Uncomment this section and add a remember_me option below your firewall to activate remember me functionality.
-        See https://symfony.com/doc/current/security/remember_me.html
+                <div>
+                    <label for="inputPassword">Mot de passe</label>
+                    <input type="password" name="password" id="inputPassword" class="" required>
+                </div>
 
-        <div class="checkbox mb-3">
-            <label>
-                <input type="checkbox" name="_remember_me"> Remember me
-            </label>
-        </div>
-    #}
+                <input type="hidden" name="_csrf_token" value="{{ csrf_token('authenticate') }}">
 
-    <button class="btn btn-lg btn-primary" type="submit">
-        Sign in
-    </button>
-</form>
+                    {#
+                        Uncomment this section and add a remember_me option below your firewall to activate remember me functionality.
+                        See https://symfony.com/doc/current/security/remember_me.html
 
+                        <div class="checkbox mb-3">
+                            <label>
+                                <input type="checkbox" name="_remember_me"> Remember me
+                            </label>
+                        </div>
+                    #}
 
+                <button class="register-button" type="submit">Connexion</button>
+            </form>
+    
+
+        {% for flashError in app.flashes('verify_email_error') %}
+        <div class="alert alert-danger" role="alert">{{ flashError }}</div>
+        {% endfor %}
+
+        
+
+            {{ form_start(registrationForm, {'attr': {'class': 'formregister'}}) }}
+
+            <h2>Vous n'avez pas encore de compte ?</h2>
+            <h3>Inscrivez-vous !</h3>
+
+            {{ form_widget(registrationForm) }}
+
+            <button type="submit" class="register-button">Valider l'inscription</button>
+
+            {{ form_end(registrationForm) }}
+
+        
 </div>
-{% for flashError in app.flashes('verify_email_error') %}
-<div class="alert alert-danger" role="alert">{{ flashError }}</div>
-{% endfor %}
-<div class="formRegister">
-<h1>Register</h1>
 
-{{ form_start(registrationForm) }}
-
-{{ form_widget(registrationForm) }}
-
-<button type="submit " class="btn alert alert-danger mt-2">Register</button>
-
-{{ form_end(registrationForm) }}
-</div>
-</div>
 {% endblock %}

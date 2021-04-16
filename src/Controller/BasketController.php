@@ -3,6 +3,8 @@
 namespace App\Controller;
 
 use App\Entity\Piece;
+use App\Entity\Renting;
+use App\Entity\RentingDetail;
 use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
@@ -12,10 +14,10 @@ use Symfony\Component\Routing\Annotation\Route;
 class BasketController extends AbstractController
 {
     #[Route('/basket', name: 'basket')]
-    public function index(Request $request , EntityManagerInterface $entityManager): Response
+    public function index(Request $request, EntityManagerInterface $entityManager): Response
     {
         $session = $request->getSession();
-        
+
         // Le panier affiche les objets
         $panier = $session->get('basket');
         dump($panier);
@@ -26,7 +28,7 @@ class BasketController extends AbstractController
         //$imagePath = $storageInterface->resolvePath($piece, 'imageFile');
 
         return $this->render('basket/index.html.twig', [
-            'panier'=> $pieces
+            'panier' => $pieces
             // ....
         ]);
     }
@@ -49,6 +51,46 @@ class BasketController extends AbstractController
         */
 
         // Redirection sur la piece
+        return $this->redirectToRoute('basket');
+    }
+    #[Route('/basket/renting', name: 'add_renting')]
+    public function rentingAdd(Request $request, EntityManagerInterface $entityManager): Response
+    {
+        $result = 0;
+        $session = $request->getSession();
+        $panier = $session->get('basket');
+        $pieces = $entityManager->getRepository(Piece::class)->findByIds($panier);
+        $renting = new Renting();
+        $renting->setStatuts('pending');
+        $renting->setUser($this->getUser());
+        $rentingDetail = new RentingDetail();
+        foreach ($pieces as $piece) {
+            $rentingDetail->addPiece($piece);
+            $result = $result + $piece->getPrice();
+        }
+        $rentingDetail->setPriceOption($result . '€');
+        $rentingDetail->setRenting($renting);
+        $entityManager = $this->getDoctrine()->getManager();
+        $entityManager->persist($renting);
+        $entityManager->persist($rentingDetail);
+        $entityManager->flush();
+        $session->set('basket',[]);
+        return $this->redirectToRoute('user_account');
+    }
+    #[Route('/basket/remove/{id}', name: 'remove_basket')]
+    public function remove(Request $request, EntityManagerInterface $entityManager,$id): Response
+    {
+        // Récupère la piece avec l'id: si l'objet n'existe pas je l'ajoute pas au panier
+
+        $session = $request->getSession();
+        // Récupère le panier
+     
+        $panier = $session->get('basket', []);
+        //dump($panier);
+        $key = array_search($id,$panier);
+        unset($panier[$key]);
+        //dd($panier);
+        $session->set('basket', $panier);
         return $this->redirectToRoute('basket');
     }
 }
