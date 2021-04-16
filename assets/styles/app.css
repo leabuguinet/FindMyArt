@@ -1137,7 +1137,7 @@ tbody, td, tfoot, th, thead, tr {
 	left: 0;
 }
 
-.red {
+.redd {
 	background: url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/198554/red-1.png) no-repeat center center;
 	opacity: 1;
 	animation: red 3s linear infinite, opacityRed 5s linear alternate infinite;
