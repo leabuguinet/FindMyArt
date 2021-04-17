@@ -1242,8 +1242,7 @@ ul.ks-cboxtags li input[type="checkbox"]:focus + label {
 
 /****** PAGE Basket  ******/
 
-.basket{
-    height: 100vh;    
+.basket{   
     padding-top: 3rem;
 }
 
