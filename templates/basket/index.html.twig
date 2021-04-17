@@ -10,10 +10,10 @@
     <table class="table">
         <thead>
             <tr>
-                <th>Nom de l'oeuvre</th>                    
+                <th>Nom de l'oeuvre</th>
+                <th>Aperçu</th>                    
                 <th>Nom de l'artiste</th>
-                <th>Style</th>
-                <th>Aperçu</th>
+                <th>Style</th>                
                 <th>Prix par mois</th>
                 <th></th>
             </tr>  
@@ -32,27 +32,9 @@
                     
                     {% set result = result + piece.price %}</td>
                 </tr>
-<<<<<<< HEAD
-            </thead>
-            
-            <tbody>
-                {% set result = 0 %}
-                {% for piece in panier %}
-                    <tr>
-                        <td>{{ piece.title }}</td>                        
-                        <td><img src="{{ findmyart_display_image(piece, 'imageFile') }}" alt="{{ piece.title }}" /></td>
-                        <td>{{ piece.artist }}</td>
-                        <td>{{ piece.style }}</td>
-                        <td>{{ piece.price }}€</td>
-                        <td><a href="{{path('remove_basket',{'id': piece.id})}}"><i class="far fa-trash-alt"></i></a></td>
-                        <td>{% set result = result + piece.price %}</td>
-                    </tr>
-                {% endfor %}
-=======
             {% endfor %}
 
             {% if panier is empty %}
->>>>>>> master
                     
                     <p> Ta palette est encore vide ! Découvre ton prochain coup de coeur dans notre  <a href="{{ path('home') }}" class="linktocollection"> Collection</a>     
             {% endif %}
