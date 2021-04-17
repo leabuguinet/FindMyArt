@@ -2,9 +2,13 @@
 
 namespace App\Controller;
 
+use App\Entity\User;
 use App\Entity\Renting;
 use App\Form\RentingType;
+use App\Form\RentingDetailType;
 use App\Repository\RentingRepository;
+use App\Repository\RentingDetailRepository;
+use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
@@ -43,9 +47,13 @@ class RentingController extends AbstractController
     }
 
     #[Route('/{id}', name: 'renting_show', methods: ['GET'])]
-    public function show(Renting $renting): Response
+    public function show(Renting $renting, EntityManagerInterface $entityManager, $id): Response
     {
+        $user = $this->getUser();
+        $renting = $entityManager->getRepository(Renting::class)->find($id);
         return $this->render('renting/show.html.twig', [
+            'user' => $user,            
+            'rentings' => $user->getRentings(),
             'renting' => $renting,
         ]);
     }

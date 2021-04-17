@@ -3,25 +3,47 @@
 {% block title %}Renting{% endblock %}
 
 {% block body %}
-    <h1>Renting</h1>
+    <h1>Détail de la commande nº {{ renting.id }} : </h1>
 
-    <table class="table">
-        <tbody>
-            <tr>
-                <th>Id</th>
-                <td>{{ renting.id }}</td>
-            </tr>
-            <tr>
-                <th>Date</th>
-                <td>{{ renting.date ? renting.date|date('d-m-Y') : '' }}</td>
-            </tr>
-            <tr>
-                <th>Statuts</th>
-                <td>{{ renting.statuts }}</td>
-            </tr>
+    {% for rentingDetail in renting.rentingDetails %}
 
-        </tbody>
-    </table>
+        <table class="table">
+            <tbody>
+                <tr>
+                    <th>Id</th>
+                    <td>{{ renting.id }}</td>
+                </tr>
+                <tr>
+                    <th>Date</th>
+                    <td>{{ renting.date ? renting.date|date('d-m-Y') : '' }}</td>
+                </tr>
+                <tr>
+                    <th>Statuts</th>
+                    {% if renting.statuts == "pending" %}
+                        <td>En cours de préparation</td> 
+                    {% elseif renting.statuts == "shipped" %}
+                        <td>En cours de livraison</td> 
+                    {% else %}
+                        <td>Terminée</td> 
+                    {% endif %}
+                </tr>
+
+                {% for piece in rentingDetail.piece %}
+                    <tr>
+                        {# {{ dump(piece) }} #}
+                        <th>Oeuvre Id nº{{ piece.id }}</th>
+                        <td>{{ piece.title }}</td>
+                    </tr> 
+                {% endfor %}
+
+                <tr>
+                    <th><strong>Total de la commande</strong></th>
+                    <td><strong>{{ rentingDetail.priceOption }}</strong></td>
+                </tr>
+
+            </tbody>
+        </table>
+    {% endfor %}
 
     <a href="{{ path('renting_edit', {'id': renting.id}) }}" class="btn btn-primary m-2" role="button"><i class="fas fa-pencil-alt"></a>
 
