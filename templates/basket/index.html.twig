@@ -6,18 +6,33 @@
 
 <div class="basket container">
 
-    <h1>Ta sélection :</h1>
-
-        <table class="table">
-            <thead>
+    <h1 class='mb-5'>Ta sélection :</h1>
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Nom de l'oeuvre</th>                    
+                <th>Nom de l'artiste</th>
+                <th>Style</th>
+                <th>Aperçu</th>
+                <th>Prix par mois</th>
+                <th></th>
+            </tr>  
+        </thead>
+            
+        <tbody>
+            {% set result = 0 %}
+            {% for piece in panier %}
                 <tr>
-                    <th>Nom de l'oeuvre</th>                    
-                    <th>Nom de l'artiste</th>
-                    <th>Style</th>
-                    <th>Aperçu</th>
-                    <th>Prix par mois</th>
-                    <th></th>
+                    <td>{{ piece.title }}</td>                        
+                    <td><img src="{{ findmyart_display_image(piece, 'imageFile') }}" alt="{{ piece.title }}" /></td>
+                    <td>{{ piece.artist }}</td>
+                    <td>{{ piece.style }}</td>
+                    <td>{{ piece.price }}€</td>
+                    <td><a href="{{path('remove_basket',{'id': piece.id})}}"><i class="far fa-trash-alt"></i></a></li>
+                    
+                    {% set result = result + piece.price %}</td>
                 </tr>
+<<<<<<< HEAD
             </thead>
             
             <tbody>
@@ -33,15 +48,48 @@
                         <td>{% set result = result + piece.price %}</td>
                     </tr>
                 {% endfor %}
+=======
+            {% endfor %}
+
+            {% if panier is empty %}
+>>>>>>> master
                     
-                    <tr>
-                        <td colspan="6"><strong>Total : {{ result }} €</strong></td>
-                    </tr>
+                    <p> Ta palette est encore vide ! Découvre ton prochain coup de coeur dans notre  <a href="{{ path('home') }}" class="linktocollection"> Collection</a>     
+            {% endif %}
+                    
+                <tr>
+                    <td colspan="6"><strong>Total : {{ result }} €</strong></td>
+                </tr>
 
             </tbody>
         </table>
-        
-        <div class="boutons">
+
+        <h3>Options de livraison</h3>
+        <h5> (bientôt!) <h5>
+
+        <div class="deliverychoices">
+
+            <label for="delivery" class="deliveryoption"> 
+                <input type="radio" name="delivery" id="deliveryChoice1" checked></input>
+                <img src="{{ asset('build/images/collect.png') }}" alt="sur place">
+                <span>Récupération sur place</span>
+            </label>
+                   
+            <label for="delivery" class="deliveryoption">
+                <input type="radio" name="delivery" id="deliveryChoice2"></input>
+                <img src="{{ asset('build/images/deliverytruck.png') }}" alt="Delivery Truck">
+                <span>Livraison à domicile</span>
+            </label>
+                   
+            <label for="delivery" class="deliveryoption">
+                <input type="radio" name="delivery" id="deliveryChoice3"></input>
+                <img src="{{ asset('build/images/installation.png') }}" alt="livraison à domicile">
+                <span>Livraison et installation à domicile</span>
+            </label>
+                   
+        </div>
+
+        <div class="boutons btn mt-5 mb-5">
             {% if is_granted('IS_AUTHENTICATED_FULLY') %}
                 <a href="{{path('add_renting')}}">Confirmer la sélection</a>
             {% else %}
