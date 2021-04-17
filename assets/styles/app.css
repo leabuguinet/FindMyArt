@@ -431,6 +431,10 @@ ul.ks-cboxtags li input[type="checkbox"]:focus + label {
 
 /***** PAGE CONCEPT *****/
 
+.concept-body span{
+    text-transform: uppercase;
+    font-size: 2rem;
+}
 
 .fma {
     text-align: left;
