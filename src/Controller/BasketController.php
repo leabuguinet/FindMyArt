@@ -20,7 +20,7 @@ class BasketController extends AbstractController
 
         // Le panier affiche les objets
         $panier = $session->get('basket');
-        dump($panier);
+        /* dump($panier); */
 
         // Requte pour récupérer tous les pièces en fonction des ids
         // SELECT * FROM pieces WHERE id IN (12, 5, 9)
