@@ -6,7 +6,7 @@
 
 <div class="basket container">
 
-    <h1>Votre sélection :</h1>
+    <h1>Ta sélection :</h1>
 
         <table class="table">
             <thead>
@@ -29,8 +29,8 @@
                         <td>{{ piece.artist }}</td>
                         <td>{{ piece.style }}</td>
                         <td>{{ piece.price }}€</td>
-                        <td><a href="{{path('remove_basket',{'id': piece.id})}}"><i class="far fa-trash-alt"></i></a></li>
-                        {% set result = result + piece.price %}</td>
+                        <td><a href="{{path('remove_basket',{'id': piece.id})}}"><i class="far fa-trash-alt"></i></a></td>
+                        <td>{% set result = result + piece.price %}</td>
                     </tr>
                 {% endfor %}
                     

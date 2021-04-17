@@ -1091,12 +1091,34 @@ ul.ks-cboxtags li input[type="checkbox"]:focus + label {
 
 /****** PAGE Show Renting  ******/
 
+.show-renting{        
+    padding-top: 3rem;
+    padding-bottom: 3rem;
+}
+
+.show-renting ul li{        
+    list-style-type: square;
+    line-height: 2.5rem;
+}
+
 .show-renting img{    
     width: 15%;
 }
 
-.show-renting{        
-    padding-top: 3rem;
+.show-renting td, tr{
+    width: 20%;
+}
+
+.show-renting .bouton{
+    padding-top: 1rem;
+}
+
+.show-renting .bouton a{
+    text-decoration: none;
+    background-color: var(--colorblue);
+    border-radius: 10px;
+    color: white;
+    padding: 0.5rem;
 }
 
 
@@ -1122,6 +1144,8 @@ ul.ks-cboxtags li input[type="checkbox"]:focus + label {
 .basket td, tr{
     width: 20%;
 }
+
+
 
 
 /*** page 403 **/

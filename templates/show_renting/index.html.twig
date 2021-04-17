@@ -3,80 +3,69 @@
 {% block title %}Hello ShowRentingController!{% endblock %}
 
 {% block body %}
+
 <div class="show-renting container">
 
     <h2>Détail de ta réservation nº {{ renting.id }}</h2>
 
-    <table class="table">
-        <thead>
-            <tr>
-                <th>Nom de l'oeuvre</th>                    
-                <th>Apperçu</th>
-                <th>Nom de l'artiste</th>
-                <th>Style</th>
-                <th>Prix par mois</th>
-            </tr>
-        </thead>
+        <ul>
+            <li>Date de la commande : {{ renting.date ? renting.date|date('d-m-Y') : '' }}</li> 
 
-        <tbody>
-                {% set result = 0 %}
-                {% for renting in rentings %}
+            {% if renting.statuts == "pending" %}
+                <li>En cours de préparation</li> 
+            {% elseif renting.statuts == "shipped" %}
+                <li>En cours de livraison</li> 
+            {% else %}
+                <li>Terminée</li> 
+            {% endif %}
 
+
+            {% for rentingDetail in renting.rentingDetails %}
+                {# {{ dump(rentingDetail) }} #}
+
+                <li><strong>Total de la commande : {{ rentingDetail.priceOption }} </strong></li>
+        </ul>   
+
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>Nom de l'oeuvre</th>                    
+                    <th>Aperçu</th>
+                    <th>Nom de l'artiste</th>
+                    <th>Style</th>
+                    <th>Prix par mois</th>
+                </tr>
+            </thead>
+
+            <tbody>
+
+                {% for piece in rentingDetail.piece %}
+                    {# {{ dump(piece) }} #}
                     <tr>
-                        <td></td>                        
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
+                        <td>{{ piece.title }}</td>
+                        <td><img src="{{ findmyart_display_image(piece, 'imageFile') }}" alt="{{ piece.title }}" /></td>
+                        <td>{{ piece.artist }}</td>
                         
+                        {% if piece.style == "Photography" %}
+                            <td>Photographie</td>
+                        {% elseif piece.style == "DigitalArt" %}
+                            <td>Art Digital</td>
+                        {% elseif piece.style == "ContemporaryArt" %}
+                            <td>Art Contemporain</td>
+                        {% else %}
+                            <td>Street Art</td>
+                        {% endif %}
+                        
+                        <td>{{ piece.price }} €</td>
                     </tr>
-                {% endfor %}
-                    
-                    <tr>
-                        <td colspan="6"><strong>Total :  €</strong></td>
-                    </tr>
+                {% endfor %}    
 
             </tbody>
         </table>
+        {% endfor %}
 
-        <div class="rentings">
-            {% for renting in rentings %}
- 
-                <div class="renting-resume">
-                    {% if (renting.rentingDetails.first) %}
-                        {% set rentingDetail = (renting.rentingDetails.first) %}
-                        {% if (rentingDetail.piece.first) %}
-                            {% set piece = (rentingDetail.piece.first) %}
-
-                                <img src="{{ findmyart_display_image(piece, 'imageFile') }}" alt="{{ piece.title }}" />
-
-                        {% endif %} 
-                    {% endif %}  
-                            <ul>
-                                <li>Nº de commande : {{ renting.id }}</li>
-                                <li>Date de la commande : {{ renting.date ? renting.date|date('d-m-Y') : '' }}</li> 
-
-                                {% if renting.statuts == "pending" %}
-                                    <li>En cours de préparation</li> 
-                                {% elseif renting.statuts == "shipped" %}
-                                    <li>En cours de livraison</li> 
-                                {% else %}
-                                    <li>Terminée</li> 
-                                {% endif %}
-
-                                <li><a href="#">Voir le détail<i class="far fa-eye"></i></a></li>
-
-                                <li>Nom oeuvre : {{ piece.title }}</li>
-                                <li>Prix : {{ piece.price }}</li>
-
-                            </ul>             
-                </div>
-            {% endfor %}
-
-        </div>
-
-        <div class="boutons">
-                <a href="{{path('user_account')}}"><i class="fas fa-arrow-alt-circle-left"></i></i>Retour à l'espace perso</a>
+        <div class="bouton">
+                <a href="{{path('user_account')}}"><i class="fas fa-arrow-alt-circle-left m-2"></i></i>Retour à l'espace perso</a>
         </div>
 
 </div>
