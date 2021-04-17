@@ -1012,15 +1012,15 @@ ul.ks-cboxtags li input[type="checkbox"]:focus + label {
 
 /****** PAGE User Account  ******/
 
-.user-account .welcome-message span{
-    font-weight: bold;
-    color: var(--colorgreen);
-}
-
 .user-account .welcome-message{
     font-size: 3rem;
     text-align: center;
     padding: 2rem;
+}
+
+.user-account .welcome-message span{
+    font-weight: bold;
+    color: var(--colorgreen);
 }
 
 .user-account h2, h3{    
@@ -1032,6 +1032,10 @@ ul.ks-cboxtags li input[type="checkbox"]:focus + label {
 
 .user-account h2{
     background-color: var(--coloryellow);
+}
+
+.user-account h3{
+    background-color: var(--colorblue);
 }
 
 .user-account .rentings{
@@ -1071,10 +1075,6 @@ ul.ks-cboxtags li input[type="checkbox"]:focus + label {
     padding-bottom: 1rem;
 }
 
-.user-account h3{
-    background-color: var(--colorblue);
-}
-
 .user-account .personal-info{
     padding-bottom: 3rem;
 }
@@ -1084,14 +1084,25 @@ ul.ks-cboxtags li input[type="checkbox"]:focus + label {
     font-style: italic;
 }
 
-tbody, td, tfoot, th, thead, tr {
+.user-account tbody, td, tfoot, th, thead, tr {
     padding-top: .8rem;
+}
+
+
+/****** PAGE Show Renting  ******/
+
+.show-renting img{    
+    width: 15%;
+}
+
+.show-renting{        
+    padding-top: 3rem;
 }
 
 
 /****** PAGE Basket  ******/
 
-.basket {
+.basket{
     height: 100vh;    
     padding-top: 3rem;
 }
