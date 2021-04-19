@@ -3,8 +3,10 @@
 {% block title %}Edit User{% endblock %}
 
 {% block body %}
-    <h1>Éditer les informations de l'utilisateur</h1>
 
+    <h1 class="mt-5">Éditer les informations de l'utilisateur</h1>
+
+    
     {{ include('user/_form.html.twig', {'button_label': 'Update'}) }}
 
     {{ include('user/_delete_form.html.twig') }}

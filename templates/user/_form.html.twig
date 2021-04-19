@@ -1,4 +1,12 @@
+
+<div class=" mt-5 mb-5 ml-5" style="">
+
 {{ form_start(form) }}
-    {{ form_widget(form) }}
+
+    {{ form_widget(form, {'attr': {'class': 'usereditform'}}) }}
+
     <button class="btn btn-success m-2">{{ button_label|default('Save') }}</button>
+    
 {{ form_end(form) }}
+
+</div>
