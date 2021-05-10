@@ -236,8 +236,9 @@ body {
     justify-content: space-around;
     padding: 2rem 0;
     animation: color-change-5x 15s linear infinite alternate both;
-    align-items: center;
+    align-items: baseline;
   }
+
 
   .searchbox{
       background: white;
@@ -269,6 +270,8 @@ body {
     display: flex;
     position: relative;
   }
+
+
 
   .search div{
       top: -4px;
@@ -331,6 +334,7 @@ body {
 
 ul.ks-cboxtags {
     list-style: none;
+    margin-bottom: 0 !important;
 }
 
 ul.ks-cboxtags li{
