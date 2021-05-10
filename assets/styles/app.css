@@ -1149,10 +1149,12 @@ ul.ks-cboxtags li input[type="checkbox"]:focus + label {
 
 .user-account h2{
     background-color: var(--coloryellow);
+    color: white;
 }
 
 .user-account h3{
     background-color: var(--colorblue);
+    color: white;
 }
 
 .user-account .rentings{
@@ -1261,7 +1263,9 @@ ul.ks-cboxtags li input[type="checkbox"]:focus + label {
     width: 20%;
 }
 
-
+.basket .total-basket{
+    text-align: right;
+}
 
 
 /*** page 403 **/

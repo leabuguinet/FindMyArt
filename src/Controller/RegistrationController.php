@@ -83,7 +83,7 @@ class RegistrationController extends AbstractController
         }
 
         // @TODO Change the redirect on success and handle or remove the flash message in your templates
-        $this->addFlash('success-email-validated', 'Ton email a bien été validé ! Important : nous allons aussi vérifier les docuements que tu nous a envoyé, ceci peut prendre jusqu\'à 72h. Ton compte sera alors finalisé et tu pourras commencer à réserver sur notre site. Rendez-vous dans ton espace personnel pour vérifier si tes documents ont bien été validés.');
+        $this->addFlash('success-email-validated', 'Ton email a bien été validé ! Important : nous allons aussi vérifier les documents que tu nous a envoyé, ceci peut prendre jusqu\'à 72h. Ton compte sera alors finalisé et tu pourras commencer à réserver sur notre site. Rendez-vous dans ton espace personnel pour vérifier si tes documents ont bien été validés.');
 
         return $this->redirectToRoute('user_account');
     }

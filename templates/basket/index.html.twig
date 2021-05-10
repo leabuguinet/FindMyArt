@@ -10,7 +10,7 @@
     <table class="table">
         <thead>
             <tr>
-                <th>Nom de l'oeuvre</th>
+                <th>Nom de l'œuvre</th>
                 <th>Aperçu</th>                    
                 <th>Nom de l'artiste</th>
                 <th>Style</th>                
@@ -26,7 +26,17 @@
                     <td>{{ piece.title }}</td>                        
                     <td><img src="{{ findmyart_display_image(piece, 'imageFile') }}" alt="{{ piece.title }}" /></td>
                     <td>{{ piece.artist }}</td>
-                    <td>{{ piece.style }}</td>
+                    
+                    <td>{% if piece.style == "Photography" %}
+                            Photographie
+                        {% elseif piece.style == "DigitalArt" %}
+                            Art Digital
+                        {% elseif piece.style == "ContemporaryArt" %}
+                            Art Contemporain
+                        {% else %}
+                            Street Art
+                        {% endif %}</td>
+                    
                     <td>{{ piece.price }}€</td>
                     <td><a href="{{path('remove_basket',{'id': piece.id})}}"><i class="far fa-trash-alt"></i></a></li>
                     
@@ -40,7 +50,7 @@
             {% endif %}
                     
                 <tr>
-                    <td colspan="6"><strong>Total : {{ result }} €</strong></td>
+                    <td class="total-basket" colspan="5"><strong>Total de ta sélection : {{ result }} €</strong></td>
                 </tr>
 
             </tbody>
