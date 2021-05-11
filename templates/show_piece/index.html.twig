@@ -4,9 +4,10 @@
 
 {% block body %}
 
+
     <section class="showpiece">
 
-        <img src="{{ findmyart_display_image(piece, 'imageFile') }}" alt="{{ piece.title }}" />
+        <img src="{{ findmyart_display_image(piece, 'imageFile') }}" alt="{{ piece.title }}" class="img-colorthief"/>
         
         <div class="description">
             <h1>{{ piece.title }}</h1>
@@ -40,6 +41,19 @@
             </div>
 
             <p>{{ piece.description }}</p>
+
+            
+    
+            <div class="main-colors">
+                <p>Couleurs principales : </p>
+                <div class='color-array'>
+                    <div class="color-array--circle first-color"></div>
+                    <div class="color-array--circle second-color"></div>
+                    <div class="color-array--circle third-color"></div>
+                </div>
+            </div>
+       
+
 
             <div class="availability-piece">
                 {% if piece.availability == 1 %}
@@ -75,7 +89,7 @@
         </div>
     </section>  
     
-  
+
 
 
 

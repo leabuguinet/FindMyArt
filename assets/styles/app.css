@@ -841,6 +841,24 @@ ul.ks-cboxtags li input[type="checkbox"]:focus + label {
     line-height: 9px;
 }
 
+.main-colors{
+    margin: 2rem 0;
+}
+
+.color-array{
+    display: flex;
+    justify-content: start;
+    margin: 1rem 0;
+}
+
+.color-array--circle{
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    margin-right: 30px;
+}
+
+
 .availability-piece{
     display: flex;
     width: 55%;
