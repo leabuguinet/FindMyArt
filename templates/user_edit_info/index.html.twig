@@ -1,0 +1,17 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello UserEditInfoController!{% endblock %}
+
+{% block body %}
+
+    <div>
+        <h1>Modification de tes infos</h1>
+        <p>Tu peux modifier tes informations personnelles puis cliquer sur sauvegarder pour les mettre à jour : </p>    
+    </div>
+
+    {{ form(form) }}
+
+    <button class="btn btn-primary">Modifier</button>
+
+
+{% endblock %}
