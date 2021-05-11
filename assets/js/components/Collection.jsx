@@ -14,8 +14,6 @@ export default class Collection extends React.Component {
   render() {
     return (
     <div>
-        
-        <p>hey</p>
         {this.state.pieces.map(function(pieces) {
           return (
             <div>

@@ -153,7 +153,7 @@ export default class Filter extends React.Component {
       }
     ).then(response => response.json()).then(response => {
       let updatedPiecesList = response.piece;
-      console.log(response);
+     
 
       this.setState({
         pieces: updatedPiecesList,

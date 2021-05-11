@@ -11,17 +11,28 @@ import './styles/app.css';
 import React from "react";
 import ReactDOM from 'react-dom';
 import App from "./js/app";
+import ColorThief from '../node_modules/colorthief/dist/color-thief.mjs';
 
-      
+
+
 const RouteElement = document.getElementById('root');
 
 if(RouteElement){
     ReactDOM.render(<App/>, document.getElementById('root'));
 }
 
-//Fonction permettant d'afficher les infos Particulier/Entreprise
+/* GLOBAL VARIABLES */ 
 
-function showInfo1() {
+let button;
+let button2;
+
+
+/* FUNCTIONS */
+
+//Display information about private individual and businesses
+
+
+function showInfoIndividual() {
 
         let div = document.getElementById("info1");
 
@@ -34,12 +45,7 @@ function showInfo1() {
 
 };
 
-let button = document.getElementById('button1');
-
-button.addEventListener('click', showInfo1);
-
-
-function showInfo2() {
+function showInfoBusiness() {
 
         let div2 = document.getElementById("info2");
 
@@ -51,6 +57,67 @@ function showInfo2() {
         }
 };
 
+// Get the three main colours of the artpiece displayed
 
-let button2 = document.getElementById('button2');
-button2.addEventListener('click', showInfo2);
+function getMainColors(img){
+        colorThief.getColor(img);
+
+        let piecePalette = colorThief.getPalette(img);
+
+        let firstColour = `rgb(${piecePalette[0]})`;
+        let secondColour = `rgb(${piecePalette[1]})`;
+        let thirdColour = `rgb(${piecePalette[2]})`;
+
+        document.querySelector('.first-color').style.backgroundColor = firstColour;
+        document.querySelector('.second-color').style.backgroundColor = secondColour;
+        document.querySelector('.third-color').style.backgroundColor = thirdColour;
+}
+
+
+/* PRINCIPAL CODE */
+
+/* Concept Page */
+
+//Display information business and individuals
+
+
+button = document.getElementById('button1');
+        
+if(button != null){
+
+        button.addEventListener('click', showInfoIndividual);
+};
+
+button2 = document.getElementById('button2');
+
+if(button2 != null){
+
+        button2.addEventListener('click', showInfoBusiness);
+};
+
+
+/* Show piece page */
+
+//Color Thief : display main colours of an art piece
+
+
+
+const colorThief = new ColorThief();
+
+        const img = document.querySelector('.img-colorthief');
+
+        if(img != null) {
+                
+                if(img.complete){
+
+                        getMainColors(img)
+                
+                } else {
+                        img.addEventListener('load', function() {
+       
+                        getMainColors(img)
+                });
+                }
+        };
+
+

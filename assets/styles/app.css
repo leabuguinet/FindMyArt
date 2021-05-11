@@ -435,19 +435,22 @@ ul.ks-cboxtags li input[type="checkbox"]:focus + label {
 
 /***** PAGE CONCEPT *****/
 
+.concept-body h3{
+    font-size: 2rem;
+}
+
 .concept-body span{
     text-transform: uppercase;
     font-size: 2rem;
 }
 
-.fma {
+.fma-what_title {
     text-align: left;
     margin: 20px;
     font-size: 40px;
-    text-transform: uppercase;
 }
 
-.fma::after, .function::before, #after::after, .communication::before{
+.fma-what_title::after, .fma-what_title::before, .fma-how::before, .fma-how h3:after, .communication::before{
     content: '';
     display: block;
     background-color: gray;
@@ -458,19 +461,13 @@ ul.ks-cboxtags li input[type="checkbox"]:focus + label {
     transform: rotate(0deg);
 }
 
-.concept-body h3{
-    font-size: 2rem;
-}
-
-
-.flex {
+.fma-what {
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin-top: 60px;
 }
 
-.descriptionFMA {
+.fma-what_description {
     width: 50%;
     text-align: center;   
     padding: 2rem;
@@ -483,15 +480,18 @@ ul.ks-cboxtags li input[type="checkbox"]:focus + label {
     animation: bounce-in-top 1.1s both;
 }
 
-.descriptionFMA h4{
+.fma-what_description h4{
     padding-bottom: 1rem;
     padding-top: 1rem;
 } 
 
-.descriptionFMA p {
+.fma-what_description p {
     font-size: 1.3rem;
     font-weight: 300;
-  
+}
+
+.fma-what_icons{
+    width: 30%;
 }
 
   @keyframes bounce-in-top {
@@ -548,21 +548,21 @@ ul.ks-cboxtags li input[type="checkbox"]:focus + label {
   }
   
 
-.function {
+.fma-how {
     display: flex;
     flex-direction: column;
     align-items: center;
     margin-top: 30px;
 }
 
-.function .all {
+.fma-how_cards {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-around;
 
 }
 
-.card {
+.fma-how_card {
     overflow: hidden;
     margin: 30px;
     height: 200px;
@@ -571,30 +571,30 @@ ul.ks-cboxtags li input[type="checkbox"]:focus + label {
     text-align: center;
 }
 
-.card:nth-child(1) {background-color: var(--colorblue);}
-.card:nth-child(2) {background-color: var(--coloryellow);}
-.card:nth-child(3) {background-color: var(--colorgreen);}
+.fma-how_card:nth-child(1) {background-color: var(--colorblue);}
+.fma-how_card:nth-child(2) {background-color: var(--coloryellow);}
+.fma-how_card:nth-child(3) {background-color: var(--colorgreen);}
 
 
-.card p:first-child {
+.fma-how_card p:first-child {
     margin: 40px auto 10px;
     text-transform: uppercase;   
     font-weight: bold;
     font-size: 25px;
 }
 
-.card p:last-child {
+.fma-how_card p:last-child {
     margin: 6px 15px;
     font-size: 19px;
     
 }
 
-.anim svg {
+.fma-how_anim svg {
     width: 50%;
     margin: 6px auto 35px;
 }
 
-.anim {
+.fma-how_anim {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -603,12 +603,12 @@ ul.ks-cboxtags li input[type="checkbox"]:focus + label {
     transition: 0.6s;
 }
 
-.anim:hover {
+.fma-how_anim:hover {
     transform: translateY(-158px);
 }
 
 
-.function::after {
+.fma-how::after {
     content: '';
     display: block;
     background-color: black;
@@ -753,6 +753,11 @@ ul.ks-cboxtags li input[type="checkbox"]:focus + label {
     text-align: left;
 }
 
+.hidden-link a{
+    display: none !important;
+
+} 
+
 #bold {
     padding-top: 1rem;
     font-weight: bold;
@@ -835,6 +840,24 @@ ul.ks-cboxtags li input[type="checkbox"]:focus + label {
     font-weight: 700;
     line-height: 9px;
 }
+
+.main-colors{
+    margin: 2rem 0;
+}
+
+.color-array{
+    display: flex;
+    justify-content: start;
+    margin: 1rem 0;
+}
+
+.color-array--circle{
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    margin-right: 30px;
+}
+
 
 .availability-piece{
     display: flex;
@@ -1149,16 +1172,17 @@ ul.ks-cboxtags li input[type="checkbox"]:focus + label {
     padding: 2rem;
     text-align: center;
     margin: 2rem auto;
+    color: black;
 }
 
 .user-account h2{
     background-color: var(--coloryellow);
-    color: white;
+  
 }
 
 .user-account h3{
-    background-color: var(--colorblue);
-    color: white;
+    background-color: var(--colorgreen);
+
 }
 
 .user-account .rentings{

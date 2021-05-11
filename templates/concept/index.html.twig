@@ -5,34 +5,31 @@
 {% block body %}
 <div class="concept-body">
 
-    <div class="flex">
+    <div class="fma-what">
 
-        <h3 class="fma">
-            Find My Art, c'est quoi ?
-        </h3>
+        <h3 class="fma-what_title">Find My Art, c'est quoi ?</h3>
          
-        <div class="descriptionFMA">
+        <div class="fma-what_description">
 
             <h4>C'est une <span>artothèque</span> !<h4>
             <p>    
-            Comme pour une bibliothèque, vous choisissez une oeuvre qui vous plait, et vous l'accrochez chez vous.  
+            Comme pour une bibliothèque, vous choisissez une oeuvre qui vous plaît, et vous l'accrochez chez vous.  
             </p>
             <p>
             Nous mettons à votre disposition un ensemble d'oeuvres diverses et variées ! Alors quels que soient vos goûts, vous trouverez votre bonheur, promis !
             </p>
+            <img class="fma-what_icons" src='../../assets/images/techniques-icons.png' alt='peinture graffiti photographie'></img>
 
         </div>
     </div>
                
-    <div class="function">
-        <h3>
-            Comment ça fonctionne ?
-        </h3>
+    <div class="fma-how">
+        
+        <h3>Comment ça fonctionne ?</h3>
 
-
-        <div class="all">
-            <div class="card">
-                <div class="anim">
+        <div class="fma-how_cards">
+            <div class="fma-how_card">
+                <div class="fma-how_anim">
                     <p>Recherchez </p><svg width="150" height="60" viewBox="0 0 118 125" fill="none" xmlns="http://www.w3.org/2000/svg"> 
                     <path d="M74.3989 5.35328e-06C66.1 -0.00413134 57.9766 2.38925 51.0056 6.89232C44.0346 11.3954 38.513 17.8164 35.1046 25.3831C31.6963 32.9498 30.5464 41.3401 31.7934 49.5448C33.0403 57.7495 36.6309 65.4193 42.1333 71.6318L0 119.456L5.84749 124.677L47.8764 77.0616C53.2825 81.2903 59.6208 84.166 66.3634 85.4492C73.1059 86.7324 80.0574 86.386 86.6389 84.4387C93.2205 82.4914 99.2414 78.9998 104.2 74.2545C109.159 69.5092 112.913 63.6477 115.148 57.1583C117.383 50.6688 118.035 43.7393 117.049 36.9468C116.064 30.1544 113.47 23.6956 109.483 18.1086C105.497 12.5216 100.233 7.96804 94.1301 4.82723C88.0274 1.68643 81.2625 0.0493022 74.3989 0.0522151V5.35328e-06ZM74.3989 78.3147C65.0523 78.3147 56.0884 74.6017 49.4794 67.9926C42.8703 61.3836 39.1573 52.4197 39.1573 43.0731C39.1573 33.7264 42.8703 24.7626 49.4794 18.1535C56.0884 11.5444 65.0523 7.83147 74.3989 7.83147C83.7456 7.83147 92.7094 11.5444 99.3185 18.1535C105.928 24.7626 109.641 33.7264 109.641 43.0731C109.641 52.4197 105.928 61.3836 99.3185 67.9926C92.7094 74.6017 83.7456 78.3147 74.3989 78.3147Z" fill="black"/>
                     </svg>
@@ -40,8 +37,8 @@
                 </div>
             </div>
 
-            <div class="card">
-                <div class="anim">
+            <div class="fma-how_card">
+                <div class="fma-how_anim">
                     <p>Réservez </p>
                     <svg width="150" height="60" viewBox="0 0 124 132" fill="none" xmlns="http://www.w3.org/2000/svg">                        
                     <path d="M62 9.86598C90.9476 9.86598 114.632 35.1263 114.632 66C114.632 96.8737 90.9476 122.134 62 122.134C33.0525 122.134 9.36817 96.8737 9.36817 66C9.36817 35.1263 33.0525 9.86598 62 9.86598ZM62 0.510315C28.2279 0.510315 0.596191 29.9807 0.596191 66C0.596191 102.019 28.2279 131.49 62 131.49C95.7722 131.49 123.404 102.019 123.404 66C123.404 29.9807 95.7722 0.510315 62 0.510315Z" fill="black"/>
@@ -53,8 +50,8 @@
                 </div>
             </div>
 
-            <div class="card">
-                <div class="anim">
+            <div class="fma-how_card">
+                <div class="fma-how_anim">
                     <p>Accrochez </p>
                     <svg width="150" height="60" viewBox="0 0 161 109" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <path d="M35.2188 0H5.03125C3.66862 0 2.48942 0.431458 1.49365 1.29438C0.497884 2.15729 0 3.17917 0 4.36V30.52C0 31.7008 0.497884 32.7227 1.49365 33.5856C2.48942 34.4485 3.66862 34.88 5.03125 34.88C6.39388 34.88 7.57308 34.4485 8.56885 33.5856C9.56462 32.7227 10.0625 31.7008 10.0625 30.52V8.72H35.2188C36.5814 8.72 37.7606 8.28854 38.7563 7.42563C39.7521 6.56271 40.25 5.54083 40.25 4.36C40.25 3.17917 39.7521 2.15729 38.7563 1.29438C37.7606 0.431458 36.5814 0 35.2188 0ZM155.969 74.12C154.606 74.12 153.427 74.5515 152.431 75.4144C151.435 76.2773 150.938 77.2992 150.938 78.48V100.28H125.781C124.419 100.28 123.239 100.711 122.244 101.574C121.248 102.437 120.75 103.459 120.75 104.64C120.75 105.821 121.248 106.843 122.244 107.706C123.239 108.569 124.419 109 125.781 109H155.969C157.331 109 158.511 108.569 159.506 107.706C160.502 106.843 161 105.821 161 104.64V78.48C161 77.2992 160.502 76.2773 159.506 75.4144C158.511 74.5515 157.331 74.12 155.969 74.12ZM35.2188 100.28H10.0625V78.48C10.0625 77.2992 9.56462 76.2773 8.56885 75.4144C7.57308 74.5515 6.39388 74.12 5.03125 74.12C3.66862 74.12 2.48942 74.5515 1.49365 75.4144C0.497884 76.2773 0 77.2992 0 78.48V104.64C0 105.821 0.497884 106.843 1.49365 107.706C2.48942 108.569 3.66862 109 5.03125 109H35.2188C36.5814 109 37.7606 108.569 38.7563 107.706C39.7521 106.843 40.25 105.821 40.25 104.64C40.25 103.459 39.7521 102.437 38.7563 101.574C37.7606 100.711 36.5814 100.28 35.2188 100.28ZM155.969 0H125.781C124.419 0 123.239 0.431458 122.244 1.29438C121.248 2.15729 120.75 3.17917 120.75 4.36C120.75 5.54083 121.248 6.56271 122.244 7.42563C123.239 8.28854 124.419 8.72 125.781 8.72H150.938V30.52C150.938 31.7008 151.435 32.7227 152.431 33.5856C153.427 34.4485 154.606 34.88 155.969 34.88C157.331 34.88 158.511 34.4485 159.506 33.5856C160.502 32.7227 161 31.7008 161 30.52V4.36C161 3.17917 160.502 2.15729 159.506 1.29438C158.511 0.431458 157.331 0 155.969 0Z" fill="black"/>
@@ -90,11 +87,11 @@
 
                 <div class="choice-card">
                     <div class="button">
-                        <button id="button2"> <p>Une entreprise</p> <p> Une collectivité </p></button>
+                        <button id="button2"> <p>Une entreprise ou une collectivité </p></button>
                     </div>
                     <div id="info2">
-                        <p>Vous souhaitez accrochez des oeuvres dans vos locaux ? Organiser un vernissage avec vos collaborateurs ?</p>
-                        <p>Contactez nous pour créer ensemble un projet sur-mesure qui répondra à vos besoins. </p>
+                        <p>Vous souhaitez accrocher des oeuvres dans vos locaux ? Organiser un vernissage avec vos collaborateurs ?</p>
+                        <p>Contactez-nous pour créer ensemble un projet sur-mesure qui répondra à vos besoins. </p>
                         <a href="mailto:contactpro@findmyart.com">contactpro@findmymart.com</a>
                     </div>
                 </div>
@@ -111,10 +108,10 @@
         <div class="map" id="map">
 
                         
-                <div>
-                    <iframe scrolling="no" marginheight="0" marginwidth="0" id="gmap_canvas" src="https://maps.google.com/maps?width=408&amp;height=320&amp;hl=en&amp;q=6%20bis%20Rue%20Chaudron,%20Paris+()&amp;t=&amp;z=12&amp;ie=UTF8&amp;iwloc=B&amp;output=embed" width="408" height="320" frameborder="0"></iframe> <a href='http://mapswebsite.net/fr'>http://mapswebsite.net/fr</a> 
-                    <script type='text/javascript' src='https://embedmaps.com/google-maps-authorization/script.js?id=8058fc59a07ad6425bef576a972f9a2fc577fc9d'></script>
+                <div class="">
                 
+
+                    <iframe scrolling="no" marginheight="0" marginwidth="0" src="https://maps.google.com/maps?width=408&height=320&hl=en&q=6%20bis%20Rue%20Chaudron,%20Paris+()&t=&z=12&ie=UTF8&iwloc=B&output=embed" width="408" height="320" frameborder="0"></iframe> <script type='text/javascript' src='https://embedmaps.com/google-maps-authorization/script.js?id=8058fc59a07ad6425bef576a972f9a2fc577fc9d'></script>
                     <h5 id="bold">Find My Art</h5>
                     <h5>6 bis Rue Chaudron</h5>
                     <h5>75010 Paris</h5>
