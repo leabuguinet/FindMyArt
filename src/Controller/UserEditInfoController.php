@@ -29,7 +29,7 @@ class UserEditInfoController extends AbstractController
     
                 $this->getDoctrine()->getManager()->flush();
     
-                return $this->redirectToRoute('user_edit_info');
+                return $this->redirectToRoute('user_account');
         }
 
         return $this->render('user_edit_info/index.html.twig', [
