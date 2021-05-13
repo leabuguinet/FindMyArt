@@ -9,7 +9,26 @@
         <p>Tu peux modifier tes informations personnelles puis cliquer sur Enregistrer pour les mettre à jour : </p>    
     </div>
 
-    {{ form(form) }}
+    {# {{ form(form) }} #}
+
+    {{ form_start(form) }}
+
+        {{ form_row(form.firstname) }}
+        {{ form_row(form.lastname) }}
+        {{ form_row(form.email) }}
+        {{ form_row(form.password) }}
+        {{ form_row(form.address) }}
+        {{ form_row(form.city) }}
+        {{ form_row(form.postcode) }}
+        {{ form_row(form.phone) }}
+
+        {# {% if (file_exists(user.identityCardis)) %}
+            {{ form_row(form.identityCardFile) }}
+        {% else %}
+            <p>test</p>
+        {% endif %} #}
+
+    {{ form_end(form) }}
 
     <a href="#"><i class="fas fa-chevron-circle-left">Retour</i></a>
 

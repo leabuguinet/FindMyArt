@@ -18,6 +18,7 @@ class UserEditInfoController extends AbstractController
         {
             $form = $this->createForm(UserEditType::class, $user);
             $form->handleRequest($request);
+            $user = $this->getUser();
     
             if ($form->isSubmitted() && $form->isValid()) {
                 $user->setPassword(
@@ -35,6 +36,7 @@ class UserEditInfoController extends AbstractController
         return $this->render('user_edit_info/index.html.twig', [
             'controller_name' => 'UserEditInfoController',
             "form" => $form->createView() ,
+            'user' => $user, 
         ]);
     }
 }
