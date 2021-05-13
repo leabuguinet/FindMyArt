@@ -390,7 +390,6 @@ class User implements UserInterface, \Serializable
         return $this->identityCard;
     }
 
-
  ////UPLOAD justificatif de domicile
 
     public function setresidenceCertificateFile(File $residenceCertificate = null)
@@ -409,7 +408,7 @@ class User implements UserInterface, \Serializable
 
     public function getresidenceCertificateFile()
     {
-        return $this->identityCardFile;
+        return $this->residenceCertificateFile;
 
     }
 
@@ -442,7 +441,7 @@ class User implements UserInterface, \Serializable
 
  public function getinsuranceCertificateFile()
  {
-     return $this->identityCardFile;
+     return $this->insuranceCertificateFile;
 
  }
 
