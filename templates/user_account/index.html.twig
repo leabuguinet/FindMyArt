@@ -88,17 +88,34 @@
                         {% if (user.DocValidated == 'Yes') %}
                             <td> Oui</td>
                         {% else %}
-                            <td class="red">Non, pas encore ! Notre équipe doit valider les documents, le délai maximum est de 72h.</td>
+                            <td class="red">Non, pas encore.</td>
                         {% endif %}
                     </tr>
-                    {# <tr>
-                        <th>Mot de passe :</th>
-                        <td>{{ user.password }}</td>
-                    </tr> #}
-                    {# <tr>
-                        <th>Roles</th>
-                        <td>{{ user.roles ? user.roles|json_encode : '' }}</td>
-                    </tr> #}
+                    <tr>
+                        <th>Carte d'identité :</th>
+                        {% if (user.identityCard != null ) %}
+                            <td>{{ user.identityCard }}</td>
+                        {% else %}
+                            <td class="red">Pas de document disponible</td>
+                        {% endif %}
+                    </tr>
+                    <tr>
+                        <th>Certificat de domicile :</th>
+                        {% if (user.residenceCertificate != null ) %}
+                            <td>{{ user.residenceCertificate }}</td>
+                        {% else %}
+                            <td class="red">Pas de document uploadé</td>
+                        {% endif %}
+                    </tr>
+                    <tr>
+                        <th>Certificat d'assurance :</th>
+                        {% if (user.insuranceCertificate != null ) %}
+                            <td>{{ user.insuranceCertificate }}</td>
+                        {% else %}
+                            <td class="red">Pas de document uploadé</td>
+                        {% endif %}
+                    </tr>
+ 
 
                 </tbody>
             </table>

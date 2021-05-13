@@ -32,6 +32,8 @@ class UserType extends AbstractType
             ->add('postcode')
             ->add('phone')
             ->add('DocValidated')
+            ->add('identityCardFile')
+
         ;
     }
 

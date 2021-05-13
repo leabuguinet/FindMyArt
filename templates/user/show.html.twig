@@ -55,6 +55,30 @@
                 <th>Password</th>
                 <td>{{ user.password }}</td>
             </tr>
+            <tr>
+                <th>Carte d'identité :</th>
+                {% if (user.identityCard != null ) %}
+                    <td>{{ user.identityCard }}</td>
+                {% else %}
+                    <td class="red">Pas de document disponible</td>
+                {% endif %}
+            </tr>
+            <tr>
+                <th>Certificat de domicile :</th>
+                {% if (user.residenceCertificate != null ) %}
+                    <td>{{ user.residenceCertificate }}</td>
+                {% else %}
+                    <td class="red">Pas de document uploadé</td>
+                {% endif %}
+            </tr>
+            <tr>
+                <th>Certificat d'assurance :</th>
+                {% if (user.insuranceCertificate != null ) %}
+                    <td>{{ user.insuranceCertificate }}</td>
+                {% else %}
+                    <td class="red">Pas de document uploadé</td>
+                {% endif %}
+            </tr>
 
         </tbody>
     </table>
