@@ -1176,13 +1176,11 @@ ul.ks-cboxtags li input[type="checkbox"]:focus + label {
 }
 
 .user-account h2{
-    background-color: var(--coloryellow);
-  
+    background-color: var(--coloryellow);  
 }
 
 .user-account h3{
     background-color: var(--colorgreen);
-
 }
 
 .user-account .rentings{
@@ -1206,7 +1204,6 @@ ul.ks-cboxtags li input[type="checkbox"]:focus + label {
 
 .user-account .rentings li:last-child{
     padding-top: 1rem;
-
 }
 
 .user-account .rentings .renting-resume li a{
@@ -1268,6 +1265,32 @@ ul.ks-cboxtags li input[type="checkbox"]:focus + label {
     padding: 0.5rem;
 }
 
+
+/****** PAGE User Edit Info  ******/
+
+.user-edit-info{        
+    padding-top: 3rem;
+    padding-bottom: 3rem;
+}
+
+.user-edit-info .flexbox-button{
+    display: flex;
+}
+
+.user-edit-info .btn{
+    background-color: var(--colorgreen);
+    border-radius: 13px;
+    padding: rem;
+    border: none;   
+    justify-content: center;
+}
+
+.user-edit-info .back-to-account{
+    background-color: var(--colorviolet);
+    color: white;
+    border-radius: 8px;
+    padding: .5rem;
+}
 
 /****** PAGE Basket  ******/
 

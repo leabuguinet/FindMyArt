@@ -3,6 +3,7 @@
 namespace App\Controller;
 use App\Entity\User;
 use App\Form\UserEditType;
+use Symfony\Component\Filesystem\Filesystem;
 use App\Repository\UserRepository;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
@@ -16,6 +17,7 @@ class UserEditInfoController extends AbstractController
     #[Route('/{id}/user/edit/info', name: 'user_edit_info', methods: ['GET', 'POST'])]
         public function edit(Request $request, User $user, UserPasswordEncoderInterface $passwordEncoder): Response
         {
+            
             $form = $this->createForm(UserEditType::class, $user);
             $form->handleRequest($request);
             $user = $this->getUser();
@@ -36,7 +38,7 @@ class UserEditInfoController extends AbstractController
         return $this->render('user_edit_info/index.html.twig', [
             'controller_name' => 'UserEditInfoController',
             "form" => $form->createView() ,
-            'user' => $user, 
+            'user' => $user,
         ]);
     }
 }

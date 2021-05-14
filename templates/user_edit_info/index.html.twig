@@ -4,33 +4,121 @@
 
 {% block body %}
 
+<div class="user-edit-info container">
+
     <div>
         <h1>Modification de tes infos</h1>
-        <p>Tu peux modifier tes informations personnelles puis cliquer sur Enregistrer pour les mettre à jour : </p>    
+        <p>Tu peux modifier tes informations personnelles puis cliquer sur Enregistrer pour les mettre à jour.</p>    
     </div>
 
     {# {{ form(form) }} #}
+    <table>
+        <tbody> 
 
-    {{ form_start(form) }}
+        {{ form_start(form) }}
 
-        {{ form_row(form.firstname) }}
-        {{ form_row(form.lastname) }}
-        {{ form_row(form.email) }}
-        {{ form_row(form.password) }}
-        {{ form_row(form.address) }}
-        {{ form_row(form.city) }}
-        {{ form_row(form.postcode) }}
-        {{ form_row(form.phone) }}
+            <tr>
+                <th>{{ form_label(form.firstname, 'Prénom :') }}</th>
+                <td>{{ form_widget(form.firstname) }}
+                    {{ form_errors(form.firstname) }}</td>
+            </tr>
 
-        {# {% if (file_exists(user.identityCardis)) %}
-            {{ form_row(form.identityCardFile) }}
-        {% else %}
-            <p>test</p>
-        {% endif %} #}
+            <tr>
+                <th>{{ form_label(form.lastname, 'Nom :') }}</th>
+                <td>{{ form_widget(form.lastname) }}
+                    {{ form_errors(form.lastname) }}</td>
+            </tr>
+
+                        <tr>
+                <th>{{ form_label(form.email, 'Email :') }}</th>
+                <td>{{ form_widget(form.email) }}
+                    {{ form_errors(form.email) }}</td>
+            </tr>
+
+                        <tr>
+                <th>{{ form_label(form.password, 'Mot de passe :') }}</th>
+                <td>{{ form_widget(form.password, {'attr': {'class': 'password'}}) }}
+                    {{ form_errors(form.password) }}</td>
+            </tr>
+
+                        <tr>
+                <th>{{ form_label(form.address, 'Adresse :') }}</th>
+                <td>{{ form_widget(form.address) }}
+                    {{ form_errors(form.address) }}</td>
+            </tr>
+
+                        <tr>
+                <th>{{ form_label(form.city, 'Ville :') }}</th>
+                <td>{{ form_widget(form.city) }}
+                    {{ form_errors(form.city) }}</td>
+            </tr>
+
+                        <tr>
+                <th>{{ form_label(form.postcode, 'Code Postal :') }}</th>
+                <td>{{ form_widget(form.postcode) }}
+                    {{ form_errors(form.postcode) }}</td>
+            </tr>
+
+                        <tr>
+                <th>{{ form_label(form.phone, 'Téléphone :') }}</th>
+                <td>{{ form_widget(form.phone) }}
+                    {{ form_errors(form.phone) }}</td>
+            </tr>
+
+            <tr>
+                <th>Carte d'identité :</th>
+                {% if (user.identityCard != null ) %}
+                    <td>{{ user.identityCard }}</td>
+                {% else %}
+                    <td class="red">Pas de document fourni</td>
+                {% endif %}
+            </tr>
+
+            <tr>
+                <th>{{ form_label(form.identityCardFile, 'Modifie ta carte :') }}</th>
+                <td>{{ form_widget(form.identityCardFile) }}
+                    {{ form_errors(form.identityCardFile) }}</td>
+            </tr>
+
+            <tr>
+                <th>Justificatif de domicile :</th>
+                {% if (user.residenceCertificate != null ) %}
+                    <td>{{ user.residenceCertificate }}</td>
+                {% else %}
+                    <td class="red">Pas de document fourni</td>
+                {% endif %}
+            </tr>
+            <tr>
+                <th>{{ form_label(form.residenceCertificateFile, 'Modifie ton justificatif :') }}</th>
+                <td>{{ form_widget(form.residenceCertificateFile) }}
+                    {{ form_errors(form.residenceCertificateFile) }}</td>
+            </tr>
+
+            <tr>
+                <th>Certificat d'assurance :</th>
+                {% if (user.insuranceCertificate != null ) %}
+                    <td>{{ user.insuranceCertificate }}</td>
+                {% else %}
+                    <td class="red">Pas de document fourni</td>
+                {% endif %}
+            </tr>
+            <tr>
+                <th>{{ form_label(form.insuranceCertificateFile, 'Modifie ton certificat :') }}</th>
+                <td>{{ form_widget(form.insuranceCertificateFile) }}
+                    {{ form_errors(form.insuranceCertificateFile) }}</td>
+            </tr>
+
+            <tr class="flexbox-button">
+                <th><button class="btn btn-primary">Enregistrer</button></th>
+            </tr>        
 
     {{ form_end(form) }}
 
-    <a href="#"><i class="fas fa-chevron-circle-left">Retour</i></a>
+     </tbody>
+            </table>
 
+    <a class="back-to-account" href="{{ path('user_account', {'id': user.id}) }}"><i class="fas fa-chevron-circle-left pr-2 ">Retour</i></a>
+
+</div>
 
 {% endblock %}

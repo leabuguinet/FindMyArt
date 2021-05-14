@@ -21,7 +21,7 @@ class UserEditType extends AbstractType
             ->add('email')
             ->add('password', PasswordType::class, array(
                 'attr' => array(
-                'placeholder' => 'reconfirme ton password',
+                'placeholder' => 'mot de passe',
                 ))
                 ) 
             ->add('address')            
@@ -38,9 +38,7 @@ class UserEditType extends AbstractType
                 ])
             -> add('insuranceCertificateFile', FileType::class, [
                 'label' => 'Attestation d\'assurance domicile',
-                ])
-                
-            ->add('Enregistrer',SubmitType::class);
+                ]);
     }
 
     public function configureOptions(OptionsResolver $resolver)
