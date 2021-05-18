@@ -1232,6 +1232,19 @@ ul.ks-cboxtags li input[type="checkbox"]:focus + label {
     padding-top: .8rem;
 }
 
+.user-account .edit-info-btn{
+    background-color: var(--coloryellow);
+    color: white;
+    border-radius: 25px;
+    text-decoration: none;
+    padding: 0.8rem;
+    margin-left: 16rem;
+}
+
+.user-account .fas{
+    padding-left: 0.7rem;
+}
+
 
 /****** PAGE Show Renting  ******/
 
@@ -1273,23 +1286,24 @@ ul.ks-cboxtags li input[type="checkbox"]:focus + label {
     padding-bottom: 3rem;
 }
 
-.user-edit-info .flexbox-button{
-    display: flex;
-}
-
 .user-edit-info .btn{
     background-color: var(--colorgreen);
-    border-radius: 13px;
+    border-radius: 8px;
     padding: rem;
-    border: none;   
-    justify-content: center;
+    border: none;       
+    margin-left: 10rem;
 }
 
 .user-edit-info .back-to-account{
     background-color: var(--colorviolet);
     color: white;
-    border-radius: 8px;
-    padding: .5rem;
+    border-radius: 25px;
+    text-decoration: none;
+    padding: 0.8rem;
+}
+
+.user-edit-info .fas{
+    margin-right: 0.7rem;
 }
 
 /****** PAGE Basket  ******/
