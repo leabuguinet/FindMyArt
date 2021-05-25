@@ -28,7 +28,7 @@ class UserEditType extends AbstractType
             ->add('city')
             ->add('postcode')
             ->add('phone')
-            
+        
             -> add('identityCardFile', FileType::class, [
                 'label' => 'Carte d\'identité',                
                 ])
