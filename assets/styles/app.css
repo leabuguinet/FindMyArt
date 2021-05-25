@@ -1238,7 +1238,7 @@ ul.ks-cboxtags li input[type="checkbox"]:focus + label {
     border-radius: 25px;
     text-decoration: none;
     padding: 0.8rem;
-    margin-left: 16rem;
+    margin-left: 25rem;
 }
 
 .user-account .fas{
@@ -1326,10 +1326,6 @@ ul.ks-cboxtags li input[type="checkbox"]:focus + label {
 
 .basket td, tr{
     width: 20%;
-}
-
-.basket .total-basket{
-    text-align: right;
 }
 
 
