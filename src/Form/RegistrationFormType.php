@@ -29,32 +29,32 @@ class RegistrationFormType extends AbstractType
             // ->add('postcode', NumberType::class, array('label'=> 'Code Postal'))
             // ->add('address', TextType::class, array('label'=> 'Adresse'))
             // ->add('phone', TelType::class, array('label'=> 'Téléphone'))
-            // ->add('plainPassword', PasswordType::class, [
-            //     // instead of being set onto the object directly,
-            //     // this is read and encoded in the controller
-            //     'label' => 'Mot de passe',
-            //     'mapped' => false,
-            //     'constraints' => [
-            //         new NotBlank([
-            //             'message' => 'Merci de choisir un mot de passe',
-            //         ]),
-            //         new Length([
-            //             'min' => 6,
-            //             'minMessage' => 'Votre mot de passe doit comprendre {{ limit }} caractères',
-            //             // max length allowed by Symfony for security reasons
-            //             'max' => 4096,
-            //         ]),
-            //     ],
-            // ])
-            // ->add('agreeTerms', CheckboxType::class, [
-            //     'label' => 'Conditions d\'utilisation',
-            //     'mapped' => false,
-            //     'constraints' => [
-            //         new IsTrue([
-            //             'message' => 'Vous devez accepter les conditions d\'utilisation',
-            //         ]),
-            //     ],
-            // ])
+            ->add('plainPassword', PasswordType::class, [
+                 // instead of being set onto the object directly,
+                 // this is read and encoded in the controller
+                 'label' => 'Mot de passe',
+                 'mapped' => false,
+                 'constraints' => [
+                     new NotBlank([
+                         'message' => 'Merci de choisir un mot de passe',
+                     ]),
+                     new Length([
+                         'min' => 6,
+                         'minMessage' => 'Votre mot de passe doit comprendre {{ limit }} caractères',
+                         // max length allowed by Symfony for security reasons
+                        'max' => 4096,
+                     ]),
+                 ],
+             ])
+            ->add('agreeTerms', CheckboxType::class, [
+                 'label' => 'Conditions d\'utilisation',
+                 'mapped' => false,
+                 'constraints' => [
+                     new IsTrue([
+                         'message' => 'Vous devez accepter les conditions d\'utilisation',
+                     ]),
+                 ],
+             ])
             // -> add('identityCardFile', FileType::class, [
             //     'label' => 'Carte d\'identité',
             //     'constraints' => [

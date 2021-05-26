@@ -1,7 +1,8 @@
 
 # Find My Art
 
-Find My Art is an online art library. It’s like a library but for art ! You can rent artwork and display it on your wall. 
+Find My Art is an online art library. It’s like a library but for art !
+You can rent artwork and display it on your wall. 
 
 ![Alt text](public/images/screenshotReadMe.png?raw=true "Title")
 
