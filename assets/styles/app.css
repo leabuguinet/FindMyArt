@@ -190,6 +190,10 @@ body {
     padding: 3rem 0 2rem 0;
 }
 
+.credits a:hover{
+    color: var(--coloryellow);
+}
+
 .footer-links--pages a:first-child:hover, .networks-icons a:hover{
     color: var(--colorred);
 }
@@ -1645,7 +1649,34 @@ ul.ks-cboxtags li input[type="checkbox"]:focus + label {
     cursor: pointer;
   }
 
-/* USER CRUD EDIT FORM */
+/****** LEGAL NOTICE  ******/
+
+.legal-notice{
+    padding: 3rem;
+}
+
+.legal-notice h1{
+    text-align: center;
+    padding-bottom: 1rem;
+}
+
+.legal-notice h3{
+    padding-bottom: 2rem;
+}
+
+.legal-notice p{
+    padding-bottom: 2rem;
+}
+
+.legal-notice--detail{
+    display: flex;
+    justify-content: space-between;
+}
+
+.legal-notice--detail div{
+    padding: 2rem;
+    width: 100%;
+}
 
 /*************************************MEDIA QUERIES********************/
 
