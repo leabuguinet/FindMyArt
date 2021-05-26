@@ -1,11 +1,20 @@
-<h1>Hi! Please confirm your email!</h1>
+<h1>Find My Art : Confirmation de votre email!</h1>
 
 <p>
-    Please confirm your email address by clicking the following link: <br><br>
-    <a href="{{ signedUrl|raw }}">Confirm my Email</a>.
-    This link will expire in {{ expiresAtMessageKey|trans(expiresAtMessageData, 'VerifyEmailBundle') }}.
+    Bonjour ! <br>
+
+    Pour confirmer votre adresse email et valider votre inscription, veuillez cliquez sur le lien suivant :
+    <br><br>
+    <a href="{{ signedUrl|raw }}">Confirmer mon adresse email</a>.
+
+    Ce lien expirera dans {{ expiresAtMessageKey|trans(expiresAtMessageData, 'VerifyEmailBundle') }}.
 </p>
 
 <p>
-    Cheers!
+    Ce lien vous redirigera vers la page de connexion. 
+    Entrez vos identifiants pour accéder à votre nouvel espace personnel.
+</p>
+
+<p>
+    Merci et à bientôt !
 </p>
