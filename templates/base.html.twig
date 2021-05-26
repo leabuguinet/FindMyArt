@@ -48,25 +48,27 @@
                             <li><a href="{{ path('concept') }}" class="conceptlink">Concept</a></li>
                         </ul>
                     </div>
+
                     <div class="icon">
 
-                    {% if is_granted('IS_AUTHENTICATED_FULLY') %}
-                        {# affichage prénom utilisateur
-                        <a href="{{ path('user_account') }}">{{ app.user.firstname }}<i class="far fa-user"></i></a> #}
+                        {% if is_granted('IS_AUTHENTICATED_FULLY') %}
+                            {# affichage prénom utilisateur
+                            <a href="{{ path('user_account') }}">{{ app.user.firstname }}<i class="far fa-user"></i></a> #}
 
-                        <a href="{{ path('user_account') }}"><i class="far fa-user user-icon"></i></a>
-                    {% else %}
-                        <a href="{{ path('app_login') }}"><i class="far fa-user"></i></a>
-                    {% endif %}
+                            <a href="{{ path('user_account') }}"><i class="far fa-user user-icon"></i></a>
+                        {% else %}
+                            <a href="{{ path('app_login') }}"><i class="far fa-user user-icon"></i></a>
+                        {% endif %}
 
-                    {% if is_granted('IS_AUTHENTICATED_FULLY') %}
-                        <a class="link-logout" href="{{ path('app_logout') }}"><i class="fas fa-sign-out-alt"></i></a>
-                    {% endif %}
+                        {% if is_granted('IS_AUTHENTICATED_FULLY') %}
+                            <a class="link-logout" href="{{ path('app_logout') }}"><i class="fas fa-sign-out-alt"></i></a>
+                        {% endif %}
 
                         <a href="{{ path('basket') }}"><i class="fas fa-palette basket-icon"></i></a>
                     </div>
                 </div>
             </nav>
+            
         </header>
 
         
