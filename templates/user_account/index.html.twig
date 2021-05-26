@@ -49,6 +49,13 @@
     <h3>Tes informations personnelles</h3>
 
         <div class="personal-info">
+
+            <div class="info-upload">
+                <p><strong>INFO :</strong> Afin de valider ton compte et de pouvoir emprunter des oeuvres, merci d'ajouter une copie de ta carte d'identité, d'un justificatif de domicile et d'une attestation d'assurance.</p>
+                <p>Une fois reçu, nous validerons les documents et activerons ton compte, ceci peut prendre jusqu'à 72h.</p>
+                <p>Tu pourras te connecter sur ton espace personnel pour vérifier si tes docuements ont bien été validés avant ta première réservation d'oeuvre.</p>
+            </div>
+
             <table>
                 <tbody>
                     {# <tr>
@@ -91,6 +98,7 @@
                             <td class="red">Non, pas encore.</td>
                         {% endif %}
                     </tr>
+
                     <tr>
                         <th>Carte d'identité :</th>
                         {% if (user.identityCard != null ) %}
@@ -115,9 +123,7 @@
                             <td class="red">Pas de document fourni</td>
                         {% endif %}
                     </tr>
- 
-
-                </tbody>
+                </tbody>                
             </table>
 
             <div>

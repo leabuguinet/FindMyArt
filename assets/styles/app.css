@@ -1241,6 +1241,15 @@ ul.ks-cboxtags li input[type="checkbox"]:focus + label {
     padding-left: 0.7rem;
 }
 
+.user-account .info-upload{
+    border: 0.05rem dashed;
+    width: 40rem;
+    padding: 1rem;
+    position: absolute;
+    margin-left: 25rem;
+    margin-top: 7rem;
+}
+
 
 /****** PAGE Show Renting  ******/
 
