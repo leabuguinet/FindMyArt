@@ -13,6 +13,7 @@ use Symfony\Component\Mime\Address;
 use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Component\Security\Core\Encoder\UserPasswordEncoderInterface;
 use SymfonyCasts\Bundle\VerifyEmail\Exception\VerifyEmailExceptionInterface;
+use Symfony\Component\Security\Http\Authentication\AuthenticationUtils;
 
 class RegistrationController extends AbstractController
 {
@@ -26,7 +27,7 @@ class RegistrationController extends AbstractController
     /**
      * @Route("/register", name="app_register")
      */
-    public function register(Request $request, UserPasswordEncoderInterface $passwordEncoder): Response
+    public function register(Request $request, UserPasswordEncoderInterface $passwordEncoder, AuthenticationUtils $authenticationUtils): Response
     {
         $user = new User();
         $form = $this->createForm(RegistrationFormType::class, $user);
@@ -60,10 +61,13 @@ class RegistrationController extends AbstractController
             $this->addFlash('success-email-sent', 'Nous t\'avons envoyé un email de confirmation. Merci de cliquer sur le lien de validation.');
             return $this->redirectToRoute('app_login');            
         }
+        $error = $authenticationUtils->getLastAuthenticationError();
+        $lastUsername = $authenticationUtils->getLastUsername();
 
         return $this->render('security/login.html.twig', [
+            'last_username' => $lastUsername,
+            'error' => $error,
             'registrationForm' => $form->createView(),
-            $this->addFlash('success-email-validated', 'Ton email a bien été validé !');
         ]);
     }
 
@@ -83,7 +87,6 @@ class RegistrationController extends AbstractController
             return $this->redirectToRoute('app_register');
         }
 
-        // @TODO Change the redirect on success and handle or remove the flash message in your templates
         $this->addFlash('success-email-validated', 'Ton email a bien été validé !');
 
         return $this->redirectToRoute('user_account');
