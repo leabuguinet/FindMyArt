@@ -37,11 +37,9 @@ class ConceptController extends AbstractController
                         ]));
 
                 $mailer->send($email);
-                /* dump($formulaire->getData()); */
-
-                /* die('mail envoyé'); */
+               
                 
-                 $this->addFlash('success', 'Votre commentaire a bien été ajouté !');
+                 $this->addFlash('success', 'Votre messabe a bien été envoyé !');
 
                  return $this->redirectToRoute('concept');
              }
