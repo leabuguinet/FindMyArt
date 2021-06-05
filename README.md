@@ -20,7 +20,7 @@ Features:
 - Confirm your selection and order / The order is registered in the database
 - Back Office (CRUD): creation, modification and removal of artworks, orders and users. 
 - Security: restricted access to the back office pages, user roles management, error pages (404, 403)
-- Cookie consent management
+
 
 
 This website is the final project made by Aissiou Abdhallah, Julien Bellet, Léa Buguinet and Nathalie Thisse, in April 2021, as part of the professional training "Web development" by La Passerelle school. 
