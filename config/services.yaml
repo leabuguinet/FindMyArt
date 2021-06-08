@@ -4,6 +4,12 @@
 # Put parameters here that don't need to change on each machine where the app is deployed
 # https://symfony.com/doc/current/best_practices/configuration.html#application-related-configuration
 parameters:
+    database_host: localhost
+    database_port: 3306
+    database_name: findmyart
+    database_user: findmyart
+    database_password: Y9nboj7z5DX7xCYF
+
 
 services:
     # default configuration for services in *this* file
