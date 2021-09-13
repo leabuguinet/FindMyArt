@@ -29,7 +29,7 @@ let button2;
 
 /* FUNCTIONS */
 
-//Display information about private individual and businesses
+//Display information about private individual and business
 
 
 function showInfoIndividual() {
@@ -99,8 +99,6 @@ if(button2 != null){
 /* Show piece page */
 
 //Color Thief : display main colours of an art piece
-
-
 
 const colorThief = new ColorThief();
 

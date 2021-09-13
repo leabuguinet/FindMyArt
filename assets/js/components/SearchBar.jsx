@@ -11,8 +11,6 @@ const breakpointColumnsObj = {
 };
 
 
-
-
 export default class Filter extends React.Component {
 
   constructor() {
@@ -41,10 +39,6 @@ export default class Filter extends React.Component {
     this.fetchPieces();
 
   }
-  //
-  // componentWillUnmount() {
-  //
-  // }
 
   render() {
     return (
@@ -107,6 +101,7 @@ export default class Filter extends React.Component {
       </div>
     )
   }
+
   /**
    * Cette fonction met à jour le state search avec la valeur reçue en paramètres
    * @param event
@@ -138,6 +133,7 @@ export default class Filter extends React.Component {
       pieces: pieceFilter,
     })
   };
+  
   fetchPieces = () => {
     fetch(
       baseUrl + '/api/pieces',
