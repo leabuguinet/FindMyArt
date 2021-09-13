@@ -1221,6 +1221,13 @@ ul.ks-cboxtags li input[type="checkbox"]:focus + label {
 
 .user-account .personal-info{
     padding-bottom: 3rem;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.user-account .personal-info table{
+    margin-bottom: 2rem;
 }
 
 .user-account .red{
@@ -1238,7 +1245,6 @@ ul.ks-cboxtags li input[type="checkbox"]:focus + label {
     border-radius: 25px;
     text-decoration: none;
     padding: 0.8rem;
-    margin-left: 25rem;
 }
 
 .user-account .fas{
@@ -1247,11 +1253,10 @@ ul.ks-cboxtags li input[type="checkbox"]:focus + label {
 
 .user-account .info-upload{
     border: 0.05rem dashed;
-    width: 40rem;
+    width: 40%;
     padding: 1rem;
-    position: absolute;
-    margin-left: 25rem;
-    margin-top: 7rem;
+    height: 100%;
+   
 }
 
 
