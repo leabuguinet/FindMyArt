@@ -10,7 +10,10 @@ use Symfony\Component\HttpFoundation\JsonResponse;
 
 class HomeController extends AbstractController
 {
-    #[Route('/', name: 'home')]
+    /* #[Route('/', name: 'home')] */
+    /**
+     * @Route("/", name="home")
+     */
     public function index(PieceRepository $pieceRepository): Response
     {
         return $this->render('home/index.html.twig', [
@@ -20,7 +23,7 @@ class HomeController extends AbstractController
     }
     
 
-      /**
+    /**
      * @Route("/", name="homepage", methods={"GET","POST"})
      */
     public function base(): Response

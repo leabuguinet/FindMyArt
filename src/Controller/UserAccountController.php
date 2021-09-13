@@ -12,7 +12,10 @@ use Symfony\Component\Routing\Annotation\Route;
 
 class UserAccountController extends AbstractController
 {
-    #[Route('/user/account', name: 'user_account')]
+    /* #[Route('/user/account', name: 'user_account')] */
+    /**
+     * @Route("/user/account", name="user_account")
+     */
     public function index(): Response
     {
         $user = $this->getUser();

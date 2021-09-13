@@ -20,7 +20,10 @@ use Symfony\Component\Routing\Annotation\Route;
 */
 class PieceController extends AbstractController
 {
-    #[Route('/', name: 'piece_index', methods: ['GET'])]
+    /* #[Route('/', name: 'piece_index', methods: ['GET'])] */
+    /**
+     * @Route("/", name="piece_index", methods={"GET"})
+     */
     public function index(PieceRepository $pieceRepository): Response
     {
         return $this->render('piece/index.html.twig', [
@@ -28,7 +31,10 @@ class PieceController extends AbstractController
         ]);
     }
 
-    #[Route('/new', name: 'piece_new', methods: ['GET', 'POST'])]
+    /* #[Route('/new', name: 'piece_new', methods: ['GET', 'POST'])] */
+    /**
+     * @Route("/new", name="piece_new", methods={"GET","POST"})
+     */
     public function new(Request $request): Response
     {
         /* $piece = new Piece(); */
@@ -49,7 +55,10 @@ class PieceController extends AbstractController
         ]);
     }
 
-    #[Route('/{id}', name: 'piece_show', methods: ['GET'])]
+    /* #[Route('/{id}', name: 'piece_show', methods: ['GET'])] */
+    /**
+     * @Route("/{id}", name="piece_show", methods={"GET"})
+     */
     public function show(Piece $piece): Response
     {
         return $this->render('piece/show.html.twig', [
@@ -57,7 +66,10 @@ class PieceController extends AbstractController
         ]);
     }
 
-    #[Route('/{id}/edit', name: 'piece_edit', methods: ['GET', 'POST'])]
+    /* #[Route('/{id}/edit', name: 'piece_edit', methods: ['GET', 'POST'])] */
+    /**
+     * @Route("/{id}/edit", name="piece_edit", methods={"GET","POST"})
+     */
     public function edit(Request $request, Piece $piece): Response
     {
         $form = $this->createForm(PieceType::class, $piece);
@@ -75,7 +87,10 @@ class PieceController extends AbstractController
         ]);
     }
 
-    #[Route('/{id}', name: 'piece_delete', methods: ['POST'])]
+    /* #[Route('/{id}', name: 'piece_delete', methods: ['POST'])] */
+    /**
+     * @Route("/{id}", name="piece_delete", methods={"POST"})
+     */
     public function delete(Request $request, Piece $piece): Response
     {
         if ($this->isCsrfTokenValid('delete'.$piece->getId(), $request->request->get('_token'))) {

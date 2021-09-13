@@ -14,10 +14,16 @@ use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 
-#[Route('/renting')]
+/* #[Route('/renting')] */
+/**
+* @Route("/renting")
+*/
 class RentingController extends AbstractController
 {
-    #[Route('/', name: 'renting_index', methods: ['GET'])]
+    /* #[Route('/', name: 'renting_index', methods: ['GET'])] */
+    /**
+     * @Route("/", name="renting_index", methods={"GET"})
+     */
     public function index(RentingRepository $rentingRepository): Response
     {
         return $this->render('renting/index.html.twig', [
@@ -25,7 +31,10 @@ class RentingController extends AbstractController
         ]);
     }
 
-    #[Route('/new', name: 'renting_new', methods: ['GET', 'POST'])]
+    /* #[Route('/new', name: 'renting_new', methods: ['GET', 'POST'])] */
+    /**
+     * @Route("/new", name="renting_new", methods={"GET","POST"})
+     */
     public function new(Request $request): Response
     {
         $renting = new Renting();
@@ -46,7 +55,10 @@ class RentingController extends AbstractController
         ]);
     }
 
-    #[Route('/{id}', name: 'renting_show', methods: ['GET'])]
+    /* #[Route('/{id}', name: 'renting_show', methods: ['GET'])] */
+    /**
+     * @Route("/{id}", name="renting_show", methods={"GET"})
+     */
     public function show(Renting $renting, EntityManagerInterface $entityManager, $id): Response
     {
         $user = $this->getUser();
@@ -58,7 +70,10 @@ class RentingController extends AbstractController
         ]);
     }
 
-    #[Route('/{id}/edit', name: 'renting_edit', methods: ['GET', 'POST'])]
+    /* #[Route('/{id}/edit', name: 'renting_edit', methods: ['GET', 'POST'])] */
+    /**
+     * @Route("/{id}/edit", name="renting_edit", methods={"GET","POST"})
+     */
     public function edit(Request $request, Renting $renting): Response
     {
         $form = $this->createForm(RentingType::class, $renting);
@@ -76,7 +91,10 @@ class RentingController extends AbstractController
         ]);
     }
 
-    #[Route('/{id}', name: 'renting_delete', methods: ['POST'])]
+    /* #[Route('/{id}', name: 'renting_delete', methods: ['POST'])] */
+    /**
+     * @Route("/{id}", name="renting_delete", methods={"POST"})
+     */
     public function delete(Request $request, Renting $renting): Response
     {
         if ($this->isCsrfTokenValid('delete'.$renting->getId(), $request->request->get('_token'))) {

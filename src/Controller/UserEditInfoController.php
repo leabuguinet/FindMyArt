@@ -14,7 +14,10 @@ use Sensio\Bundle\FrameworkExtraBundle\Configuration\IsGranted;
 
 class UserEditInfoController extends AbstractController
 {
-    #[Route('/{id}/user/edit/info', name: 'user_edit_info', methods: ['GET', 'POST'])]
+    /* #[Route('/{id}/user/edit/info', name: 'user_edit_info', methods: ['GET', 'POST'])] */
+    /**
+     * @Route("/{id}/user/edit/info", name="user_edit_info", methods={"GET","POST"})
+     */
         public function edit(Request $request, User $user, UserPasswordEncoderInterface $passwordEncoder): Response
         {
             

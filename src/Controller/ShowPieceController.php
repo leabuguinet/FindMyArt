@@ -20,8 +20,10 @@ use League\ColorExtractor\Palette;
 
 class ShowPieceController extends AbstractController
 {
-    #[Route('/show/{id}', name: 'show_piece')]
-
+    /* #[Route('/show/{id}', name: 'show_piece')] */
+    /**
+     * @Route("/show/{id}", name="show_piece")
+     */
     public function index(EntityManagerInterface $entityManager, $id, StorageInterface $storageInterface): Response
     {
         $piece = $entityManager->getRepository(Piece::class)->find($id);

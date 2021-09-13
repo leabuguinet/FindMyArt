@@ -33,8 +33,11 @@ class RegistrationController extends AbstractController
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
+
+            /* COMMENTED TO STOP REGISTERING */
+
             // encode the plain password
-            $user->setPassword(
+            /* $user->setPassword(
                 $passwordEncoder->encodePassword(
                     $user,
                     $form->get('plainPassword')->getData()
@@ -54,7 +57,7 @@ class RegistrationController extends AbstractController
                     ->to($user->getEmail())
                     ->subject('Please Confirm your Email')
                     ->htmlTemplate('registration/confirmation_email.html.twig')
-            );
+            ); */
             // do anything else you need here, like send an email
             
             $this->addFlash('success-email-sent', 'Nous t\'avons envoyé un email de confirmation. Merci de cliquer sur le lien de validation.');

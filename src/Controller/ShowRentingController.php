@@ -16,7 +16,10 @@ use Symfony\Component\Routing\Annotation\Route;
 
 class ShowRentingController extends AbstractController
 {
-    #[Route('/show/renting/{id}', name: 'show_renting', methods: ['GET'])]
+    /* #[Route('/show/renting/{id}', name: 'show_renting', methods: ['GET'])] */
+    /**
+     * @Route("/show/renting/{id}", name="show_renting", methods={"GET"})
+     */
     public function index(EntityManagerInterface $entityManager, $id): Response
     {
         $user = $this->getUser();

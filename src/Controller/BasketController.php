@@ -13,7 +13,10 @@ use Symfony\Component\Routing\Annotation\Route;
 
 class BasketController extends AbstractController
 {
-    #[Route('/basket', name: 'basket')]
+    #/* [Route('/basket', name: 'basket')] */
+    /**
+     * @Route("/basket", name="basket")
+     */
     public function index(Request $request, EntityManagerInterface $entityManager): Response
     {
         $session = $request->getSession();
@@ -33,7 +36,10 @@ class BasketController extends AbstractController
         ]);
     }
 
-    #[Route('/basket/add/{id}', name: 'add_basket')]
+    /* #[Route('/basket/add/{id}', name: 'add_basket')] */
+     /**
+     * @Route("/basket/add{id}", name="add_basket")
+     */
     public function add(Request $request, EntityManagerInterface $entityManager, $id): Response
     {
         // Récupère la piece avec l'id: si l'objet n'existe pas je l'ajoute pas au panier
@@ -53,7 +59,12 @@ class BasketController extends AbstractController
         // Redirection sur la piece
         return $this->redirectToRoute('basket');
     }
-    #[Route('/basket/renting', name: 'add_renting')]
+
+
+    /* #[Route('/basket/renting', name: 'add_renting')] */
+     /**
+     * @Route("/basket/renting", name="add_basket")
+     */
     public function rentingAdd(Request $request, EntityManagerInterface $entityManager): Response
     {
         $result = 0;
@@ -77,7 +88,11 @@ class BasketController extends AbstractController
         $session->set('basket',[]);
         return $this->redirectToRoute('user_account');
     }
-    #[Route('/basket/remove/{id}', name: 'remove_basket')]
+
+    /* #[Route('/basket/remove/{id}', name: 'remove_basket')] */
+     /**
+     * @Route("/basket/remove/{id}", name="remove_basket")
+     */
     public function remove(Request $request, EntityManagerInterface $entityManager,$id): Response
     {
         // Récupère la piece avec l'id: si l'objet n'existe pas je l'ajoute pas au panier
